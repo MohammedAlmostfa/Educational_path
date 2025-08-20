@@ -18,9 +18,9 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
         'email',
         'password',
+        'code',
     ];
 
     /**
@@ -44,5 +44,9 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function devicetoke(){
+        return $this->hasMany(DeviceToken::class);
     }
 }
