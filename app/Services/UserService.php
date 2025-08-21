@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class UserService extends Service
 {
-    public function GetAllUser()
+    public function getAllUser()
     {
         try {
             $users = User::paginate(10);
