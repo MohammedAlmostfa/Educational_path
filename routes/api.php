@@ -13,4 +13,4 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);     
 Route::post('/logout', [AuthController::class, 'logout']);    
 Route::post('//access-with-google', [AuthController::class, 'loginwithgoogel']);    
-Route::post('/fcm', [DeviceTokenController::class, 'createOrUpdate']);  
+Route::post('/save-fcm', [DeviceTokenController::class, 'createOrUpdate']);  

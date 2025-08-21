@@ -7,43 +7,56 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Exception;
 
+/**
+ * Service for handling device token operations.
+ *
+ * This service handles creating or updating device tokens for push notifications.
+ */
 class DeviceTokenService extends Service
 {
+    /**
+     * Create or update a device token.
+     *
+     * @param array $data An array containing 'device_id' and 'fcm_token'.
+     * @return array Standardized response with status and message.
+     */
     public function createOrUpdate(array $data)
     {
         try {
-            // جلب الجهاز إذا كان موجودًا
+            // Retrieve the device if it already exists
             $device = DeviceToken::where('device_id', $data['device_id'])->first();
 
-            // الحصول على المستخدم حالياً إذا كان مسجل دخول
-            $user = Auth::user(); // null إذا كان المستخدم غير مسجل
+            // Get the currently authenticated user using Sanctum (null if not logged in)
+            $user = Auth::guard('sanctum')->user();
 
             if ($device) {
-                // تحديث التوكن إذا تغير
+                // Update the FCM token if it has changed
                 if ($device->fcm_token !== $data['fcm_token']) {
                     $device->fcm_token = $data['fcm_token'];
                 }
 
-                // تحديث الـ user_id فقط إذا كان المستخدم مسجل دخول و user_id مختلف
+                // Update the user_id only if a user is logged in and it's different
                 if ($user && $device->user_id !== $user->id) {
                     $device->user_id = $user->id;
                 }
 
+                // Save changes to the device
                 $device->save();
             } else {
-                // إنشاء سجل جديد
+                // Create a new device token record
                 DeviceToken::create([
                     'device_id' => $data['device_id'],
                     'fcm_token' => $data['fcm_token'],
-                    'user_id' => $user->id ?? null, // null إذا كان المستخدم غير مسجل
+                    'user_id' => $user->id ?? null, // null if user is not logged in
                 ]);
             }
 
-            return $this->successResponse('تم التحقق من FCM بنجاح.', 200);
+            return $this->successResponse('FCM token verified successfully.', 200);
 
         } catch (Exception $e) {
-            Log::error('حدث خطأ أثناء معالجة FCM: ' . $e->getMessage());
-            return $this->errorResponse('حدث خطأ أثناء معالجة FCM، يرجى المحاولة مرة أخرى.', 500);
+            // Log any exception for debugging
+            Log::error('Error while processing FCM token: ' . $e->getMessage());
+            return $this->errorResponse('An error occurred while processing the FCM token. Please try again.', 500);
         }
     }
 }
