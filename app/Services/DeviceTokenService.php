@@ -51,12 +51,12 @@ class DeviceTokenService extends Service
                 ]);
             }
 
-            return $this->successResponse('FCM token verified successfully.', 200);
+            return $this->successResponse('تم التحقق من رمز FCM بنجاح.', 200);
 
         } catch (Exception $e) {
             // Log any exception for debugging
             Log::error('Error while processing FCM token: ' . $e->getMessage());
-            return $this->errorResponse('An error occurred while processing the FCM token. Please try again.', 500);
+            return $this->errorResponse('حدث خطأ أثناء معالجة رمز FCM. يرجى المحاولة مرة أخرى.', 500);
         }
     }
 }

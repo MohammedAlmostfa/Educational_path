@@ -7,20 +7,37 @@ use Exception;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Service class for handling user-related operations.
+ *
+ * This service manages user accounts, activation codes, and profile data.
+ */
 class UserService extends Service
 {
+    /**
+     * Get all users that don't have an activation code.
+     *
+     * @return array Response with paginated users
+     */
     public function getAllUser()
     {
         try {
-            $users = User::paginate(10);
-            return $this->successResponse('تم جلب المستخدمين بنجاح', $users, 200);
+            $users = User::where('activation_code', null)->paginate(10);
+
+            return $this->successResponse('تم جلب المستخدمين بنجاح', 200, $users);
         } catch (Exception $e) {
             Log::error('حدث خطأ أثناء جلب المستخدمين: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء معالجة المستخدمين، يرجى المحاولة مرة أخرى.', 500);
         }
     }
 
-    public function GeneratCode($id)
+    /**
+     * Generate an activation code for a user if not already exists.
+     *
+     * @param int $id User ID
+     * @return array Response with activation code
+     */
+    public function Activaccount($id)
     {
         try {
             $user = User::findOrFail($id);
@@ -30,7 +47,7 @@ class UserService extends Service
                 $user->activation_code = $randomNumber;
                 $user->save();
 
-                return $this->successResponse('تم توليد الكود بنجاح', $randomNumber, 200);
+                return $this->successResponse('تم توليد الكود بنجاح', 200, $randomNumber);
             } else {
                 return $this->errorResponse('المستخدم له كود سابق', 400);
             }
@@ -40,11 +57,16 @@ class UserService extends Service
         }
     }
 
-    public function checkCode($data)
+    /**
+     * Check if the activation code matches the current logged-in user.
+     *
+     * @param array $data Activation code
+     * @return array Response with verification result
+     */
+    public function checkActivationCode($data)
     {
         try {
-            $user = Auth::user();
-            
+            $user = Auth::guard('sanctum')->user();
             if (!$user) {
                 return $this->errorResponse('المستخدم غير موجود', 404);
             }
@@ -59,27 +81,33 @@ class UserService extends Service
             return $this->errorResponse('حدث خطأ أثناء التحقق من الكود، يرجى المحاولة مرة أخرى.', 500);
         }
     }
-public function AddUserData($data)
-{
-    try {
-        $user = Auth::user();
 
-        if (!$user) {
-            return $this->errorResponse('المستخدم غير موجود', 404);
+    /**
+     * Add or update extra user profile data (average, gender, branch).
+     *
+     * @param array $data User data
+     * @return array Response with updated user
+     */
+    public function AddUserData($data)
+    {
+        try {
+            $user = Auth::guard('sanctum')->user();
+
+            if (!$user) {
+                return $this->errorResponse('المستخدم غير موجود', 404);
+            }
+
+            $user->update([
+                "average" => $data['average'],
+                "gender" => $data['gender'],
+                "branch" => $data['branch'],
+            ]);
+
+            return $this->successResponse('تم تحديث بيانات المستخدم بنجاح', 200, $user);
+
+        } catch (Exception $e) {
+            Log::error('حدث خطأ أثناء تحديث بيانات المستخدم: ' . $e->getMessage());
+            return $this->errorResponse('حدث خطأ أثناء تحديث بيانات المستخدم، يرجى المحاولة مرة أخرى.', 500);
         }
-
-        $user->update([
-            "average" => $data['average'],
-            "gender" => $data['gender'],
-            "branch" => $data['branch'],
-        ]);
-
-        return $this->successResponse('تم تحديث بيانات المستخدم بنجاح', $user, 200);
-
-    } catch (Exception $e) {
-        Log::error('حدث خطأ أثناء تحديث بيانات المستخدم: ' . $e->getMessage());
-        return $this->errorResponse('حدث خطأ أثناء تحديث بيانات المستخدم، يرجى المحاولة مرة أخرى.', 500);
     }
-}
-
 }

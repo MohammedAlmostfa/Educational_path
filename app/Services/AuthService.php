@@ -33,12 +33,12 @@ class AuthService extends Service
             // Generate access token
             $token = $user->createToken('auth_token')->plainTextToken;
 
-            return $this->successResponse('User created successfully.', 200, [
+            return $this->successResponse('تم إنشاء المستخدم بنجاح.', 200, [
                 'token' => $token,
             ]);
         } catch (Exception $e) {
             Log::error('Error while creating user: ' . $e->getMessage());
-            return $this->errorResponse('An error occurred while creating the user. Please try again.', 500);
+            return $this->errorResponse('حدث خطأ أثناء إنشاء المستخدم. يرجى المحاولة مرة أخرى.', 500);
         }
     }
 
@@ -51,17 +51,18 @@ class AuthService extends Service
     public function login($data)
     {
         try {
+            // Find user by email
             $user = User::where('email', $data['email'])->first();
 
-            // Check if user exists and password matches
+            // Validate password
             if (!$user || !Hash::check($data['password'], $user->password)) {
-                return $this->errorResponse('Invalid credentials.', 422);
+                return $this->errorResponse('بيانات تسجيل الدخول غير صحيحة.', 422);
             }
 
             // Generate a new access token
             $token = $user->createToken('auth_token')->plainTextToken;
 
-            return $this->successResponse('Login successful.', 200, [
+            return $this->successResponse('تم تسجيل الدخول بنجاح.', 200, [
                 'token' => $token,
                 'user' => new UserResource($user),
             ]);
@@ -69,7 +70,7 @@ class AuthService extends Service
             return $this->errorResponse($e->errors(), 422);
         } catch (Exception $e) {
             Log::error('Error while logging in user: ' . $e->getMessage());
-            return $this->errorResponse('An error occurred during login. Please try again.', 500);
+            return $this->errorResponse('حدث خطأ أثناء تسجيل الدخول. يرجى المحاولة مرة أخرى.', 500);
         }
     }
 
@@ -81,15 +82,17 @@ class AuthService extends Service
     public function logout()
     {
         try {
-           $user= Auth::guard('sanctum')->user(); // Get current authenticated user
+            // Get current authenticated user
+            $user = Auth::guard('sanctum')->user();
             if ($user && $user->currentAccessToken()) {
-                $user->currentAccessToken()->delete(); // Delete current token
+                // Delete current token
+                $user->currentAccessToken()->delete();
             }
 
-            return $this->successResponse('Logout successful.', 200);
+            return $this->successResponse('تم تسجيل الخروج بنجاح.', 200);
         } catch (Exception $e) {
             Log::error('Error while logging out user: ' . $e->getMessage());
-            return $this->errorResponse('An error occurred during logout. Please try again.', 500);
+            return $this->errorResponse('حدث خطأ أثناء تسجيل الخروج. يرجى المحاولة مرة أخرى.', 500);
         }
     }
 
@@ -107,7 +110,7 @@ class AuthService extends Service
             $payload = $client->verifyIdToken($googleToken);
 
             if (!$payload) {
-                return $this->errorResponse('Invalid Google token.', 401);
+                return $this->errorResponse('رمز Google غير صالح.', 401);
             }
 
             $email = $payload['email']; // Get email from Google payload
@@ -115,11 +118,11 @@ class AuthService extends Service
             // Find user in database
             $user = User::where('email', $email)->first();
 
+            // Create new user if not found
             if (!$user) {
-                // Create new user if not found
                 $user = User::create([
                     'email' => $email,
-                    'password' => bcrypt(Str::random(16)), // Random password
+                    'password' => bcrypt(Str::random(16)), // Generate random password
                 ]);
             }
 
@@ -127,14 +130,14 @@ class AuthService extends Service
             Auth::login($user);
             $token = $user->createToken('authToken')->plainTextToken;
 
-            return $this->successResponse('Login successful.', 200, [
+            return $this->successResponse('تم تسجيل الدخول باستخدام Google بنجاح.', 200, [
                 'user' => new UserResource($user),
                 'access_token' => $token,
                 'token_type' => 'Bearer',
             ]);
         } catch (Exception $e) {
             Log::error('Error while logging in with Google: ' . $e->getMessage());
-            return $this->errorResponse('An error occurred during Google login. Please try again.', 500);
+            return $this->errorResponse('حدث خطأ أثناء تسجيل الدخول باستخدام Google. يرجى المحاولة مرة أخرى.', 500);
         }
     }
 }

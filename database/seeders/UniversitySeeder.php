@@ -2,13 +2,14 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
-use App\Models\Governorate;
-use App\Models\University;
+use App\Models\Admission;
+
+use App\Models\Branch;
 use App\Models\College;
 use App\Models\Department;
-use App\Models\Branch;
-use App\Models\Admission;
+use App\Models\Governorate;
+use App\Models\University;
+use Illuminate\Database\Seeder;
 
 class UniversitySeeder extends Seeder
 {
