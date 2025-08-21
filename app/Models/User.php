@@ -20,7 +20,10 @@ class User extends Authenticatable
     protected $fillable = [
         'email',
         'password',
-        'code',
+        'activation_code',
+        "average",
+        "gender",
+        "branch",
     ];
 
     /**
@@ -46,7 +49,8 @@ class User extends Authenticatable
         ];
     }
 
-    public function devicetoke(){
+    public function devicetoke()
+    {
         return $this->hasMany(DeviceToken::class);
     }
 }
