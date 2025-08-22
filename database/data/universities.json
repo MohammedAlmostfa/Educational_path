@@ -518,5 +518,3933 @@
         "preferenceScore": 282
       }
     ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الطب",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 100.89,
+        "minTotal": 706.24,
+        "preferenceScore": 297
+      },
+      {
+        "year": 2024,
+        "minAverage": 100.90,
+        "minTotal": 706.28,
+        "preferenceScore": 298
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية طب الكندي",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 100.45,
+        "minTotal": 703.12,
+        "preferenceScore": 294
+      },
+      {
+        "year": 2024,
+        "minAverage": 100.57,
+        "minTotal": 704.00,
+        "preferenceScore": 300
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الطب",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 100.38,
+        "minTotal": 702.68,
+        "preferenceScore": 295
+      },
+      {
+        "year": 2024,
+        "minAverage": 100.51,
+        "minTotal": 703.56,
+        "preferenceScore": 292
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة الكوفة",
+    "collegeName": "كلية الطب",
+    "governorate": "النجف",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 100.14,
+        "minTotal": 701.00,
+        "preferenceScore": 299
+      },
+      {
+        "year": 2024,
+        "minAverage": 100.43,
+        "minTotal": 703.00,
+        "preferenceScore": 297
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة كربلاء",
+    "collegeName": "كلية الطب",
+    "governorate": "كربلاء",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 100.14,
+        "minTotal": 700.96,
+        "preferenceScore": 296
+      },
+      {
+        "year": 2024,
+        "minAverage": 100.14,
+        "minTotal": 701.00,
+        "preferenceScore": 296
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة كركوك",
+    "collegeName": "كلية الطب",
+    "governorate": "كركوك",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 100.00,
+        "minTotal": 700.00,
+        "preferenceScore": 295
+      },
+      {
+        "year": 2024,
+        "minAverage": 100.00,
+        "minTotal": 700.00,
+        "preferenceScore": 295
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة الموصل",
+    "collegeName": "كلية طب الموصل",
+    "governorate": "نينوى",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 100.00,
+        "minTotal": 700.00,
+        "preferenceScore": 293
+      },
+      {
+        "year": 2024,
+        "minAverage": 100.14,
+        "minTotal": 701.00,
+        "preferenceScore": 295
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بابل",
+    "collegeName": "كلية الطب",
+    "governorate": "بابل",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.99,
+        "minTotal": 699.96,
+        "preferenceScore": 293
+      },
+      {
+        "year": 2024,
+        "minAverage": 100.43,
+        "minTotal": 703.00,
+        "preferenceScore": 298
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة المستنصرية",
+    "collegeName": "كلية الطب",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.96,
+        "minTotal": 699.72,
+        "preferenceScore": 294
+      },
+      {
+        "year": 2024,
+        "minAverage": 100.27,
+        "minTotal": 701.92,
+        "preferenceScore": 290
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ابن سينا للعلوم الطبية والصيدلانية",
+    "collegeName": "كلية الطب",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.74,
+        "minTotal": 698.20,
+        "preferenceScore": 294
+      },
+      {
+        "year": 2024,
+        "minAverage": 100.06,
+        "minTotal": 700.40,
+        "preferenceScore": 294
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة العراقية",
+    "collegeName": "كلية الطب",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.72,
+        "minTotal": 698.04,
+        "preferenceScore": 293
+      },
+      {
+        "year": 2024,
+        "minAverage": 100.01,
+        "minTotal": 700.04,
+        "preferenceScore": 294
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بابل",
+    "collegeName": "كلية طب حمورابي",
+    "governorate": "بابل",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.69,
+        "minTotal": 697.84,
+        "preferenceScore": 285
+      },
+      {
+        "year": 2024,
+        "minAverage": 100.00,
+        "minTotal": 700.00,
+        "preferenceScore": 297
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة الفلوجة",
+    "collegeName": "كلية الطب",
+    "governorate": "الأنبار",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.57,
+        "minTotal": 697.00,
+        "preferenceScore": 298
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.71,
+        "minTotal": 698.00,
+        "preferenceScore": 299
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة جابر بن حيان للعلوم الطبية والصيدلانية",
+    "collegeName": "كلية الطب",
+    "governorate": "النجف",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.57,
+        "minTotal": 697.00,
+        "preferenceScore": 295
+      },
+      {
+        "year": 2024,
+        "minAverage": 100.00,
+        "minTotal": 700.00,
+        "preferenceScore": 295
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ديالى",
+    "collegeName": "كلية الطب",
+    "governorate": "ديالى",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.48,
+        "minTotal": 696.36,
+        "preferenceScore": 296
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.98,
+        "minTotal": 699.88,
+        "preferenceScore": 294
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة القادسية",
+    "collegeName": "كلية الطب",
+    "governorate": "القادسية",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.43,
+        "minTotal": 696.00,
+        "preferenceScore": 300
+      },
+      {
+        "year": 2024,
+        "minAverage": 100.14,
+        "minTotal": 701.00,
+        "preferenceScore": 295
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة واسط",
+    "collegeName": "كلية الطب",
+    "governorate": "واسط",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.35,
+        "minTotal": 695.44,
+        "preferenceScore": 294
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.71,
+        "minTotal": 698.00,
+        "preferenceScore": 299
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة نينوى",
+    "collegeName": "كلية الطب",
+    "governorate": "نينوى",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.29,
+        "minTotal": 695.00,
+        "preferenceScore": 299
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.43,
+        "minTotal": 696.00,
+        "preferenceScore": 300
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة المثنى",
+    "collegeName": "كلية الطب",
+    "governorate": "المثنى",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.29,
+        "minTotal": 695.00,
+        "preferenceScore": 299
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.86,
+        "minTotal": 699.00,
+        "preferenceScore": 296
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة الانبار",
+    "collegeName": "كلية الطب",
+    "governorate": "الأنبار",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.29,
+        "minTotal": 695.00,
+        "preferenceScore": 291
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.57,
+        "minTotal": 697.00,
+        "preferenceScore": 292
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة البصرة",
+    "collegeName": "كلية الطب",
+    "governorate": "البصرة",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.29,
+        "minTotal": 695.00,
+        "preferenceScore": 295
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.62,
+        "minTotal": 697.36,
+        "preferenceScore": 291
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة المثنى",
+    "collegeName": "كلية الطب/ابناء المحافظة",
+    "governorate": "المثنى",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.29,
+        "minTotal": 695.00,
+        "preferenceScore": 295
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.43,
+        "minTotal": 696.00,
+        "preferenceScore": 298
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ذي قار",
+    "collegeName": "كلية الطب",
+    "governorate": "ذي قار",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.29,
+        "minTotal": 695.00,
+        "preferenceScore": 298
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.57,
+        "minTotal": 697.00,
+        "preferenceScore": 294
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة تكريت",
+    "collegeName": "كلية الطب",
+    "governorate": "صلاح الدين",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.17,
+        "minTotal": 694.20,
+        "preferenceScore": 294
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.57,
+        "minTotal": 697.00,
+        "preferenceScore": 292
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة البصرة",
+    "collegeName": "كلية طب الزهراء",
+    "governorate": "البصرة",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.15,
+        "minTotal": 694.04,
+        "preferenceScore": 296
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.57,
+        "minTotal": 697.00,
+        "preferenceScore": 295
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة تكريت",
+    "collegeName": "كلية الطب/ابناء المحافظة",
+    "governorate": "صلاح الدين",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.14,
+        "minTotal": 694.00,
+        "preferenceScore": 298
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.57,
+        "minTotal": 697.00,
+        "preferenceScore": 294
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ميسان",
+    "collegeName": "كلية الطب",
+    "governorate": "ميسان",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.14,
+        "minTotal": 694.00,
+        "preferenceScore": 299
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.57,
+        "minTotal": 697.00,
+        "preferenceScore": 293
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة سومر",
+    "collegeName": "كلية الطب",
+    "governorate": "ذي قار",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.14,
+        "minTotal": 694.00,
+        "preferenceScore": 298
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.57,
+        "minTotal": 697.00,
+        "preferenceScore": 291
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ميسان",
+    "collegeName": "كلية الطب/ابناء المحافظة",
+    "governorate": "ميسان",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 6,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 99.07,
+        "minTotal": 693.52,
+        "preferenceScore": 292
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.43,
+        "minTotal": 696.00,
+        "preferenceScore": 296
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.86,
+        "minTotal": 692.00,
+        "preferenceScore": 294
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.43,
+        "minTotal": 696.00,
+        "preferenceScore": 297
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة المستنصرية",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.86,
+        "minTotal": 692.00,
+        "preferenceScore": 300
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.29,
+        "minTotal": 695.00,
+        "preferenceScore": 296
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة الكوفة",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "النجف",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.71,
+        "minTotal": 691.00,
+        "preferenceScore": 290
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.19,
+        "minTotal": 694.36,
+        "preferenceScore": 298
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة العراقية",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.71,
+        "minTotal": 691.00,
+        "preferenceScore": 294
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.14,
+        "minTotal": 694.00,
+        "preferenceScore": 297
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ابن سينا للعلوم الطبية والصيدلانية",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.67,
+        "minTotal": 690.68,
+        "preferenceScore": 290
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.14,
+        "minTotal": 694.00,
+        "preferenceScore": 294
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ذي قار",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "ذي قار",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.65,
+        "minTotal": 690.52,
+        "preferenceScore": 288
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.00,
+        "minTotal": 693.00,
+        "preferenceScore": 290
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ديالى",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "ديالى",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.57,
+        "minTotal": 690.00,
+        "preferenceScore": 294
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.00,
+        "minTotal": 693.00,
+        "preferenceScore": 294
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بابل",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "بابل",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.50,
+        "minTotal": 689.52,
+        "preferenceScore": 293
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.00,
+        "minTotal": 693.00,
+        "preferenceScore": 295
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة القادسية",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "القادسية",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.43,
+        "minTotal": 689.00,
+        "preferenceScore": 293
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.00,
+        "minTotal": 693.00,
+        "preferenceScore": 293
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة البصرة",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "البصرة",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.43,
+        "minTotal": 689.00,
+        "preferenceScore": 296
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.91,
+        "minTotal": 692.36,
+        "preferenceScore": 289
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة كربلاء",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "كربلاء",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.43,
+        "minTotal": 689.00,
+        "preferenceScore": 297
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.00,
+        "minTotal": 693.00,
+        "preferenceScore": 294
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة كركوك",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "كركوك",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.43,
+        "minTotal": 689.00,
+        "preferenceScore": 294
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.91,
+        "minTotal": 692.40,
+        "preferenceScore": 291
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة الموصل",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "نينوى",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.43,
+        "minTotal": 689.00,
+        "preferenceScore": 293
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.86,
+        "minTotal": 692.00,
+        "preferenceScore": 295
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة تكريت",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "صلاح الدين",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.39,
+        "minTotal": 688.72,
+        "preferenceScore": 285
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.00,
+        "minTotal": 693.00,
+        "preferenceScore": 292
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة واسط",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "واسط",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.35,
+        "minTotal": 688.44,
+        "preferenceScore": 289
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.86,
+        "minTotal": 692.00,
+        "preferenceScore": 297
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ميسان",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "ميسان",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.29,
+        "minTotal": 688.00,
+        "preferenceScore": 297
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.86,
+        "minTotal": 692.00,
+        "preferenceScore": 295
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة الانبار",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "الأنبار",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.29,
+        "minTotal": 688.00,
+        "preferenceScore": 298
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.86,
+        "minTotal": 692.00,
+        "preferenceScore": 293
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة المثنى",
+    "collegeName": "كلية طب الاسنان",
+    "governorate": "المثنى",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.29,
+        "minTotal": 688.00,
+        "preferenceScore": 296
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.86,
+        "minTotal": 692.00,
+        "preferenceScore": 297
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الصيدلة",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.86,
+        "minTotal": 692.00,
+        "preferenceScore": 291
+      },
+      {
+        "year": 2024,
+        "minAverage": 99.14,
+        "minTotal": 694.00,
+        "preferenceScore": 288
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الصيدلة",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.45,
+        "minTotal": 689.12,
+        "preferenceScore": 283
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.86,
+        "minTotal": 692.04,
+        "preferenceScore": 285
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة المستنصرية",
+    "collegeName": "كلية الصيدلة",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.41,
+        "minTotal": 688.88,
+        "preferenceScore": 287
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.75,
+        "minTotal": 691.28,
+        "preferenceScore": 290
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة الموصل",
+    "collegeName": "كلية الصيدلة",
+    "governorate": "نينوى",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.29,
+        "minTotal": 688.00,
+        "preferenceScore": 287
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.57,
+        "minTotal": 690.00,
+        "preferenceScore": 299
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة البصرة",
+    "collegeName": "كلية الصيدلة",
+    "governorate": "البصرة",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.29,
+        "minTotal": 688.00,
+        "preferenceScore": 294
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.43,
+        "minTotal": 689.00,
+        "preferenceScore": 294
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة الكوفة",
+    "collegeName": "كلية الصيدلة",
+    "governorate": "النجف",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.24,
+        "minTotal": 687.68,
+        "preferenceScore": 287
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.71,
+        "minTotal": 691.00,
+        "preferenceScore": 291
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة الانبار",
+    "collegeName": "كلية الصيدلة",
+    "governorate": "الأنبار",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.14,
+        "minTotal": 687.00,
+        "preferenceScore": 289
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.49,
+        "minTotal": 689.40,
+        "preferenceScore": 291
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة القادسية",
+    "collegeName": "كلية الصيدلة",
+    "governorate": "القادسية",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.14,
+        "minTotal": 687.00,
+        "preferenceScore": 294
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.57,
+        "minTotal": 690.00,
+        "preferenceScore": 295
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة كركوك",
+    "collegeName": "كلية الصيدلة",
+    "governorate": "كركوك",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.14,
+        "minTotal": 687.00,
+        "preferenceScore": 292
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.57,
+        "minTotal": 690.00,
+        "preferenceScore": 298
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة تكريت",
+    "collegeName": "كلية الصيدلة",
+    "governorate": "صلاح الدين",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.14,
+        "minTotal": 687.00,
+        "preferenceScore": 291
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.57,
+        "minTotal": 690.00,
+        "preferenceScore": 290
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ذي قار",
+    "collegeName": "كلية الصيدلة",
+    "governorate": "ذي قار",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.14,
+        "minTotal": 687.00,
+        "preferenceScore": 289
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.57,
+        "minTotal": 690.00,
+        "preferenceScore": 291
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة كربلاء",
+    "collegeName": "كلية الصيدلة",
+    "governorate": "كربلاء",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.14,
+        "minTotal": 687.00,
+        "preferenceScore": 297
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.57,
+        "minTotal": 690.00,
+        "preferenceScore": 297
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة جابر بن حيان للعلوم الطبية والصيدلانية",
+    "collegeName": "كلية الصيدلة",
+    "governorate": "النجف",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.14,
+        "minTotal": 687.00,
+        "preferenceScore": 296
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.71,
+        "minTotal": 691.00,
+        "preferenceScore": 292
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بابل",
+    "collegeName": "كلية الصيدلة",
+    "governorate": "بابل",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.14,
+        "minTotal": 687.00,
+        "preferenceScore": 297
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.57,
+        "minTotal": 690.00,
+        "preferenceScore": 298
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة نينوى",
+    "collegeName": "كلية الصيدلة",
+    "governorate": "نينوى",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.07,
+        "minTotal": 686.48,
+        "preferenceScore": 285
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.43,
+        "minTotal": 689.00,
+        "preferenceScore": 296
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة المثنى",
+    "collegeName": "كلية الصيدلة",
+    "governorate": "المثنى",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.07,
+        "minTotal": 686.48,
+        "preferenceScore": 283
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.57,
+        "minTotal": 690.00,
+        "preferenceScore": 290
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ميسان",
+    "collegeName": "كلية الصيدلة",
+    "governorate": "ميسان",
+    "gender": "كلاهما",
+    "collegeType": "المجموعة الطبية",
+    "studyDuration": 5,
+    "departments": [],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.04,
+        "minTotal": 686.28,
+        "preferenceScore": 291
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.43,
+        "minTotal": 689.00,
+        "preferenceScore": 294
+      }
+    ]
+  },
+   {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-قسم العمارة",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "العمارة"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 98.00,
+        "minTotal": 686.00,
+        "preferenceScore": 286
+      },
+      {
+        "year": 2024,
+        "minAverage": 97.57,
+        "minTotal": 683.00,
+        "preferenceScore": 290
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة البصرة للنفط والغاز",
+    "collegeName": "كلية هندسة النفط والغاز-قسم هندسة النفط والغاز",
+    "governorate": "البصرة",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "هندسة النفط والغاز"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 97.86,
+        "minTotal": 685.00,
+        "preferenceScore": 296
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.14,
+        "minTotal": 687.00,
+        "preferenceScore": 298
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-الخوارزمي-قسم الطب الحياتي",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "الطب الحياتي"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 97.71,
+        "minTotal": 684.00,
+        "preferenceScore": 297
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.14,
+        "minTotal": 687.00,
+        "preferenceScore": 293
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-الخوارزمي-قسم الطب الحياتي",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "الطب الحياتي"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 97.71,
+        "minTotal": 684.00,
+        "preferenceScore": 297
+      },
+      {
+        "year": 2024,
+        "minAverage": 97.86,
+        "minTotal": 685.00,
+        "preferenceScore": 293
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الهندسة-قسم الطب الحياتي",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "الطب الحياتي"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 97.57,
+        "minTotal": 683.00,
+        "preferenceScore": 294
+      },
+      {
+        "year": 2024,
+        "minAverage": 98.00,
+        "minTotal": 686.00,
+        "preferenceScore": 297
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الهندسة-قسم الطب الحياتي",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "الطب الحياتي"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 97.57,
+        "minTotal": 683.00,
+        "preferenceScore": 294
+      },
+      {
+        "year": 2024,
+        "minAverage": 97.14,
+        "minTotal": 680.00,
+        "preferenceScore": 289
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الهندسة-قسم العمارة",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "العمارة"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 97.43,
+        "minTotal": 682.00,
+        "preferenceScore": 285
+      },
+      {
+        "year": 2024,
+        "minAverage": 95.29,
+        "minTotal": 667.00,
+        "preferenceScore": 283
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة كربلاء",
+    "collegeName": "كلية الهندسة-قسم الطب الحياتي",
+    "governorate": "كربلاء",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "الطب الحياتي"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 97.43,
+        "minTotal": 682.00,
+        "preferenceScore": 288
+      },
+      {
+        "year": 2024,
+        "minAverage": 97.86,
+        "minTotal": 685.00,
+        "preferenceScore": 291
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة كربلاء",
+    "collegeName": "كلية الهندسة-قسم الطب الحياتي",
+    "governorate": "كربلاء",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "الطب الحياتي"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 97.43,
+        "minTotal": 682.00,
+        "preferenceScore": 288
+      },
+      {
+        "year": 2024,
+        "minAverage": 95.71,
+        "minTotal": 670.00,
+        "preferenceScore": 284
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة المستنصرية",
+    "collegeName": "كلية الهندسة-قسم العمارة",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "العمارة"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 97.29,
+        "minTotal": 681.00,
+        "preferenceScore": 293
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.86,
+        "minTotal": 650.00,
+        "preferenceScore": 273
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة البصرة",
+    "collegeName": "كلية الهندسة-قسم النفط",
+    "governorate": "البصرة",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "النفط"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 97.20,
+        "minTotal": 680.40,
+        "preferenceScore": 287
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.86,
+        "minTotal": 650.00,
+        "preferenceScore": 270
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة التكنولوجية",
+    "collegeName": "هندسة العمارة-التصميم المعماري",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "التصميم المعماري"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 97.14,
+        "minTotal": 680.00,
+        "preferenceScore": 282
+      },
+      {
+        "year": 2024,
+        "minAverage": 93.57,
+        "minTotal": 655.00,
+        "preferenceScore": 285
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة كربلاء",
+    "collegeName": "كلية الهندسة-قسم النفط",
+    "governorate": "كربلاء",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "النفط"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 97.14,
+        "minTotal": 680.00,
+        "preferenceScore": 279
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.71,
+        "minTotal": 649.00,
+        "preferenceScore": 281
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-قسم النفط",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "النفط"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 97.14,
+        "minTotal": 680.00,
+        "preferenceScore": 296
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.14,
+        "minTotal": 659.00,
+        "preferenceScore": 285
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة التكنولوجية",
+    "collegeName": "هندسة الطب الحياتي",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "هندسة الطب الحياتي"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.86,
+        "minTotal": 678.00,
+        "preferenceScore": 295
+      },
+      {
+        "year": 2024,
+        "minAverage": 96.00,
+        "minTotal": 672.00,
+        "preferenceScore": 284
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة التكنولوجية",
+    "collegeName": "هندسة الطب الحياتي",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "هندسة الطب الحياتي"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.86,
+        "minTotal": 678.00,
+        "preferenceScore": 295
+      },
+      {
+        "year": 2024,
+        "minAverage": 97.71,
+        "minTotal": 684.00,
+        "preferenceScore": 300
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-قسم الطيران",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "الطيران"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.71,
+        "minTotal": 677.00,
+        "preferenceScore": 298
+      },
+      {
+        "year": 2024,
+        "minAverage": 97.71,
+        "minTotal": 684.00,
+        "preferenceScore": 296
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-قسم الطيران",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "الطيران"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.71,
+        "minTotal": 677.00,
+        "preferenceScore": 298
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.71,
+        "minTotal": 663.00,
+        "preferenceScore": 276
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة كربلاء",
+    "collegeName": "كلية الهندسة-قسم العمارة",
+    "governorate": "كربلاء",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "العمارة"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.59,
+        "minTotal": 676.16,
+        "preferenceScore": 292
+      },
+      {
+        "year": 2024,
+        "minAverage": 96.43,
+        "minTotal": 675.00,
+        "preferenceScore": 268
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة البصرة",
+    "collegeName": "كلية الهندسة-قسم العمارة",
+    "governorate": "البصرة",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "العمارة"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.57,
+        "minTotal": 676.00,
+        "preferenceScore": 286
+      },
+      {
+        "year": 2024,
+        "minAverage": 96.57,
+        "minTotal": 676.00,
+        "preferenceScore": 282
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الهندسة-قسم الاطراف والمساند الصناعية",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الاطراف والمساند الصناعية"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.43,
+        "minTotal": 675.00,
+        "preferenceScore": 289
+      },
+      {
+        "year": 2024,
+        "minAverage": 95.14,
+        "minTotal": 666.00,
+        "preferenceScore": 280
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الهندسة-قسم الاطراف والمساند الصناعية",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الاطراف والمساند الصناعية"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.43,
+        "minTotal": 675.00,
+        "preferenceScore": 289
+      },
+      {
+        "year": 2024,
+        "minAverage": 95.14,
+        "minTotal": 666.00,
+        "preferenceScore": 280
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ميسان",
+    "collegeName": "كلية الهندسة-قسم النفط",
+    "governorate": "ميسان",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "النفط"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.43,
+        "minTotal": 675.00,
+        "preferenceScore": 278
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.86,
+        "minTotal": 650.00,
+        "preferenceScore": 270
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة البصرة للنفط والغاز",
+    "collegeName": "كلية هندسة النفط والغاز-قسم الهندسة الكيميائية وتكرير النفط",
+    "governorate": "البصرة",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الهندسة الكيميائية وتكرير النفط"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.43,
+        "minTotal": 675.00,
+        "preferenceScore": 283
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.57,
+        "minTotal": 662.00,
+        "preferenceScore": 286
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بابل",
+    "collegeName": "كلية الهندسة-قسم الطب الحياتي",
+    "governorate": "بابل",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "الطب الحياتي"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.43,
+        "minTotal": 675.00,
+        "preferenceScore": 297
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.71,
+        "minTotal": 663.00,
+        "preferenceScore": 267
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بابل",
+    "collegeName": "كلية الهندسة-قسم الطب الحياتي",
+    "governorate": "بابل",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "الطب الحياتي"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.43,
+        "minTotal": 675.00,
+        "preferenceScore": 297
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.71,
+        "minTotal": 663.00,
+        "preferenceScore": 267
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة كربلاء",
+    "collegeName": "كلية الهندسة-قسم الاطراف والمساند الصناعية",
+    "governorate": "كربلاء",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الاطراف والمساند الصناعية"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.29,
+        "minTotal": 674.04,
+        "preferenceScore": 286
+      },
+      {
+        "year": 2024,
+        "minAverage": 97.18,
+        "minTotal": 680.28,
+        "preferenceScore": 290
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة كربلاء",
+    "collegeName": "كلية الهندسة-قسم الاطراف والمساند الصناعية",
+    "governorate": "كربلاء",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الاطراف والمساند الصناعية"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.29,
+        "minTotal": 674.04,
+        "preferenceScore": 286
+      },
+      {
+        "year": 2024,
+        "minAverage": 97.18,
+        "minTotal": 680.28,
+        "preferenceScore": 290
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-قسم المدني",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "المدني"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.29,
+        "minTotal": 674.00,
+        "preferenceScore": 278
+      },
+      {
+        "year": 2024,
+        "minAverage": 93.71,
+        "minTotal": 656.00,
+        "preferenceScore": 277
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة التكنولوجية",
+    "collegeName": "هندسة العمارة-التصميم الحضري",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "التصميم الحضري"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.27,
+        "minTotal": 673.88,
+        "preferenceScore": 298
+      },
+      {
+        "year": 2024,
+        "minAverage": 93.57,
+        "minTotal": 655.00,
+        "preferenceScore": 285
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الهندسة-قسم الليزر",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الليزر"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.23,
+        "minTotal": 673.60,
+        "preferenceScore": 289
+      },
+      {
+        "year": 2024,
+        "minAverage": 97.42,
+        "minTotal": 681.92,
+        "preferenceScore": 288
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الهندسة-قسم الليزر",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الليزر"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.23,
+        "minTotal": 673.60,
+        "preferenceScore": 289
+      },
+      {
+        "year": 2024,
+        "minAverage": 93.57,
+        "minTotal": 655.00,
+        "preferenceScore": 277
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة الكوفة",
+    "collegeName": "كلية الهندسة-قسم العمارة",
+    "governorate": "النجف",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "العمارة"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.16,
+        "minTotal": 673.12,
+        "preferenceScore": 291
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.43,
+        "minTotal": 661.00,
+        "preferenceScore": 282
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بابل",
+    "collegeName": "كلية الهندسة-قسم العمارة",
+    "governorate": "بابل",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "العمارة"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.13,
+        "minTotal": 672.88,
+        "preferenceScore": 278
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.29,
+        "minTotal": 660.00,
+        "preferenceScore": 284
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ذي قار",
+    "collegeName": "كلية الهندسة-قسم الطب الحياتي",
+    "governorate": "ذي قار",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "الطب الحياتي"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.00,
+        "minTotal": 672.00,
+        "preferenceScore": 291
+      },
+      {
+        "year": 2024,
+        "minAverage": 97.29,
+        "minTotal": 681.00,
+        "preferenceScore": 289
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ذي قار",
+    "collegeName": "كلية الهندسة-قسم الطب الحياتي",
+    "governorate": "ذي قار",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "الطب الحياتي"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 96.00,
+        "minTotal": 672.00,
+        "preferenceScore": 291
+      },
+      {
+        "year": 2024,
+        "minAverage": 97.29,
+        "minTotal": 681.00,
+        "preferenceScore": 289
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة التكنولوجية",
+    "collegeName": "هندسة النفط والغاز",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "هندسة النفط والغاز"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 95.94,
+        "minTotal": 671.60,
+        "preferenceScore": 280
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.71,
+        "minTotal": 663.00,
+        "preferenceScore": 276
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ذي قار",
+    "collegeName": "كلية الهندسة-قسم النفط والغاز",
+    "governorate": "ذي قار",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "النفط والغاز"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 95.86,
+        "minTotal": 671.00,
+        "preferenceScore": 281
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.71,
+        "minTotal": 663.00,
+        "preferenceScore": 276
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-قسم الحاسوب",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الحاسوب"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 95.57,
+        "minTotal": 669.00,
+        "preferenceScore": 293
+      },
+      {
+        "year": 2024,
+        "minAverage": 95.71,
+        "minTotal": 670.00,
+        "preferenceScore": 285
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-قسم الحاسوب",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الحاسوب"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 95.57,
+        "minTotal": 669.00,
+        "preferenceScore": 293
+      },
+      {
+        "year": 2024,
+        "minAverage": 93.71,
+        "minTotal": 656.00,
+        "preferenceScore": 277
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ديالى",
+    "collegeName": "كلية الهندسة-قسم العمارة",
+    "governorate": "ديالى",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "العمارة"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 95.43,
+        "minTotal": 668.00,
+        "preferenceScore": 281
+      },
+      {
+        "year": 2024,
+        "minAverage": 93.57,
+        "minTotal": 655.00,
+        "preferenceScore": 285
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية هندسة المعلومات-قسم الامن السيبراني",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الامن السيبراني"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 95.29,
+        "minTotal": 667.00,
+        "preferenceScore": 291
+      },
+      {
+        "year": 2024,
+        "minAverage": 93.29,
+        "minTotal": 653.00,
+        "preferenceScore": 284
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية هندسة المعلومات-قسم الامن السيبراني",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الامن السيبراني"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 95.29,
+        "minTotal": 667.00,
+        "preferenceScore": 291
+      },
+      {
+        "year": 2024,
+        "minAverage": 93.29,
+        "minTotal": 653.00,
+        "preferenceScore": 284
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة الموصل",
+    "collegeName": "كلية الهندسة-قسم العمارة",
+    "governorate": "نينوى",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "العمارة"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 95.29,
+        "minTotal": 667.00,
+        "preferenceScore": 276
+      },
+      {
+        "year": 2024,
+        "minAverage": 93.57,
+        "minTotal": 655.00,
+        "preferenceScore": 285
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الهندسة-قسم المدني",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "المدني"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 95.29,
+        "minTotal": 667.00,
+        "preferenceScore": 294
+      },
+      {
+        "year": 2024,
+        "minAverage": 93.29,
+        "minTotal": 653.00,
+        "preferenceScore": 284
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة البصرة للنفط والغاز",
+    "collegeName": "كلية هندسة النفط والغاز-قسم الهندسة البوليمرات والبتروكيمياويات",
+    "governorate": "البصرة",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الهندسة البوليمرات والبتروكيمياويات"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 95.05,
+        "minTotal": 665.32,
+        "preferenceScore": 268
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.14,
+        "minTotal": 645.00,
+        "preferenceScore": 269
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة التكنولوجية",
+    "collegeName": "هندسة الليزر والالكترونيات البصرية",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الليزر والالكترونيات البصرية"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 95.00,
+        "minTotal": 665.00,
+        "preferenceScore": 291
+      },
+      {
+        "year": 2024,
+        "minAverage": 96.43,
+        "minTotal": 675.00,
+        "preferenceScore": 284
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة التكنولوجية",
+    "collegeName": "هندسة الليزر والالكترونيات البصرية",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الليزر والالكترونيات البصرية"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 95.00,
+        "minTotal": 665.00,
+        "preferenceScore": 291
+      },
+      {
+        "year": 2024,
+        "minAverage": 96.43,
+        "minTotal": 675.00,
+        "preferenceScore": 284
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة نينوى",
+    "collegeName": "كلية هندسة الالكترونيات-قسم الطب الحياتي",
+    "governorate": "نينوى",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "الطب الحياتي"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.92,
+        "minTotal": 664.44,
+        "preferenceScore": 286
+      },
+      {
+        "year": 2024,
+        "minAverage": 95.57,
+        "minTotal": 669.00,
+        "preferenceScore": 291
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة نينوى",
+    "collegeName": "كلية هندسة الالكترونيات-قسم الطب الحياتي",
+    "governorate": "نينوى",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "الطب الحياتي"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.92,
+        "minTotal": 664.44,
+        "preferenceScore": 286
+      },
+      {
+        "year": 2024,
+        "minAverage": 93.29,
+        "minTotal": 653.00,
+        "preferenceScore": 282
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الهندسة-قسم الذكاء الاصطناعي والانسان الالي",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الذكاء الاصطناعي والانسان الالي"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.86,
+        "minTotal": 664.00,
+        "preferenceScore": 293
+      },
+      {
+        "year": 2024,
+        "minAverage": null,
+        "minTotal": null,
+        "preferenceScore": null
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الهندسة-قسم الذكاء الاصطناعي والانسان الالي",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الذكاء الاصطناعي والانسان الالي"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.86,
+        "minTotal": 664.00,
+        "preferenceScore": 293
+      },
+      {
+        "year": 2024,
+        "minAverage": null,
+        "minTotal": null,
+        "preferenceScore": null
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-الخوارزمي-قسم الكيميائية الاحيائية",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الكيميائية الاحيائية"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.86,
+        "minTotal": 664.00,
+        "preferenceScore": 278
+      },
+      {
+        "year": 2024,
+        "minAverage": 96.57,
+        "minTotal": 676.00,
+        "preferenceScore": 287
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-الخوارزمي-قسم الكيميائية الاحيائية",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الكيميائية الاحيائية"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.86,
+        "minTotal": 664.00,
+        "preferenceScore": 278
+      },
+      {
+        "year": 2024,
+        "minAverage": 96.57,
+        "minTotal": 676.00,
+        "preferenceScore": 287
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة البصرة",
+    "collegeName": "كلية الهندسة-قسم الكيمياوية",
+    "governorate": "البصرة",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الكيمياوية"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.71,
+        "minTotal": 663.00,
+        "preferenceScore": 274
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.71,
+        "minTotal": 663.00,
+        "preferenceScore": 281
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة البصرة",
+    "collegeName": "كلية الهندسة-قسم الكيمياوية",
+    "governorate": "البصرة",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الكيمياوية"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.71,
+        "minTotal": 663.00,
+        "preferenceScore": 274
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.71,
+        "minTotal": 663.00,
+        "preferenceScore": 281
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة التكنولوجية",
+    "collegeName": "الهندسة الكيميائية-قسم الهندسة الكيمياوية وتكرير النفط",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الهندسة الكيمياوية وتكرير النفط"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.57,
+        "minTotal": 662.00,
+        "preferenceScore": 276
+      },
+      {
+        "year": 2024,
+        "minAverage": 96.00,
+        "minTotal": 672.00,
+        "preferenceScore": 282
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة التكنولوجية",
+    "collegeName": "الهندسة الكيميائية-قسم الهندسة الكيمياوية وتكرير النفط",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الهندسة الكيمياوية وتكرير النفط"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.57,
+        "minTotal": 662.00,
+        "preferenceScore": 276
+      },
+      {
+        "year": 2024,
+        "minAverage": 96.00,
+        "minTotal": 672.00,
+        "preferenceScore": 282
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة واسط",
+    "collegeName": "كلية الهندسة-قسم العمارة",
+    "governorate": "واسط",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "العمارة"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.57,
+        "minTotal": 662.00,
+        "preferenceScore": 289
+      },
+      {
+        "year": 2024,
+        "minAverage": 93.57,
+        "minTotal": 655.00,
+        "preferenceScore": 285
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة المثنى",
+    "collegeName": "كلية الهندسة-قسم العمارة",
+    "governorate": "المثنى",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "العمارة"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.57,
+        "minTotal": 662.00,
+        "preferenceScore": 289
+      },
+      {
+        "year": 2024,
+        "minAverage": 93.57,
+        "minTotal": 655.00,
+        "preferenceScore": 285
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة سامراء",
+    "collegeName": "كلية الهندسة-قسم العمارة",
+    "governorate": "صلاح الدين",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 5,
+    "departments": [
+      "العمارة"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.50,
+        "minTotal": 661.52,
+        "preferenceScore": 286
+      },
+      {
+        "year": 2024,
+        "minAverage": 93.57,
+        "minTotal": 655.00,
+        "preferenceScore": 285
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-قسم الالكترونيك والاتصالات",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الالكترونيك والاتصالات"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.43,
+        "minTotal": 661.00,
+        "preferenceScore": 282
+      },
+      {
+        "year": 2024,
+        "minAverage": 95.71,
+        "minTotal": 670.00,
+        "preferenceScore": 286
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-قسم الالكترونيك والاتصالات",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الالكترونيك والاتصالات"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.43,
+        "minTotal": 661.00,
+        "preferenceScore": 282
+      },
+      {
+        "year": 2024,
+        "minAverage": 95.71,
+        "minTotal": 670.00,
+        "preferenceScore": 286
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الهندسة-قسم الحاسوب",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الحاسوب"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.43,
+        "minTotal": 661.00,
+        "preferenceScore": 279
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.57,
+        "minTotal": 662.00,
+        "preferenceScore": 285
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الهندسة-قسم الحاسوب",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الحاسوب"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.43,
+        "minTotal": 661.00,
+        "preferenceScore": 279
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.57,
+        "minTotal": 662.00,
+        "preferenceScore": 285
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة المستنصرية",
+    "collegeName": "كلية الهندسة-قسم المدني",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "المدني"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.20,
+        "minTotal": 659.40,
+        "preferenceScore": 285
+      },
+      {
+        "year": 2024,
+        "minAverage": 93.57,
+        "minTotal": 655.00,
+        "preferenceScore": 285
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة كركوك",
+    "collegeName": "كلية الهندسة-قسم النفط",
+    "governorate": "كركوك",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "النفط"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.14,
+        "minTotal": 659.00,
+        "preferenceScore": 284
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.14,
+        "minTotal": 659.00,
+        "preferenceScore": 284
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ميسان",
+    "collegeName": "كلية الهندسة-قسم الكيمياوية",
+    "governorate": "ميسان",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الكيمياوية"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.14,
+        "minTotal": 659.00,
+        "preferenceScore": 272
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.43,
+        "minTotal": 647.00,
+        "preferenceScore": 268
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة ميسان",
+    "collegeName": "كلية الهندسة-قسم الكيمياوية",
+    "governorate": "ميسان",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الكيمياوية"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.14,
+        "minTotal": 659.00,
+        "preferenceScore": 272
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.43,
+        "minTotal": 647.00,
+        "preferenceScore": 268
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة البصرة",
+    "collegeName": "كلية الهندسة-قسم المدني",
+    "governorate": "البصرة",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "المدني"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 94.00,
+        "minTotal": 658.00,
+        "preferenceScore": 282
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.00,
+        "minTotal": 658.00,
+        "preferenceScore": 284
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية هندسة المعلومات-قسم الاتمتة والذكاء الاصطناعي",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الاتمتة والذكاء الاصطناعي"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.86,
+        "minTotal": 657.00,
+        "preferenceScore": 288
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.14,
+        "minTotal": 645.00,
+        "preferenceScore": 273
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية هندسة المعلومات-قسم الاتمتة والذكاء الاصطناعي",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الاتمتة والذكاء الاصطناعي"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.86,
+        "minTotal": 657.00,
+        "preferenceScore": 288
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.14,
+        "minTotal": 645.00,
+        "preferenceScore": 273
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة البصرة",
+    "collegeName": "كلية الهندسة-قسم الحاسوب",
+    "governorate": "البصرة",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الحاسوب"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.63,
+        "minTotal": 655.40,
+        "preferenceScore": 287
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.29,
+        "minTotal": 646.00,
+        "preferenceScore": 275
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة البصرة",
+    "collegeName": "كلية الهندسة-قسم الحاسوب",
+    "governorate": "البصرة",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الحاسوب"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.63,
+        "minTotal": 655.40,
+        "preferenceScore": 287
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.29,
+        "minTotal": 646.00,
+        "preferenceScore": 275
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة الانبار",
+    "collegeName": "كلية الهندسة-قسم المدني",
+    "governorate": "الأنبار",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "المدني"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.59,
+        "minTotal": 655.13,
+        "preferenceScore": 282
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.29,
+        "minTotal": 646.00,
+        "preferenceScore": 275
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-قسم الكيمياوية",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الكيمياوية"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.57,
+        "minTotal": 655.00,
+        "preferenceScore": 272
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.29,
+        "minTotal": 646.00,
+        "preferenceScore": 272
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-قسم الكيمياوية",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الكيمياوية"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.57,
+        "minTotal": 655.00,
+        "preferenceScore": 272
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.29,
+        "minTotal": 646.00,
+        "preferenceScore": 272
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-قسم الكهرباء",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الكهرباء"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.43,
+        "minTotal": 654.00,
+        "preferenceScore": 276
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.00,
+        "minTotal": 658.00,
+        "preferenceScore": 284
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة العراقية",
+    "collegeName": "كلية الهندسة-قسم الشبكات والامن السيبراني",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الشبكات والامن السيبراني"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.39,
+        "minTotal": 653.72,
+        "preferenceScore": 283
+      },
+      {
+        "year": 2024,
+        "minAverage": 93.29,
+        "minTotal": 653.00,
+        "preferenceScore": 280
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة العراقية",
+    "collegeName": "كلية الهندسة-قسم الشبكات والامن السيبراني",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الشبكات والامن السيبراني"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.39,
+        "minTotal": 653.72,
+        "preferenceScore": 283
+      },
+      {
+        "year": 2024,
+        "minAverage": 93.29,
+        "minTotal": 653.00,
+        "preferenceScore": 280
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة المستنصرية",
+    "collegeName": "كلية الهندسة-قسم الحاسوب",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الحاسوب"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.29,
+        "minTotal": 653.00,
+        "preferenceScore": 273
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.29,
+        "minTotal": 646.00,
+        "preferenceScore": 285
+      }
+    ]
+  },
+  {
+    "universityName": "الجامعة المستنصرية",
+    "collegeName": "كلية الهندسة-قسم الحاسوب",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الحاسوب"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.29,
+        "minTotal": 653.00,
+        "preferenceScore": 273
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.29,
+        "minTotal": 646.00,
+        "preferenceScore": 285
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-الخوارزمي-قسم المعلومات والاتصالات",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "المعلومات والاتصالات"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.14,
+        "minTotal": 652.00,
+        "preferenceScore": 279
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.71,
+        "minTotal": 663.00,
+        "preferenceScore": 279
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-الخوارزمي-قسم المعلومات والاتصالات",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "المعلومات والاتصالات"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.14,
+        "minTotal": 652.00,
+        "preferenceScore": 279
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.71,
+        "minTotal": 663.00,
+        "preferenceScore": 279
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-قسم الطاقة",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الطاقة"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.14,
+        "minTotal": 652.00,
+        "preferenceScore": 271
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.00,
+        "minTotal": 658.00,
+        "preferenceScore": 284
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة بغداد",
+    "collegeName": "كلية الهندسة-قسم الطاقة",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الطاقة"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.14,
+        "minTotal": 652.00,
+        "preferenceScore": 271
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.00,
+        "minTotal": 658.00,
+        "preferenceScore": 284
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الهندسة-قسم الكيمياوي",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الكيمياوي"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.00,
+        "minTotal": 651.00,
+        "preferenceScore": 255
+      },
+      {
+        "year": 2024,
+        "minAverage": 95.00,
+        "minTotal": 665.00,
+        "preferenceScore": 279
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الهندسة-قسم الكيمياوي",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الكيمياوي"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 93.00,
+        "minTotal": 651.00,
+        "preferenceScore": 255
+      },
+      {
+        "year": 2024,
+        "minAverage": 95.00,
+        "minTotal": 665.00,
+        "preferenceScore": 279
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الهندسة-قسم الالكترونية والاتصالات",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الالكترونية والاتصالات"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 92.86,
+        "minTotal": 650.00,
+        "preferenceScore": 280
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.14,
+        "minTotal": 659.00,
+        "preferenceScore": 292
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة النهرين",
+    "collegeName": "كلية الهندسة-قسم الالكترونية والاتصالات",
+    "governorate": "بغداد",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الالكترونية والاتصالات"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 92.86,
+        "minTotal": 650.00,
+        "preferenceScore": 280
+      },
+      {
+        "year": 2024,
+        "minAverage": 94.14,
+        "minTotal": 659.00,
+        "preferenceScore": 292
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة البصرة",
+    "collegeName": "كلية الهندسة-قسم الميكانيك",
+    "governorate": "البصرة",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الميكانيك"
+    ],
+    "branch": "احيائي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 92.86,
+        "minTotal": 650.00,
+        "preferenceScore": 278
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.14,
+        "minTotal": 645.00,
+        "preferenceScore": 273
+      }
+    ]
+  },
+  {
+    "universityName": "جامعة البصرة",
+    "collegeName": "كلية الهندسة-قسم الميكانيك",
+    "governorate": "البصرة",
+    "gender": "كلاهما",
+    "collegeType": "هندسة",
+    "studyDuration": 4,
+    "departments": [
+      "الميكانيك"
+    ],
+    "branch": "تطبيقي",
+    "admissions": [
+      {
+        "year": 2025,
+        "minAverage": 92.86,
+        "minTotal": 650.00,
+        "preferenceScore": 278
+      },
+      {
+        "year": 2024,
+        "minAverage": 92.14,
+        "minTotal": 645.00,
+        "preferenceScore": 273
+      }
+    ]
   }
 ]

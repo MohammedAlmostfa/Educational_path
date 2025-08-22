@@ -52,11 +52,11 @@ class User extends Authenticatable
         ];
     }
 
-public function favoriteColleges()
-{
-    return $this->belongsToMany(College::class, 'favorite_college_user', 'user_id', 'college_id')
-                ->withTimestamps();
-}
+    public function savedColleges()
+    {
+        return $this->belongsToMany(College::class, 'saved_college_user', 'user_id', 'college_id')
+            ->withTimestamps();
+    }
 
 
     public function devicetoke()
@@ -64,10 +64,6 @@ public function favoriteColleges()
         return $this->hasMany(DeviceToken::class);
     }
 
- public function savedlCollage()
-    {
-        return $this->hasMany(SavedCollage::class);
-    }
 
     public function scopeFilterBy($query, $filteringData)
     {

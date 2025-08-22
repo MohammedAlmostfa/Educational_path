@@ -3,26 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Services\FavoriteCollegeService;
+use App\Services\SavedCollegeService;
 
-class FavoriteCollegeController extends Controller
+class SavedCollegeController extends Controller
 {
-    protected $favoriteCollegeService;
+    protected $savedCollegeService;
 
-    public function __construct(FavoriteCollegeService $favoriteCollegeService)
+    public function __construct(SavedCollegeService $savedCollegeService)
     {
-        $this->favoriteCollegeService = $favoriteCollegeService;
+        $this->savedCollegeService = $savedCollegeService;
     }
 
     /**
-     * Add a college to the user's favorites.
+     * Add a college to the user's saved list.
      *
      * @param int $collegeId
      * @return \Illuminate\Http\JsonResponse
      */
-    public function addFavorite($collegeId)
+    public function addSaved($collegeId)
     {
-        $result = $this->favoriteCollegeService->addFavorite($collegeId);
+        $result = $this->savedCollegeService->addSaved($collegeId);
 
         return $result['status'] === 200
             ? self::success($result['data'] ?? null, $result['message'], $result['status'])
@@ -30,14 +30,14 @@ class FavoriteCollegeController extends Controller
     }
 
     /**
-     * Remove a college from the user's favorites.
+     * Remove a college from the user's saved list.
      *
      * @param int $collegeId
      * @return \Illuminate\Http\JsonResponse
      */
-    public function removeFavorite($collegeId)
+    public function removeSaved($collegeId)
     {
-        $result = $this->favoriteCollegeService->removeFavorite($collegeId);
+        $result = $this->savedCollegeService->removeSaved($collegeId);
 
         return $result['status'] === 200
             ? self::success(null, $result['message'], $result['status'])
@@ -45,13 +45,13 @@ class FavoriteCollegeController extends Controller
     }
 
     /**
-     * Get all favorite colleges for the current user.
+     * Get all saved colleges for the current user.
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getFavorites()
+    public function getSaved()
     {
-        $result = $this->favoriteCollegeService->getFavorites();
+        $result = $this->savedCollegeService->getSaved();
 
         return $result['status'] === 200
             ? self::success($result['data'], $result['message'], $result['status'])

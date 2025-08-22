@@ -29,9 +29,9 @@ class College extends Model
     {
         return $this->belongsToMany(Branch::class, 'admissions');
     }
-    public function favoredByUsers()
+    public function saveddByUsers()
 {
-    return $this->belongsToMany(User::class, 'college_user')->withTimestamps();
+    return $this->belongsToMany(User::class, 'savedColleges')->withTimestamps();
 }
 
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CollegeController;
 use App\Http\Controllers\DeviceTokenController;
 use App\Http\Controllers\FavoriteCollegeController;
+use App\Http\Controllers\SavedCollegeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -32,7 +33,7 @@ Route::get('/get-colleges', [CollegeController::class, 'index']);
 
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::post('/favorites/{collegeId}', [FavoriteCollegeController::class, 'addFavorite']);
-    Route::delete('/favorites/{collegeId}', [FavoriteCollegeController::class, 'removeFavorite']);
-    Route::get('/favorites', [FavoriteCollegeController::class, 'getFavorites']);
+    Route::post('/saved/{collegeId}', [SavedCollegeController::class, 'addSaved']);
+    Route::delete('/saved/{collegeId}', [SavedCollegeController::class, 'removeSaved']);
+    Route::get('/saved', [SavedCollegeController::class, 'getSaved']);
 });
