@@ -19,11 +19,14 @@ class UserService extends Service
      *
      * @return array Response with paginated users
      */
-    public function getAllUser()
+    public function getAllUser($filteringData)
     {
         try {
-            $users = User::where('activation_code', null)->paginate(10);
 
+            $users = User::where('activation_code', null)
+                ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
+                ->orderByDesc('created_at')
+                ->paginate(10);
             return $this->successResponse('تم جلب المستخدمين بنجاح', 200, $users);
         } catch (Exception $e) {
             Log::error('حدث خطأ أثناء جلب المستخدمين: ' . $e->getMessage());
@@ -47,7 +50,7 @@ class UserService extends Service
                 $user->activation_code = $randomNumber;
                 $user->save();
 
-                return $this->successResponse('تم توليد الكود بنجاح', 200, $randomNumber);
+                return $this->successResponse('تم توليد الكود بنجاح', 200, ["activation_code" => $randomNumber]);
             } else {
                 return $this->errorResponse('المستخدم له كود سابق', 400);
             }
@@ -104,7 +107,6 @@ class UserService extends Service
             ]);
 
             return $this->successResponse('تم تحديث بيانات المستخدم بنجاح', 200, $user);
-
         } catch (Exception $e) {
             Log::error('حدث خطأ أثناء تحديث بيانات المستخدم: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء تحديث بيانات المستخدم، يرجى المحاولة مرة أخرى.', 500);

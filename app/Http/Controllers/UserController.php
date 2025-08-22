@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\checkActivationCodeRequest;
+use App\Http\Requests\User\FilterUser;
 use App\Http\Resources\UserResource;
 use App\Services\UserService;
 use Illuminate\Http\Request;
@@ -15,9 +16,9 @@ class UserController extends Controller
         $this->userService = $userService;
     }
 
-    public function index()
-    {
-        $result = $this->userService->getAllUser();
+    public function index(FilterUser $request)
+    {    $validatedData = $request->validated();
+        $result = $this->userService->getAllUser(   $validatedData );
 
 
         return $result['status'] === 200

@@ -30,12 +30,15 @@ class LoginRequest extends FormRequest
        *
        */
 
-    protected function failedValidation(Validator $validator): void
-    {
-        throw new HttpResponseException(response()->json([
-            'status' => 'error',
-            'message' => 'فشل التحقق من صحة البيانات',
-            'errors' => $validator->errors(),
-        ], 422));
-    }
+    
+public function messages()
+{
+    return [
+        'email.required' => 'البريد الإلكتروني مطلوب.',
+        'email.email' => 'يجب إدخال بريد إلكتروني صالح.',
+        'password.required' => 'كلمة المرور مطلوبة.',
+        'password.string' => 'كلمة المرور يجب أن تكون نصاً.',
+        'password.min' => 'كلمة المرور يجب أن تكون 8 أحرف على الأقل.',
+    ];
+}
 }

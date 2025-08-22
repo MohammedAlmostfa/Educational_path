@@ -29,4 +29,9 @@ class College extends Model
     {
         return $this->belongsToMany(Branch::class, 'admissions');
     }
+    public function favoredByUsers()
+{
+    return $this->belongsToMany(User::class, 'college_user')->withTimestamps();
+}
+
 }

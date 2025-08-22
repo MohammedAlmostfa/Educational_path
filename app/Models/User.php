@@ -3,13 +3,16 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\DeviceToken;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Sanctum\HasApiTokens; // 👈 مهم
 
 class User extends Authenticatable
 {
+
+
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasApiTokens;
     /**
@@ -49,8 +52,30 @@ class User extends Authenticatable
         ];
     }
 
+public function favoriteColleges()
+{
+    return $this->belongsToMany(College::class, 'favorite_college_user', 'user_id', 'college_id')
+                ->withTimestamps();
+}
+
+
     public function devicetoke()
     {
         return $this->hasMany(DeviceToken::class);
+    }
+
+ public function savedlCollage()
+    {
+        return $this->hasMany(SavedCollage::class);
+    }
+
+    public function scopeFilterBy($query, $filteringData)
+    {
+        if (isset($filteringData['email'])) {
+            $query->where(function ($q) use ($filteringData) {
+                $q->where('email', 'LIKE', "%{$filteringData['email']}%");
+            });
+        }
+        return $query;
     }
 }

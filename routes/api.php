@@ -1,10 +1,13 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CollegeController;
 use App\Http\Controllers\DeviceTokenController;
+use App\Http\Controllers\FavoriteCollegeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 
 Route::get('/user', function (Request $request) {
@@ -24,3 +27,12 @@ Route::post('/save-fcm', [DeviceTokenController::class, 'createOrUpdate']);
 Route::get('/show-unactive-users', [UserController::class, 'index']);  
 
 Route::post('/check-activation_code', [UserController::class, 'checkActivationCode']);  
+
+Route::get('/get-colleges', [CollegeController::class, 'index']);  
+
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/favorites/{collegeId}', [FavoriteCollegeController::class, 'addFavorite']);
+    Route::delete('/favorites/{collegeId}', [FavoriteCollegeController::class, 'removeFavorite']);
+    Route::get('/favorites', [FavoriteCollegeController::class, 'getFavorites']);
+});
