@@ -26,7 +26,9 @@ class User extends Authenticatable
         'activation_code',
         "average",
         "gender",
-        "branch",
+        "branch_id",
+        "is_active",
+        'is_admin'
     ];
 
     /**
@@ -62,6 +64,10 @@ class User extends Authenticatable
     public function devicetoke()
     {
         return $this->hasMany(DeviceToken::class);
+    }
+    public function branch()
+    {
+        return $this->hasOne(branch::class);
     }
 
 

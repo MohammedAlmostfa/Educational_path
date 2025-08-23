@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateOrUpdateDeviceToken;
+
+use App\Http\Requests\User\CreateOrUpdateDeviceToken;
 use App\Services\DeviceTokenService;
 
 /**

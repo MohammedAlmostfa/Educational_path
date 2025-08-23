@@ -1,12 +1,12 @@
 <?php
-
-namespace App\Http\Requests;
+namespace App\Http\Requests\User;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 
-class checkActivationCodeRequest extends FormRequest
+
+class CreateOrUpdateDeviceToken extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,16 +24,19 @@ class checkActivationCodeRequest extends FormRequest
     public function rules(): array
     {
         return [
-       'activation_code'=>'integer|required'
+            'device_id' => 'required',
+            'fcm_token' => 'required',
         ];
     }
-    public function messages()
-{
-    return [
-        'activation_code.required' => 'كود التفعيل مطلوب.',
-        'activation_code.integer' => 'كود التفعيل  يجب أن تكون رقما.',
-    ];
-}
+
+    /**
+     * Handle a failed validation attempt.
+     * This method is called when validation fails.
+     * Logs failed attempts and throws validation exception.
+     * @param \Illuminate\Validation\Validator $validator
+     * @return void
+     *
+     */
 
     protected function failedValidation(Validator $validator): void
     {

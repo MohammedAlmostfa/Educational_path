@@ -75,15 +75,18 @@ class UserService extends Service
             }
 
             if ($user->activation_code == $data['activation_code']) {
+                $user->is_active = '1';
+                $user->save();
                 return $this->successResponse('تم التحقق من الكود', 200);
             } else {
                 return $this->errorResponse('الكود المستخدم خاطئ', 400);
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             Log::error('حدث خطأ أثناء التحقق من الكود: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء التحقق من الكود، يرجى المحاولة مرة أخرى.', 500);
         }
     }
+
 
     /**
      * Add or update extra user profile data (average, gender, branch).
@@ -103,7 +106,7 @@ class UserService extends Service
             $user->update([
                 "average" => $data['average'],
                 "gender" => $data['gender'],
-                "branch" => $data['branch'],
+                "branch_id" => $data['branch_id'],
             ]);
 
             return $this->successResponse('تم تحديث بيانات المستخدم بنجاح', 200, $user);
