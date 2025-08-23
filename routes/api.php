@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CollegeController;
+use App\Http\Controllers\ContentController;
 use App\Http\Controllers\DeviceTokenController;
 use App\Http\Controllers\FavoriteCollegeController;
 use App\Http\Controllers\SavedCollegeController;
@@ -37,3 +38,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/saved/{collegeId}', [SavedCollegeController::class, 'removeSaved']);
     Route::get('/saved', [SavedCollegeController::class, 'getSaved']);
 });
+Route::post('/content/{id}', [ContentController::class, 'update']);
+
+Route::apiResource('/content',ContentController::class);

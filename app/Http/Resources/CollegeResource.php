@@ -11,7 +11,7 @@ class CollegeResource extends JsonResource
         return [
             'universityName' => $this->university->name,
             'collegeName'    => $this->name,
-            // 'isSaved'        => $this->is_saved ?? false, 
+            'isSaved'        => $this->is_saved ?? false, 
             'departments'    => $this->departments->pluck('name'), 
             'admissions'     => $this->admissions->map(function($adm) {
                 return [

@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Content extends Model
 {
     protected $fillable = [
-        'image_url', // fixed the key from "image-url" to valid snake_case
+        'image_url', 
         'title',
         'body',
-        'status'
+        'is_new'
     ];
 }

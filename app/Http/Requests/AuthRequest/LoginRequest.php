@@ -18,7 +18,7 @@ class LoginRequest extends FormRequest
     {
         return [
             'email' => 'required|email',
-            'password' => 'required|string|min:8',
+            'password' => 'required|string',
         ];
     }
     /**
@@ -38,7 +38,7 @@ public function messages()
         'email.email' => 'يجب إدخال بريد إلكتروني صالح.',
         'password.required' => 'كلمة المرور مطلوبة.',
         'password.string' => 'كلمة المرور يجب أن تكون نصاً.',
-        'password.min' => 'كلمة المرور يجب أن تكون 8 أحرف على الأقل.',
+
     ];
 }
 }
