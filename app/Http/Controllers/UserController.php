@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\User\checkActivationCodeRequest;
 use App\Http\Requests\User\CreateUserDataRequest;
 use App\Http\Requests\User\FilterUser;
+use App\Http\Requests\User\updateUserDataRequest;
 use App\Http\Resources\UserResource;
 use App\Services\UserService;
 
@@ -40,9 +41,17 @@ class UserController extends Controller
             ? self::success($result['data'], $result['message'], $result['status'])
             : self::error(null, $result['message'], $result['status']);
     }
+ public function update(updateUserDataRequest $request)
+    {
+        $validatedData = $request->validated();
+        $result = $this->userService->updateUserData($validatedData);
 
+        return $result['status'] === 200
+            ? self::success($result['data'], $result['message'], $result['status'])
+            : self::error(null, $result['message'], $result['status']);
+    }
 
-    public function update($id)
+    public function active($id)
     {
         $result = $this->userService->Activaccount($id);
 

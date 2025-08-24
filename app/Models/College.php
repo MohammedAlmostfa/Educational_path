@@ -33,6 +33,36 @@ class College extends Model
 {
     return $this->belongsToMany(User::class, 'savedColleges')->withTimestamps();
 }
+public function scopeFilterBy($query, $filters)
+{
+
+    if (!empty($filters['governorates'])) {
+        $query->whereHas('university', function ($q) use ($filters) {
+            $q->whereIn('governorate_id', $filters['governorates']);
+        });
+    }
+   if (!empty($filters['min_average_from']) && !empty($filters['min_average_to'])) {
+    $query->whereHas('admissions', function ($q) use ($filters) {
+        $q->whereBetween('min_average', [$filters['min_average_from'], $filters['min_average_to']]);
+    });
+}
+
+    // فلترة حسب الأقسام
+    if (!empty($filters['departments'])) {
+        $query->whereHas('departments', function ($q) use ($filters) {
+            $q->whereIn('id', $filters['departments']);
+        });
+    }
+
+    // فلترة حسب الفروع (اختياري)
+    if (!empty($filters['branches'])) {
+        $query->whereHas('branches', function ($q) use ($filters) {
+            $q->whereIn('branches.id', $filters['branches']);
+        });
+    }
+
+    return $query;
+}
 
 
 }

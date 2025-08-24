@@ -3,8 +3,10 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CollegeController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DeviceTokenController;
 use App\Http\Controllers\FavoriteCollegeController;
+use App\Http\Controllers\GovernorateController;
 use App\Http\Controllers\SavedCollegeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -53,7 +55,7 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
     Route::get('/show-unactive-users', [UserController::class, 'index']); 
 Route::get('/me', [UserController::class, 'me']); 
     // تفعيل مستخدم محدد
-    Route::put('/activation/{id}', [UserController::class, 'update']); 
+    Route::put('/activation/{id}', [UserController::class, 'active']); 
 });
 
 // مسارات تحتاج تسجيل الدخول والتحقق من التفعيل
@@ -61,9 +63,11 @@ Route::middleware(['auth:sanctum', 'activation'])->group(function () {
     // عرض المحتوى
     Route::get('/content', [ContentController::class, 'index']); 
 
+    Route::get('/department', [DepartmentController::class, 'index']); 
+    Route::get('/governorate', [GovernorateController::class, 'index']); 
     // حفظ معلومات المستخدم
     Route::post('/set-user-information', [UserController::class, 'creat']); 
-
+ Route::post('/update-user-information', [UserController::class, 'update']); 
     // إضافة كلية للمفضلة
     Route::post('/saved/{collegeId}', [SavedCollegeController::class, 'addSaved']); 
 

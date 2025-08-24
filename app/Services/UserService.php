@@ -94,47 +94,69 @@ class UserService extends Service
      * @param array $data User data
      * @return array Response with updated user
      */
-    public function AddUserData($data)
-{
-    try {
-        $user = Auth::guard('sanctum')->user();
+    public function addUserData(array $data)
+    {
+        try {
+            $user = Auth::guard('sanctum')->user();
 
-        if (!$user) {
-            return $this->errorResponse('المستخدم غير موجود', 404);
-        }
+            if (!$user) {
+                return $this->errorResponse('المستخدم غير موجود', 404);
+            }
 
-        if ($user->average === null) {
+            // التحقق من وجود أي بيانات مسبقة
+            if ($user->average !== null || $user->gender !== null || $user->branch_id !== null) {
+                return $this->errorResponse('تم تعيين البيانات سابقًا', 400);
+            }
+
             $user->update([
-                "average"   => $data['average'],
-                "gender"    => $data['gender'],
-                "branch_id" => $data['branch_id'],
+                "average"   => $data['average'] ?? null,
+                "gender"    => $data['gender'] ?? null,
+                "branch_id" => $data['branch_id'] ?? null,
             ]);
-        } else {
-            return $this->errorResponse('تم تعيين البيانات سابقًا', 400);
+
+            return $this->successResponse('تم اضافة بيانات المستخدم بنجاح', 200, $user);
+        } catch (Exception $e) {
+            Log::error('حدث خطأ أثناء اضافة بيانات المستخدم: ' . $e->getMessage());
+            return $this->errorResponse('حدث خطأ أثناء اضافة بيانات المستخدم، يرجى المحاولة مرة أخرى.', 500);
         }
-
-        return $this->successResponse('تم تحديث بيانات المستخدم بنجاح', 200, $user);
-
-    } catch (Exception $e) {
-        Log::error('حدث خطأ أثناء تحديث بيانات المستخدم: ' . $e->getMessage());
-        return $this->errorResponse('حدث خطأ أثناء تحديث بيانات المستخدم، يرجى المحاولة مرة أخرى.', 500);
     }
-}
 
-   public function sgetUserData()
-{
-    try {
-        $user = Auth::guard('sanctum')->user();
+    public function updateUserData(array $data)
+    {
+        try {
+            $user = Auth::guard('sanctum')->user();
 
-        if ($user) {
-            return $this->successResponse('تم التحقق من المستخدم', 200, $user);
-        } else {
-            return $this->errorResponse('المستخدم غير مصرح به أو غير موجود', 401);
+            if (!$user) {
+                return $this->errorResponse('المستخدم غير موجود', 404);
+            }
+
+            // التحديث مع المحافظة على القيم السابقة إذا لم يتم تمريرها
+            $user->update([
+                "average"   => $data['average'] ?? $user->average,
+                "gender"    => $data['gender'] ?? $user->gender,
+                "branch_id" => $data['branch_id'] ?? $user->branch_id,
+            ]);
+
+            return $this->successResponse('تم تحديث بيانات المستخدم بنجاح', 200, $user);
+        } catch (Exception $e) {
+            Log::error('حدث خطأ أثناء تحديث بيانات المستخدم: ' . $e->getMessage());
+            return $this->errorResponse('حدث خطأ أثناء تحديث بيانات المستخدم، يرجى المحاولة مرة أخرى.', 500);
         }
-    } catch (\Exception $e) {
-        Log::error('حدث خطأ أثناء التحقق من المستخدم: ' . $e->getMessage());
-        return $this->errorResponse('حدث خطأ أثناء التحقق من المستخدم، يرجى المحاولة مرة أخرى.', 500);
     }
-}
 
+    public function sgetUserData()
+    {
+        try {
+            $user = Auth::guard('sanctum')->user();
+
+            if ($user) {
+                return $this->successResponse('تم التحقق من المستخدم', 200, $user);
+            } else {
+                return $this->errorResponse('المستخدم غير مصرح به أو غير موجود', 401);
+            }
+        } catch (\Exception $e) {
+            Log::error('حدث خطأ أثناء التحقق من المستخدم: ' . $e->getMessage());
+            return $this->errorResponse('حدث خطأ أثناء التحقق من المستخدم، يرجى المحاولة مرة أخرى.', 500);
+        }
+    }
 }

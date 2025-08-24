@@ -9,13 +9,14 @@ use Illuminate\Support\Facades\Log;
 
 class CollegeService extends Service
 {
-    public function getAllColleges()
+    public function getAllColleges($filteringData)
     {
         try {
             $user = Auth::guard('sanctum')->user();
 
             if ($user) {
                 $colleges = College::with(['university', 'departments', 'admissions'])
+                 ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
                     ->paginate(10);
             } else {
                 $colleges = College::with(['university', 'departments', 'admissions'])
