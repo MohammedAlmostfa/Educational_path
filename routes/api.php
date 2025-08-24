@@ -29,9 +29,10 @@ Route::get('/user', function (Request $request) {
 Route::post('/register', [AuthController::class, 'register']); // تسجيل مستخدم جديد
 Route::post('/login', [AuthController::class, 'login']); // تسجيل دخول
 Route::post('/logout', [AuthController::class, 'logout']); // تسجيل خروج
-Route::post('//access-with-google', [AuthController::class, 'loginwithgoogel']); // تسجيل دخول عبر جوجل
+Route::post('/access-with-google', [AuthController::class, 'loginWithGoogle']); // تسجيل دخول عبر جوجل
 Route::post('/save-fcm', [DeviceTokenController::class, 'createOrUpdate']); // حفظ أو تحديث توكن FCM للجهاز
-
+  // جلب قائمة الكليات
+    Route::get('/get-colleges', [CollegeController::class, 'index']); 
 // مسارات تحتاج تسجيل الدخول فقط
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/check-activation_code', [UserController::class, 'checkActivationCode']); // التحقق من كود التفعيل
@@ -50,7 +51,7 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
 
     // عرض جميع المستخدمين غير المفعلين
     Route::get('/show-unactive-users', [UserController::class, 'index']); 
-
+Route::get('/me', [UserController::class, 'me']); 
     // تفعيل مستخدم محدد
     Route::put('/activation/{id}', [UserController::class, 'update']); 
 });
@@ -69,8 +70,7 @@ Route::middleware(['auth:sanctum', 'activation'])->group(function () {
     // إزالة كلية من المفضلة
     Route::delete('/saved/{collegeId}', [SavedCollegeController::class, 'removeSaved']); 
 
-    // جلب قائمة الكليات
-    Route::get('/get-colleges', [CollegeController::class, 'index']); 
+  
 
     // جلب الكليات المحفوظة للمستخدم
     Route::get('/saved', [SavedCollegeController::class, 'getSaved']); 

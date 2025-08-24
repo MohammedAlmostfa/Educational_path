@@ -34,4 +34,5 @@ class College extends Model
     return $this->belongsToMany(User::class, 'savedColleges')->withTimestamps();
 }
 
+
 }

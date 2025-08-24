@@ -59,4 +59,13 @@ class UserController extends Controller
             ? self::success($result['data'], $result['message'], $result['status'])
             : self::error(null, $result['message'], $result['status']);
     }
+
+    public function me()
+    {
+        $result = $this->userService->getUserData();
+
+        return $result['status'] === 200
+            ? self::success(new UserResource($result['data']), $result['message'], $result['status'])
+            : self::error(null, $result['message'], $result['status']);
+    }
 }

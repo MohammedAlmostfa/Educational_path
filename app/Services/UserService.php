@@ -115,4 +115,21 @@ class UserService extends Service
             return $this->errorResponse('حدث خطأ أثناء تحديث بيانات المستخدم، يرجى المحاولة مرة أخرى.', 500);
         }
     }
+
+   public function sgetUserData()
+{
+    try {
+        $user = Auth::guard('sanctum')->user();
+
+        if ($user) {
+            return $this->successResponse('تم التحقق من المستخدم', 200, $user);
+        } else {
+            return $this->errorResponse('المستخدم غير مصرح به أو غير موجود', 401);
+        }
+    } catch (\Exception $e) {
+        Log::error('حدث خطأ أثناء التحقق من المستخدم: ' . $e->getMessage());
+        return $this->errorResponse('حدث خطأ أثناء التحقق من المستخدم، يرجى المحاولة مرة أخرى.', 500);
+    }
+}
+
 }

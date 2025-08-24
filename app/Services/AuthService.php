@@ -5,14 +5,14 @@ namespace App\Services;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use App\Services\Service;
-use Exception;
-use Google_Client;
+use Illuminate\Support\Facades\Http; 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
-
+use Exception;
+use Google_Client;
 class AuthService extends Service
 {
     /**
@@ -102,42 +102,40 @@ class AuthService extends Service
      * @param string $googleToken Google ID token
      * @return array Response with user data and access token
      */
-    public function loginWithGoogle(string $googleToken)
-    {
-        try {
-            // Initialize Google Client to verify token
-            $client = new Google_Client(['client_id' => env('GOOGLE_CLIENT_ID')]);
-            $payload = $client->verifyIdToken($googleToken);
 
-            if (!$payload) {
-                return $this->errorResponse('رمز Google غير صالح.', 401);
-            }
 
-            $email = $payload['email']; // Get email from Google payload
+public function loginWithGoogle(string $googleToken)
+{
+    try {
+        $response = Http::get('https://oauth2.googleapis.com/tokeninfo', [
+            'id_token' => $googleToken,
+        ]);
 
-            // Find user in database
-            $user = User::where('email', $email)->first();
-
-            // Create new user if not found
-            if (!$user) {
-                $user = User::create([
-                    'email' => $email,
-                    'password' => bcrypt(Str::random(16)), // Generate random password
-                ]);
-            }
-
-            // Login user and create access token
-            Auth::login($user);
-            $token = $user->createToken('authToken')->plainTextToken;
-
-            return $this->successResponse('تم تسجيل الدخول باستخدام Google بنجاح.', 200, [
-                'user' => new UserResource($user),
-                'access_token' => $token,
-                'token_type' => 'Bearer',
-            ]);
-        } catch (Exception $e) {
-            Log::error('Error while logging in with Google: ' . $e->getMessage());
-            return $this->errorResponse('حدث خطأ أثناء تسجيل الدخول باستخدام Google. يرجى المحاولة مرة أخرى.', 500);
+        if ($response->failed()) {
+            return $this->errorResponse('رمز Google غير صالح.', 401);
         }
+
+        $payload = $response->json();
+
+
+        $email = $payload['email'];
+
+        // نفس منطق إنشاء/تسجيل الدخول للمستخدم
+        $user = User::firstOrCreate(
+            ['email' => $email],
+            ['password' => bcrypt(Str::random(16))]
+        );
+
+        Auth::login($user);
+        $token = $user->createToken('authToken')->plainTextToken;
+
+        return $this->successResponse('تم تسجيل الدخول باستخدام Google بنجاح.', 200, [
+            'user' => new UserResource($user),
+            'token' => $token,
+        ]);
+    } catch (\Exception $e) {
+        Log::error('Error while logging in with Google: ' . $e->getMessage());
+        return $this->errorResponse('حدث خطأ أثناء تسجيل الدخول باستخدام Google.', 500);
     }
+}
 }
