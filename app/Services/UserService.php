@@ -95,26 +95,31 @@ class UserService extends Service
      * @return array Response with updated user
      */
     public function AddUserData($data)
-    {
-        try {
-            $user = Auth::guard('sanctum')->user();
+{
+    try {
+        $user = Auth::guard('sanctum')->user();
 
-            if (!$user) {
-                return $this->errorResponse('المستخدم غير موجود', 404);
-            }
+        if (!$user) {
+            return $this->errorResponse('المستخدم غير موجود', 404);
+        }
 
+        if ($user->average === null) {
             $user->update([
-                "average" => $data['average'],
-                "gender" => $data['gender'],
+                "average"   => $data['average'],
+                "gender"    => $data['gender'],
                 "branch_id" => $data['branch_id'],
             ]);
-
-            return $this->successResponse('تم تحديث بيانات المستخدم بنجاح', 200, $user);
-        } catch (Exception $e) {
-            Log::error('حدث خطأ أثناء تحديث بيانات المستخدم: ' . $e->getMessage());
-            return $this->errorResponse('حدث خطأ أثناء تحديث بيانات المستخدم، يرجى المحاولة مرة أخرى.', 500);
+        } else {
+            return $this->errorResponse('تم تعيين البيانات سابقًا', 400);
         }
+
+        return $this->successResponse('تم تحديث بيانات المستخدم بنجاح', 200, $user);
+
+    } catch (Exception $e) {
+        Log::error('حدث خطأ أثناء تحديث بيانات المستخدم: ' . $e->getMessage());
+        return $this->errorResponse('حدث خطأ أثناء تحديث بيانات المستخدم، يرجى المحاولة مرة أخرى.', 500);
     }
+}
 
    public function sgetUserData()
 {

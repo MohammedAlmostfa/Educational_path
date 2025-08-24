@@ -20,16 +20,18 @@ class RegisterRequest extends FormRequest
         ];
     }
 
-    public function messages()
+   public function messages()
 {
     return [
         'email.required' => 'البريد الإلكتروني مطلوب.',
         'email.email' => 'يجب إدخال بريد إلكتروني صالح.',
+        'email.unique' => 'البريد الإلكتروني مستخدم بالفعل.',
         'password.required' => 'كلمة المرور مطلوبة.',
         'password.string' => 'كلمة المرور يجب أن تكون نصاً.',
         'password.min' => 'كلمة المرور يجب أن تكون 8 أحرف على الأقل.',
     ];
 }
+
     /**
        * Handle a failed validation attempt.
        * This method is called when validation fails.

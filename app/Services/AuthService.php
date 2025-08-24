@@ -120,7 +120,7 @@ public function loginWithGoogle(string $googleToken)
 
         $email = $payload['email'];
 
-        // نفس منطق إنشاء/تسجيل الدخول للمستخدم
+
         $user = User::firstOrCreate(
             ['email' => $email],
             ['password' => bcrypt(Str::random(16))]

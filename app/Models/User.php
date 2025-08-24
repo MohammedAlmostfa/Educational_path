@@ -30,6 +30,17 @@ class User extends Authenticatable
         "is_active",
         'is_admin'
     ];
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+            'is_active'=> 'integer',
+            "average" => "float",
+            "is_admin" => "integer",
+            "gender" => "integer"
+        ];
+    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -46,13 +57,7 @@ class User extends Authenticatable
      *
      * @return array<string, string>
      */
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
-    }
+ 
 
     public function savedColleges()
     {
