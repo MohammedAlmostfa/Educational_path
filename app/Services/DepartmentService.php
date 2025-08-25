@@ -6,17 +6,28 @@ use App\Models\Department;
 use Exception;
 use Illuminate\Support\Facades\Log;
 
+/**
+ * Class DepartmentService
+ *
+ * Service responsible for managing departments.
+ * Provides methods to retrieve department data.
+ */
 class DepartmentService extends Service
 {
+    /**
+     * Get all departments.
+     *
+     * @return array Response with department list (Arabic message)
+     */
     public function getAllDepartments()
     {
         try {
-            $departments = Department::select('id','name')->get();
+            $departments = Department::select('id', 'name')->get();
 
             return $this->successResponse('تم استرجاع الأقسام بنجاح.', 200, $departments);
 
         } catch (Exception $e) {
-            // تسجيل الخطأ للـ debugging
+            // Log the error for debugging
             Log::error('Error while fetching departments: ' . $e->getMessage());
 
             return $this->errorResponse('حدث خطأ أثناء استرجاع الأقسام. يرجى المحاولة مرة أخرى.', 500);

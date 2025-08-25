@@ -8,37 +8,42 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 
 /**
- * Service class for handling user-related operations.
+ * Class UserService
  *
- * This service manages user accounts, activation codes, and profile data.
+ * Service responsible for user operations:
+ * - Retrieve users
+ * - Manage activation codes
+ * - Add or update user profile data
  */
 class UserService extends Service
 {
     /**
-     * Get all users that don't have an activation code.
+     * Get all users without an activation code, with optional filtering.
      *
-     * @return array Response with paginated users
+     * @param array $filteringData Filtering parameters
+     * @return array Standardized response with users
      */
     public function getAllUser($filteringData)
     {
         try {
-
             $users = User::where('activation_code', null)
                 ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
                 ->orderByDesc('created_at')
                 ->paginate(10);
+
             return $this->successResponse('تم جلب المستخدمين بنجاح', 200, $users);
+
         } catch (Exception $e) {
-            Log::error('حدث خطأ أثناء جلب المستخدمين: ' . $e->getMessage());
+            Log::error('Error fetching users: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء معالجة المستخدمين، يرجى المحاولة مرة أخرى.', 500);
         }
     }
 
     /**
-     * Generate an activation code for a user if not already exists.
+     * Generate an activation code for a user if not exists.
      *
      * @param int $id User ID
-     * @return array Response with activation code
+     * @return array Standardized response with the code
      */
     public function Activaccount($id)
     {
@@ -54,17 +59,18 @@ class UserService extends Service
             } else {
                 return $this->errorResponse('المستخدم له كود سابق', 400);
             }
+
         } catch (Exception $e) {
-            Log::error('حدث خطأ أثناء توليد الكود: ' . $e->getMessage());
+            Log::error('Error generating activation code: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء توليد الكود، يرجى المحاولة مرة أخرى.', 500);
         }
     }
 
     /**
-     * Check if the activation code matches the current logged-in user.
+     * Verify the activation code for the currently authenticated user.
      *
-     * @param array $data Activation code
-     * @return array Response with verification result
+     * @param array $data ['activation_code']
+     * @return array Response indicating success or failure
      */
     public function checkActivationCode($data)
     {
@@ -81,29 +87,27 @@ class UserService extends Service
             } else {
                 return $this->errorResponse('الكود المستخدم خاطئ', 400);
             }
-        } catch (\Exception $e) {
-            Log::error('حدث خطأ أثناء التحقق من الكود: ' . $e->getMessage());
+
+        } catch (Exception $e) {
+            Log::error('Error verifying activation code: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء التحقق من الكود، يرجى المحاولة مرة أخرى.', 500);
         }
     }
 
-
     /**
-     * Add or update extra user profile data (average, gender, branch).
+     * Add new user profile data (average, gender, branch) if not set previously.
      *
-     * @param array $data User data
-     * @return array Response with updated user
+     * @param array $data User profile data
+     * @return array Response with updated user data
      */
     public function addUserData(array $data)
     {
         try {
             $user = Auth::guard('sanctum')->user();
-
             if (!$user) {
                 return $this->errorResponse('المستخدم غير موجود', 404);
             }
 
-            // التحقق من وجود أي بيانات مسبقة
             if ($user->average !== null || $user->gender !== null || $user->branch_id !== null) {
                 return $this->errorResponse('تم تعيين البيانات سابقًا', 400);
             }
@@ -115,22 +119,27 @@ class UserService extends Service
             ]);
 
             return $this->successResponse('تم اضافة بيانات المستخدم بنجاح', 200, $user);
+
         } catch (Exception $e) {
-            Log::error('حدث خطأ أثناء اضافة بيانات المستخدم: ' . $e->getMessage());
+            Log::error('Error adding user data: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء اضافة بيانات المستخدم، يرجى المحاولة مرة أخرى.', 500);
         }
     }
 
+    /**
+     * Update existing user profile data.
+     *
+     * @param array $data User profile data
+     * @return array Response with updated user data
+     */
     public function updateUserData(array $data)
     {
         try {
             $user = Auth::guard('sanctum')->user();
-
             if (!$user) {
                 return $this->errorResponse('المستخدم غير موجود', 404);
             }
 
-            // التحديث مع المحافظة على القيم السابقة إذا لم يتم تمريرها
             $user->update([
                 "average"   => $data['average'] ?? $user->average,
                 "gender"    => $data['gender'] ?? $user->gender,
@@ -138,24 +147,29 @@ class UserService extends Service
             ]);
 
             return $this->successResponse('تم تحديث بيانات المستخدم بنجاح', 200, $user);
+
         } catch (Exception $e) {
-            Log::error('حدث خطأ أثناء تحديث بيانات المستخدم: ' . $e->getMessage());
+            Log::error('Error updating user data: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء تحديث بيانات المستخدم، يرجى المحاولة مرة أخرى.', 500);
         }
     }
 
-    public function sgetUserData()
+    /**
+     * Get the currently authenticated user's data.
+     *
+     * @return array Response with user data
+     */
+    public function getUserData()
     {
         try {
             $user = Auth::guard('sanctum')->user();
-
             if ($user) {
                 return $this->successResponse('تم التحقق من المستخدم', 200, $user);
             } else {
                 return $this->errorResponse('المستخدم غير مصرح به أو غير موجود', 401);
             }
-        } catch (\Exception $e) {
-            Log::error('حدث خطأ أثناء التحقق من المستخدم: ' . $e->getMessage());
+        } catch (Exception $e) {
+            Log::error('Error fetching user data: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء التحقق من المستخدم، يرجى المحاولة مرة أخرى.', 500);
         }
     }

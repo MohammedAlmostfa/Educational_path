@@ -5,14 +5,22 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 
-
+/**
+ * Class CreateOrUpdateDeviceToken
+ *
+ * Handles validation for creating or updating a device token for push notifications.
+ * Ensures that 'device_id' and 'fcm_token' are provided.
+ */
 class CreateOrUpdateDeviceToken extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
+     *
+     * @return bool
      */
     public function authorize(): bool
     {
+        // Allow all users to execute this request
         return true;
     }
 
@@ -23,6 +31,7 @@ class CreateOrUpdateDeviceToken extends FormRequest
      */
     public function rules(): array
     {
+        // Validation rules: both device_id and fcm_token are required
         return [
             'device_id' => 'required',
             'fcm_token' => 'required',
@@ -31,15 +40,13 @@ class CreateOrUpdateDeviceToken extends FormRequest
 
     /**
      * Handle a failed validation attempt.
-     * This method is called when validation fails.
-     * Logs failed attempts and throws validation exception.
-     * @param \Illuminate\Validation\Validator $validator
-     * @return void
      *
+     * @param Validator $validator
+     * @throws HttpResponseException
      */
-
     protected function failedValidation(Validator $validator): void
     {
+        // Return a JSON response if validation fails
         throw new HttpResponseException(response()->json([
             'status' => 'error',
             'message' => 'فشل التحقق من صحة البيانات',

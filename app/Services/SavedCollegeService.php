@@ -15,15 +15,16 @@ use Exception;
 class SavedCollegeService extends Service
 {
     /**
-     * Add a college to the user's saved list.
+     * Add a college to the authenticated user's saved list.
      *
      * @param int $collegeId
-     * @return array
+     * @return array Response with status and message
      */
     public function addSaved(int $collegeId)
     {
         try {
             $user = Auth::guard('sanctum')->user();
+
             if (!$user) {
                 return $this->errorResponse('المستخدم غير مسجل الدخول', 401);
             }
@@ -37,6 +38,7 @@ class SavedCollegeService extends Service
             } else {
                 return $this->errorResponse('الكلية محفوظة مسبقاً', 400);
             }
+
         } catch (Exception $e) {
             Log::error('Error while saving college: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء حفظ الكلية', 500);
@@ -44,15 +46,16 @@ class SavedCollegeService extends Service
     }
 
     /**
-     * Remove a college from the user's saved list.
+     * Remove a college from the authenticated user's saved list.
      *
      * @param int $collegeId
-     * @return array
+     * @return array Response with status and message
      */
     public function removeSaved(int $collegeId)
     {
         try {
             $user = Auth::guard('sanctum')->user();
+
             if (!$user) {
                 return $this->errorResponse('المستخدم غير مسجل الدخول', 401);
             }
@@ -64,6 +67,7 @@ class SavedCollegeService extends Service
             } else {
                 return $this->errorResponse('الكلية غير موجودة في المحفوظات', 400);
             }
+
         } catch (Exception $e) {
             Log::error('Error while removing saved college: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء إزالة الكلية من المحفوظات', 500);
@@ -71,14 +75,15 @@ class SavedCollegeService extends Service
     }
 
     /**
-     * Get all saved colleges for the current user.
+     * Retrieve all saved colleges for the authenticated user.
      *
-     * @return array
+     * @return array Response with status, message, and data
      */
     public function getSaved()
     {
         try {
             $user = Auth::guard('sanctum')->user();
+
             if (!$user) {
                 return $this->errorResponse('المستخدم غير مسجل الدخول', 401);
             }
@@ -86,6 +91,7 @@ class SavedCollegeService extends Service
             $saved = $user->savedColleges()->with(['university', 'departments'])->get();
 
             return $this->successResponse('تم جلب الكليات المحفوظة بنجاح', 200, $saved);
+
         } catch (Exception $e) {
             Log::error('Error while fetching saved colleges: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء جلب الكليات المحفوظة', 500);

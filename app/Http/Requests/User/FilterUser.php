@@ -3,47 +3,56 @@
 namespace App\Http\Requests\User;
 
 use Illuminate\Foundation\Http\FormRequest;
-
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 
+/**
+ * Class FilterUser
+ *
+ * Handles validation for filtering users.
+ * Currently allows filtering by optional email.
+ */
 class FilterUser extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
+     *
+     * @return bool
      */
     public function authorize(): bool
     {
+        // Allow all authenticated users to execute this request
         return true;
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * Validation rules for the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array<string, string>
      */
     public function rules(): array
     {
         return [
+            // Email is optional for filtering
             'email' => 'nullable',
         ];
     }
 
     /**
      * Handle a failed validation attempt.
-     * This method is called when validation fails.
-     * Logs failed attempts and throws validation exception.
-     * @param \Illuminate\Validation\Validator $validator
-     * @return void
      *
+     * @param Validator $validator
+     * @throws HttpResponseException
      */
-
     protected function failedValidation(Validator $validator): void
     {
-        throw new HttpResponseException(response()->json([
-            'status' => 'error',
-            'message' => 'فشل التحقق من صحة البيانات',
-            'errors' => $validator->errors(),
-        ], 422));
+        // Return a JSON response if validation fails
+        throw new HttpResponseException(
+            response()->json([
+                'status' => 'error',
+                'message' => 'فشل التحقق من صحة البيانات',
+                'errors' => $validator->errors(),
+            ], 422)
+        );
     }
 }
