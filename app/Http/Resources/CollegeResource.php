@@ -13,11 +13,13 @@ class CollegeResource extends JsonResource
             'collegeName'    => $this->name,
             'isSaved'        => $this->is_saved ?? false,
             'departments'    => $this->department->name,
-            'admissions'     => $this->admissions->map(function($adm) {
+            "gender"         => $this->gender,
+            'admissions'     => $this->admissions->map(function ($adm) {
+
                 return [
                     'year'       => $adm->year,
                     'minAverage' => $adm->min_average,
-                    'branch'=>$adm->branch->name,
+                    'branch' => $adm->branch->name,
                     'minTotal'   => (int)$adm->min_total ?? null,
                 ];
             }),

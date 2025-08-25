@@ -82,7 +82,15 @@ class SavedCollegeService extends Service
         try {
             $user = Auth::guard('sanctum')->user();
 
-            $saved = $user->savedColleges()->with(['university', 'departments'])->get();
+            $saved = $user->savedColleges()
+                ->with([
+                    'university:id,name',
+                    'department:id,name',
+                    'admissions:id,college_id,branch_id,year,min_average,min_total,preference_score'
+                ])
+                ->orderBy('saved_college_user.priority', 'desc') // ترتيب حسب الأولوية من الأعلى إلى الأدنى
+                ->get();
+
 
             return $this->successResponse('تم جلب الكليات المحفوظة بنجاح', 200, $saved);
         } catch (Exception $e) {

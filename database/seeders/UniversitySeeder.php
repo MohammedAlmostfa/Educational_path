@@ -17,6 +17,13 @@ class UniversitySeeder extends Seeder
         $json = file_get_contents(database_path('data/universities.json'));
         $data = json_decode($json, true);
 
+        // خريطة تحويل الجنس من نص إلى رقم
+        $genderMap = [
+            'أنثى' => 0,
+            'ذكر' => 1,
+            'كلاهما' => 2
+        ];
+
         foreach ($data as $item) {
             // حفظ المحافظة
             $governorate = Governorate::firstOrCreate(['name' => $item['governorate']]);
@@ -35,25 +42,26 @@ class UniversitySeeder extends Seeder
                 $departmentId = $department->id;
             }
 
-            // حفظ الكلية وربطها بالقسم الرئيسي
+            // حفظ الكلية وربطها بالقسم الرئيسي + تخزين الجنس
             $college = College::create([
                 'name' => $item['collegeName'],
                 'college_type' => $item['collegeType'],
                 'study_duration' => $item['studyDuration'],
                 'university_id' => $university->id,
-                'department_id' => $departmentId
+                'department_id' => $departmentId,
+                'gender' => $genderMap[$item['gender']] ?? 2 // الافتراضي = 2 (كلاهما)
             ]);
 
             // إنشاء باقي الأقسام إذا موجودة
             foreach ($item['departments'] as $dep) {
-                $depModel = Department::firstOrCreate(['name' => $dep]);
+                Department::firstOrCreate(['name' => $dep]);
             }
 
-            // حفظ البرانش (تطبيقي / أحيائي / علمي)
+            // حفظ الفرع (تطبيقي / أحيائي / علمي)
             foreach ($item['admissions'] as $adm) {
                 $branchName = $item['branch'];
 
-                // تعديل 2025 إلى علمي
+                // تعديل 2025 إلى علمي إذا كان تطبيقي أو احيائي
                 if ($adm['year'] == 2025 && in_array($branchName, ['تطبيقي', 'احيائي'])) {
                     $branchName = 'علمي';
                 }
