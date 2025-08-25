@@ -1,33 +1,18 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * Class Department
- *
- * Represents a department within a college.
- * Each department belongs to a single college.
- */
 class Department extends Model
 {
     use HasFactory;
 
-    /**
-     * Mass assignable attributes.
-     */
-    protected $fillable = [
-        'name',       // Name of the department
-        'college_id', // Foreign key to the associated college
-    ];
+    protected $fillable = ['name'];
 
-    /**
-     * Get the college this department belongs to.
-     */
-    public function college()
+
+    public function colleges()
     {
-        return $this->belongsTo(College::class);
+        return $this->hasMany(College::class, 'department_id');
     }
 }

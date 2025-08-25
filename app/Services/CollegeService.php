@@ -33,12 +33,12 @@ class CollegeService extends Service
             if ($user) {
                 // Authenticated user: fetch colleges with related university, departments, admissions
                 // Apply filters if provided, and paginate the results
-                $colleges = College::with(['university', 'departments', 'admissions'])
+                $colleges = College::with(['university', 'department', 'admissions'])
                     ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
                     ->paginate(10);
             } else {
                 // Guest user: return a random subset of 4 colleges with related data
-                $colleges = College::with(['university', 'departments', 'admissions'])
+                $colleges = College::with(['university', 'department', 'admissions'])
                     ->inRandomOrder()
                     ->limit(4)
                     ->get();

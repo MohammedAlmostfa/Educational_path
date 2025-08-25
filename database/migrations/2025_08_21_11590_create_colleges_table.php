@@ -10,8 +10,9 @@ return new class extends Migration {
             $table->id();
             $table->foreignId('university_id')->constrained()->onDelete('cascade');
             $table->string('name');
-            $table->string('college_type'); // نوع الكلية (مثلاً هندسة/طب)
-            $table->integer('study_duration'); // عدد سنوات الدراسة
+            $table->string('college_type'); // نوع الكلية
+            $table->integer('study_duration'); // سنوات الدراسة
+            $table->foreignId('department_id')->nullable()->constrained('departments')->nullOnDelete(); // القسم الافتراضي
             $table->timestamps();
         });
     }
@@ -21,3 +22,4 @@ return new class extends Migration {
         Schema::dropIfExists('colleges');
     }
 };
+

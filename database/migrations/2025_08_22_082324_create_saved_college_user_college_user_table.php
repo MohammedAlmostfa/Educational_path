@@ -10,12 +10,13 @@ return new class extends Migration {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('college_id')->constrained()->onDelete('cascade');
+            $table->integer('priority')->default(0);
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('college_user');
+        Schema::dropIfExists('saved_college_user'); // مطابق للجدول
     }
 };

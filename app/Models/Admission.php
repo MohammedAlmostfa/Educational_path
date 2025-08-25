@@ -4,29 +4,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Admission extends Model
-{
-    use HasFactory;
-
-    protected $fillable = [
-        'college_id',
-        'branch_id',
-        'year',
-        'min_average',
-        'min_total',
-        'preference_score'
-    ];
-
-    public function college()
-    {
-        return $this->belongsTo(College::class);
-    }
-<?php
-namespace App\Models;
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
 /**
  * Class Admission
  *
@@ -62,12 +39,6 @@ class Admission extends Model
     /**
      * Get the branch associated with the admission.
      */
-    public function branch()
-    {
-        return $this->belongsTo(Branch::class);
-    }
-}
-
     public function branch()
     {
         return $this->belongsTo(Branch::class);

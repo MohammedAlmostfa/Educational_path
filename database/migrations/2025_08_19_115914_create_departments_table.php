@@ -8,7 +8,7 @@ return new class extends Migration {
     {
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('college_id')->constrained()->onDelete('cascade');
+
             $table->string('name');
             $table->timestamps();
         });

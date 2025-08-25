@@ -11,13 +11,14 @@ class CollegeResource extends JsonResource
         return [
             'universityName' => $this->university->name,
             'collegeName'    => $this->name,
-            'isSaved'        => $this->is_saved ?? false, 
-            'departments'    => $this->departments->pluck('name'), 
+            'isSaved'        => $this->is_saved ?? false,
+            'departments'    => $this->department->name,
             'admissions'     => $this->admissions->map(function($adm) {
                 return [
                     'year'       => $adm->year,
                     'minAverage' => $adm->min_average,
-                    'minTotal'   => $adm->min_total ?? null, // إذا موجود
+                    'branch'=>$adm->branch->name,
+                    'minTotal'   => (int)$adm->min_total ?? null,
                 ];
             }),
         ];

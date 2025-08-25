@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\SavedCollegeService;
+use App\Http\Requests\SwapSavedCollegesRequest;
 
 /**
  * Class SavedCollegeController
  *
  * Controller responsible for managing user's saved colleges.
- * Handles adding, removing, and retrieving saved colleges.
+ * Handles adding, removing, retrieving, and swapping priorities of saved colleges.
  */
 class SavedCollegeController extends Controller
 {
@@ -74,6 +75,26 @@ class SavedCollegeController extends Controller
         $result = $this->savedCollegeService->getSaved();
 
         // Return success response with saved colleges or error
+        return $result['status'] === 200
+            ? self::success($result['data'], $result['message'], $result['status'])
+            : self::error(null, $result['message'], $result['status']);
+    }
+
+    /**
+     * Swap priorities between two saved colleges for the authenticated user.
+     *
+     * @param SwapSavedCollegesRequest $request Request validated with college IDs to swap
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function swapSavedColleges(SwapSavedCollegesRequest $request)
+    {
+        // Validate the incoming request to ensure both college IDs are provided
+        $data = $request->validated();
+
+        // Call service to swap the priorities of the two saved colleges
+        $result = $this->savedCollegeService->swapSavedCollegesPriority($data);
+
+        // Return success or error response based on service result
         return $result['status'] === 200
             ? self::success($result['data'], $result['message'], $result['status'])
             : self::error(null, $result['message'], $result['status']);

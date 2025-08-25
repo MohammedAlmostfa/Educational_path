@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Admission;
-
 use App\Models\Branch;
 use App\Models\College;
 use App\Models\Department;
@@ -28,27 +27,40 @@ class UniversitySeeder extends Seeder
                 'governorate_id' => $governorate->id
             ]);
 
-            // حفظ الكلية
+            // التعامل مع القسم الرئيسي
+            $departmentId = null;
+            if (!empty($item['departments'])) {
+                // نأخذ القسم الأول فقط كقسم رئيسي للكلية
+                $department = Department::firstOrCreate(['name' => $item['departments'][0]]);
+                $departmentId = $department->id;
+            }
+
+            // حفظ الكلية وربطها بالقسم الرئيسي
             $college = College::create([
                 'name' => $item['collegeName'],
                 'college_type' => $item['collegeType'],
                 'study_duration' => $item['studyDuration'],
-                'university_id' => $university->id
+                'university_id' => $university->id,
+                'department_id' => $departmentId
             ]);
 
-            // حفظ الأقسام
+            // إنشاء باقي الأقسام إذا موجودة
             foreach ($item['departments'] as $dep) {
-                Department::create([
-                    'name' => $dep,
-                    'college_id' => $college->id
-                ]);
+                $depModel = Department::firstOrCreate(['name' => $dep]);
             }
 
-            // حفظ الفرع (تطبيقي / أحيائي)
-            $branch = Branch::firstOrCreate(['name' => $item['branch']]);
-
-            // حفظ بيانات القبول
+            // حفظ البرانش (تطبيقي / أحيائي / علمي)
             foreach ($item['admissions'] as $adm) {
+                $branchName = $item['branch'];
+
+                // تعديل 2025 إلى علمي
+                if ($adm['year'] == 2025 && in_array($branchName, ['تطبيقي', 'احيائي'])) {
+                    $branchName = 'علمي';
+                }
+
+                $branch = Branch::firstOrCreate(['name' => $branchName]);
+
+                // حفظ بيانات القبول
                 Admission::create([
                     'college_id' => $college->id,
                     'branch_id' => $branch->id,

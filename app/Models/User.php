@@ -70,7 +70,7 @@ class User extends Authenticatable
             'saved_college_user',
             'user_id',
             'college_id'
-        )->withTimestamps();
+        )->withPivot('priority')->withTimestamps();
     }
 
     /**

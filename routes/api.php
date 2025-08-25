@@ -17,65 +17,88 @@ use Illuminate\Support\Facades\Route;
 | API Routes
 |--------------------------------------------------------------------------
 |
-| هنا يتم تعريف كل مسارات الـ API الخاصة بالتطبيق.
-| بعض المسارات محمية بميدل وير للتحقق من تسجيل الدخول أو صلاحيات المستخدم.
+| Here we define all API routes for the application.
+| Some routes are protected with middleware to check authentication
+| or user permissions (e.g., admin or activation check).
 |
 */
 
-// مسار لتجربة المستخدم المسجل دخول فقط
+// Route to test authenticated user only
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-// مسارات التسجيل وتسجيل الدخول والخروج
-Route::post('/register', [AuthController::class, 'register']); // تسجيل مستخدم جديد
-Route::post('/login', [AuthController::class, 'login']); // تسجيل دخول
-Route::post('/logout', [AuthController::class, 'logout']); // تسجيل خروج
-Route::post('/access-with-google', [AuthController::class, 'loginWithGoogle']); // تسجيل دخول عبر جوجل
-Route::post('/save-fcm', [DeviceTokenController::class, 'createOrUpdate']); // حفظ أو تحديث توكن FCM للجهاز
-  // جلب قائمة الكليات
-    Route::get('/get-colleges', [CollegeController::class, 'index']); 
-// مسارات تحتاج تسجيل الدخول فقط
+/*
+|--------------------------------------------------------------------------
+| Authentication Routes
+|--------------------------------------------------------------------------
+|
+| Routes for user registration, login, logout, and third-party login (Google)
+| Also includes saving device FCM tokens.
+|
+*/
+Route::post('/register', [AuthController::class, 'register']); // Register a new user
+Route::post('/login', [AuthController::class, 'login']); // User login
+Route::post('/logout', [AuthController::class, 'logout']); // User logout
+Route::post('/access-with-google', [AuthController::class, 'loginWithGoogle']); // Login via Google
+Route::post('/save-fcm', [DeviceTokenController::class, 'createOrUpdate']); // Save or update device FCM token
+
+// Route to get all colleges
+Route::get('/get-colleges', [CollegeController::class, 'index']);
+
+/*
+|--------------------------------------------------------------------------
+| Authenticated User Routes
+|--------------------------------------------------------------------------
+|
+| Routes that require the user to be logged in.
+|
+*/
 Route::middleware(['auth:sanctum'])->group(function () {
-    Route::post('/check-activation_code', [UserController::class, 'checkActivationCode']); // التحقق من كود التفعيل
+    Route::post('/check-activation_code', [UserController::class, 'checkActivationCode']); // Verify activation code
 });
 
-// مسارات تحتاج صلاحيات الادمن
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+|
+| Routes that require both authentication and admin role.
+| Admins can manage content and users.
+|
+*/
 Route::middleware(['auth:sanctum', 'admin'])->group(function () {
-    // إنشاء محتوى جديد
-    Route::post('/content', [ContentController::class, 'store']); 
+    Route::post('/content', [ContentController::class, 'store']); // Create new content
+    Route::post('/content/{id}', [ContentController::class, 'update']); // Update specific content
+    Route::delete('/content/{content}', [ContentController::class, 'destroy']); // Delete specific content
 
-    // تعديل محتوى معين
-    Route::post('/content/{id}', [ContentController::class, 'update']); 
-
-    // حذف محتوى معين
-    Route::delete('/content/{content}', [ContentController::class, 'destroy']); 
-
-    // عرض جميع المستخدمين غير المفعلين
-    Route::get('/show-unactive-users', [UserController::class, 'index']); 
-Route::get('/me', [UserController::class, 'me']); 
-    // تفعيل مستخدم محدد
-    Route::put('/activation/{id}', [UserController::class, 'active']); 
+    Route::get('/show-unactive-users', [UserController::class, 'index']); // List all inactive users
+    Route::get('/me', [UserController::class, 'me']); // Get current admin user info
+    Route::put('/activation/{id}', [UserController::class, 'active']); // Activate a specific user
 });
 
-// مسارات تحتاج تسجيل الدخول والتحقق من التفعيل
+/*
+|--------------------------------------------------------------------------
+| Authenticated & Activated User Routes
+|--------------------------------------------------------------------------
+|
+| Routes that require authentication and user activation.
+| Includes content viewing, department/governorate listing, user info update,
+| and managing saved colleges.
+|
+*/
 Route::middleware(['auth:sanctum', 'activation'])->group(function () {
-    // عرض المحتوى
-    Route::get('/content', [ContentController::class, 'index']); 
+    Route::get('/content', [ContentController::class, 'index']); // View content
+    Route::get('/department', [DepartmentController::class, 'index']); // Get all departments
+    Route::get('/governorate', [GovernorateController::class, 'index']); // Get all governorates
 
-    Route::get('/department', [DepartmentController::class, 'index']); 
-    Route::get('/governorate', [GovernorateController::class, 'index']); 
-    // حفظ معلومات المستخدم
-    Route::post('/set-user-information', [UserController::class, 'creat']); 
- Route::post('/update-user-information', [UserController::class, 'update']); 
-    // إضافة كلية للمفضلة
-    Route::post('/saved/{collegeId}', [SavedCollegeController::class, 'addSaved']); 
+    // User information management
+    Route::post('/set-user-information', [UserController::class, 'creat']); // Save user info
+    Route::post('/update-user-information', [UserController::class, 'update']); // Update user info
 
-    // إزالة كلية من المفضلة
-    Route::delete('/saved/{collegeId}', [SavedCollegeController::class, 'removeSaved']); 
-
-  
-
-    // جلب الكليات المحفوظة للمستخدم
-    Route::get('/saved', [SavedCollegeController::class, 'getSaved']); 
+    // Saved Colleges management
+    Route::post('/saved/{collegeId}', [SavedCollegeController::class, 'addSaved']); // Add a college to saved list
+    Route::delete('/saved/{collegeId}', [SavedCollegeController::class, 'removeSaved']); // Remove a college from saved list
+    Route::get('/saved', [SavedCollegeController::class, 'getSaved']); // Get all saved colleges
+    Route::post('/swap-saved-collage', [SavedCollegeController::class, 'swapSavedColleges']); // Swap priorities of saved colleges
 });
