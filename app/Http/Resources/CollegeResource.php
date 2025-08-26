@@ -9,20 +9,27 @@ class CollegeResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'=>$this->id,
-            'universityName' => $this->university->name,
+            'id'             => $this->id,
+            'universityName' => $this->university->name ?? null,
             'collegeName'    => $this->name,
             'isSaved'        => $this->is_saved ?? false,
-            'departments'    => $this->department->name,
-            "gender"         => $this->gender,
+
+            'department'     => $this->department ? [
+                'id'   => $this->department->id,
+                'name' => $this->department->name,
+            ] : null,
+
+            'gender'         => $this->gender,
+
             'admissions'     => $this->admissions->map(function ($adm) {
-
                 return [
-
                     'year'       => $adm->year,
                     'minAverage' => $adm->min_average,
-                    'branch' => $adm->branch->name,
-                    'minTotal'   => (int)$adm->min_total ?? null,
+                    'branch'     => [
+                        'id'   => $adm->branch->id,
+                        'name' => $adm->branch->name,
+                    ],
+                    'minTotal'   => $adm->min_total !== null ? (int)$adm->min_total : null,
                 ];
             }),
         ];
