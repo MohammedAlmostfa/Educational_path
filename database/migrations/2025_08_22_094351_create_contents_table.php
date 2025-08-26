@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('image_url')->nullable();
             $table->string('title');
             $table->text('body');
-            $table->enum('is_new', ['0', '1'])->default('1'); 
+            $table->enum('is_new', ['0', '1'])->default('1');
+            $table->integer('viewers')->default(0);
             $table->timestamps();
         });
     }

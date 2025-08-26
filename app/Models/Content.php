@@ -19,6 +19,7 @@ class Content extends Model
         'image_url', // URL/path to the content image
         'title',     // Title of the content
         'body',      // Main body text of the content
-        'is_new'     // Flag indicating if this content is new (1 = new, 0 = old)
+        'is_new'   ,  // Flag indicating if this content is new (1 = new, 0 = old)
+        "viewers",
     ];
 }

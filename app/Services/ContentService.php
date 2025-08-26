@@ -18,7 +18,7 @@ use App\Models\DeviceToken;
  * - Create new content
  * - Update existing content
  * - Delete content
- * 
+ *
  * Handles image uploads and sends FCM notifications for new content.
  */
 class ContentService extends Service
@@ -165,4 +165,22 @@ class ContentService extends Service
             return $this->errorResponse('حدث خطأ أثناء حذف المحتوى. يرجى المحاولة مرة أخرى.', 500);
         }
     }
+public function addViewers(int $id)
+{
+    try {
+        $content = Content::findOrFail($id);
+
+        if ($content) {
+            $content->viewers += 1;
+            $content->save();
+        }
+
+        return $this->successResponse('تم تحديث عدد مشاهدات المحتوى بنجاح.', 200);
+
+    } catch (Exception $e) {
+        Log::error('Error updating content viewers: ' . $e->getMessage());
+
+        return $this->errorResponse('حدث خطأ أثناء تحديث عدد المشاهدات. يرجى المحاولة مرة أخرى.', 500);
+    }
+}
 }
