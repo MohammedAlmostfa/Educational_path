@@ -49,7 +49,8 @@ class CollegeController extends Controller
         // Get currently authenticated user (if any)
         $user = Auth::guard('sanctum')->user();
 
-        if ($user) {
+        if ($user && $user->is_active == 1) {
+
             // Authenticated users get paginated response
             return $result['status'] === 200
                 ? self::paginated(

@@ -5,7 +5,7 @@ namespace App\Services;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use App\Services\Service;
-use Illuminate\Support\Facades\Http; 
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
@@ -33,9 +33,13 @@ class AuthService extends Service
     public function register($data)
     {
         try {
+            $randomNumber = rand(1000, 9999);
+
+
             $user = User::create([
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
+            'activation_code'=> $randomNumber,
             ]);
 
             $token = $user->createToken('auth_token')->plainTextToken;

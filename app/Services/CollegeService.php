@@ -29,16 +29,16 @@ class CollegeService extends Service
         try {
             // Get the currently authenticated user
             $user = Auth::guard('sanctum')->user();
+if ($user && $user->is_active == 1) {
 
-            if ($user) {
                 // Authenticated user: fetch colleges with related university, departments, admissions
                 // Apply filters if provided, and paginate the results
-                $colleges = College::with(['university', 'department', 'admissions'])
+                $colleges = College::with(['university', 'departments', 'admissions'])
                     ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
                     ->paginate(10);
             } else {
                 // Guest user: return a random subset of 4 colleges with related data
-                $colleges = College::with(['university', 'department', 'admissions'])
+                $colleges = College::with(['university', 'departments', 'admissions'])
                     ->inRandomOrder()
                     ->limit(4)
                     ->get();

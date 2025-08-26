@@ -94,22 +94,22 @@ class UserController extends Controller
             : self::error(null, $result['message'], $result['status']);
     }
 
-    /**
-     * Activate a user account by ID.
-     *
-     * @param int $id User ID
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function active($id)
-    {
-        // Call service to activate account
-        $result = $this->userService->Activaccount($id);
+    // /**
+    //  * Activate a user account by ID.
+    //  *
+    //  * @param int $id User ID
+    //  * @return \Illuminate\Http\JsonResponse
+    //  */
+    // public function active($id)
+    // {
+    //     // Call service to activate account
+    //     $result = $this->userService->Activaccount($id);
 
-        // Return success or error response
-        return $result['status'] === 200
-            ? self::success($result['data'], $result['message'], $result['status'])
-            : self::error(null, $result['message'], $result['status']);
-    }
+    //     // Return success or error response
+    //     return $result['status'] === 200
+    //         ? self::success($result['data'], $result['message'], $result['status'])
+    //         : self::error(null, $result['message'], $result['status']);
+    // }
 
     /**
      * Check the activation code for a user.

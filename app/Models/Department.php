@@ -11,8 +11,10 @@ class Department extends Model
     protected $fillable = ['name'];
 
 
-    public function colleges()
-    {
-        return $this->hasMany(College::class, 'department_id');
-    }
+   public function colleges()
+{
+    return $this->belongsToMany(College::class, 'department_college', 'department_id', 'college_id');
+
+}
+
 }

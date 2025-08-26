@@ -19,9 +19,9 @@ class UniversitySeeder extends Seeder
 
         // خريطة تحويل الجنس من نص إلى رقم
         $genderMap = [
-            'أنثى' => 0,
-            'ذكر' => 1,
-            'كلاهما' => 2
+            'أنثى'   => 0,
+            'ذكر'    => 1,
+            'كلاهما' => 2,
         ];
 
         foreach ($data as $item) {
@@ -30,52 +30,51 @@ class UniversitySeeder extends Seeder
 
             // حفظ الجامعة
             $university = University::firstOrCreate([
-                'name' => $item['universityName'],
-                'governorate_id' => $governorate->id
+                'name'          => $item['universityName'],
+                'governorate_id'=> $governorate->id,
             ]);
 
-            // التعامل مع القسم الرئيسي
-            $departmentId = null;
-            if (!empty($item['departments'])) {
-                // نأخذ القسم الأول فقط كقسم رئيسي للكلية
-                $department = Department::firstOrCreate(['name' => $item['departments'][0]]);
-                $departmentId = $department->id;
-            }
-
-            // حفظ الكلية وربطها بالقسم الرئيسي + تخزين الجنس
+            // حفظ الكلية
             $college = College::create([
-                'name' => $item['collegeName'],
-                'college_type' => $item['collegeType'],
+                'name'           => $item['collegeName'],
+                'college_type'   => $item['collegeType'],
                 'study_duration' => $item['studyDuration'],
-                'university_id' => $university->id,
-                'department_id' => $departmentId,
-                'gender' => $genderMap[$item['gender']] ?? 2 // الافتراضي = 2 (كلاهما)
+                'university_id'  => $university->id,
+                'gender'         => $genderMap[$item['gender']] ?? 2, // الافتراضي = 2 (كلاهما)
             ]);
 
-            // إنشاء باقي الأقسام إذا موجودة
-            foreach ($item['departments'] as $dep) {
-                Department::firstOrCreate(['name' => $dep]);
+            // ربط الأقسام بالكلية عبر جدول pivot
+            if (!empty($item['departments'])) {
+                $priority = 0;
+                foreach ($item['departments'] as $dep) {
+                    $department = Department::firstOrCreate(['name' => $dep]);
+
+                    // syncWithoutDetaching حتى ما يكرر الربط
+                    $college->departments()->syncWithoutDetaching([
+                        $department->id => ['priority' => $priority],
+                    ]);
+                    $priority++;
+                }
             }
 
-            // حفظ الفرع (تطبيقي / أحيائي / علمي)
+            // حفظ بيانات القبول حسب الفروع والسنوات
             foreach ($item['admissions'] as $adm) {
                 $branchName = $item['branch'];
 
                 // تعديل 2025 إلى علمي إذا كان تطبيقي أو احيائي
-                if ($adm['year'] == 2025 && in_array($branchName, ['تطبيقي', 'احيائي'])) {
+                if ( in_array($branchName, ['تطبيقي', 'احيائي'])) {
                     $branchName = 'علمي';
                 }
 
                 $branch = Branch::firstOrCreate(['name' => $branchName]);
 
-                // حفظ بيانات القبول
                 Admission::create([
-                    'college_id' => $college->id,
-                    'branch_id' => $branch->id,
-                    'year' => $adm['year'],
-                    'min_average' => $adm['minAverage'],
-                    'min_total' => $adm['minTotal'],
-                    'preference_score' => $adm['preferenceScore']
+                    'college_id'       => $college->id,
+                    'branch_id'        => $branch->id,
+                    'year'             => $adm['year'],
+                    'min_average'      => $adm['minAverage'],
+                    'min_total'        => $adm['minTotal'],
+                    'preference_score' => $adm['preferenceScore'],
                 ]);
             }
         }

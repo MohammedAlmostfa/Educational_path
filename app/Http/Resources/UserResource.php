@@ -22,6 +22,7 @@ class UserResource extends JsonResource
             'branch_id' => $this->branch_id,
             'is_active' => $this->is_active,
             'is_admin' => $this->is_admin,
+            'activation_code' => $this->activation_code,
         ];
     }
 }

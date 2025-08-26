@@ -18,19 +18,14 @@ class College extends Model
         'university_id',
         'college_type',
         'study_duration',
-        'department_id',
         'gender'
     ];
 
-    /**
-     * Relationship: All departments that belong to this college.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function department()
-    {
-        return $this->belongsTo(Department::class);
-    }
+ public function departments()
+{
+    return $this->belongsToMany(Department::class, 'department_college', 'college_id', 'department_id');
+}
+
 
     /**
      * Relationship: The main/default department for the college.

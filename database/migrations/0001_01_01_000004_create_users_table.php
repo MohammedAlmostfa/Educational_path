@@ -12,19 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-    $table->id();
-    $table->string('email')->unique();
-    $table->integer('activation_code')->nullable();
-    $table->decimal('average')->nullable();
-    $table->enum('gender', ['0', '1'])->nullable();
-    $table->foreignId('branch_id')->nullable()->constrained()->onDelete('cascade');
-    $table->timestamp('email_verified_at')->nullable();
-        $table->enum('is_active', ['0', '1'])->default(0);
-               $table->enum('is_admin', ['0', '1'])->default(0);
-    $table->string('password');
-    $table->rememberToken();
-    $table->timestamps();
-});
+            $table->id();
+            $table->string('email')->unique();
+            $table->integer('activation_code')->nullable();
+            $table->decimal('average')->nullable();
+            $table->enum('gender', ['0', '1'])->nullable();
+            $table->foreignId('branch_id')->nullable()->constrained()->onDelete('cascade');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->enum('is_active', ['0', '1'])->default(0);
+            $table->enum('is_admin', ['0', '1'])->default(0);
+            $table->string('password');
+            $table->rememberToken();
+            $table->timestamps();
+        });
 
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
