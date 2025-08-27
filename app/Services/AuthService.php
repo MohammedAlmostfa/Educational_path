@@ -112,6 +112,12 @@ class AuthService extends Service
     public function loginWithGoogle(string $googleToken)
     {
         try {
+
+             $randomNumber = rand(1000, 9999);
+
+
+
+
             $response = Http::get('https://oauth2.googleapis.com/tokeninfo', [
                 'id_token' => $googleToken,
             ]);
@@ -125,7 +131,8 @@ class AuthService extends Service
 
             $user = User::firstOrCreate(
                 ['email' => $email],
-                ['password' => bcrypt(Str::random(16))]
+                ['password' => bcrypt(Str::random(16))],
+                [ 'activation_code'=> $randomNumber]
             );
 
             Auth::login($user);
