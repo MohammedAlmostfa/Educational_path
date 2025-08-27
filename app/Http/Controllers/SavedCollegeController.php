@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\SavedCollegeService;
+use App\Http\Resources\CollegeResource;
 use App\Http\Requests\SwapSavedCollegesRequest;
 
 /**
@@ -76,7 +77,11 @@ class SavedCollegeController extends Controller
 
         // Return success response with saved colleges or error
         return $result['status'] === 200
-            ? self::success($result['data'], $result['message'], $result['status'])
+            ? self::success(
+                    CollegeResource::collection($result['data']),
+                    $result['message'],
+                    $result['status']
+                )
             : self::error(null, $result['message'], $result['status']);
     }
 

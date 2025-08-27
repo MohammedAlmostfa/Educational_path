@@ -25,31 +25,40 @@ class UniversitySeeder extends Seeder
         ];
 
         foreach ($data as $item) {
-            // حفظ المحافظة
-            $governorate = Governorate::firstOrCreate(['name' => $item['governorate']]);
-
-            // حفظ الجامعة
-            $university = University::firstOrCreate([
-                'name'          => $item['universityName'],
-                'governorate_id'=> $governorate->id,
+            // ✅ حفظ المحافظة
+            $governorate = Governorate::firstOrCreate([
+                'name' => $item['governorate']
             ]);
 
-            // حفظ الكلية
+            // ✅ حفظ الجامعة
+            $university = University::firstOrCreate([
+                'name'           => $item['universityName'],
+                'governorate_id' => $governorate->id,
+            ]);
+
+            // ✅ جلب أو إنشاء الفرع (لكل كلية)
+            $branchName = $item['branch'] ?? 'عام';
+            if (in_array($branchName, ['تطبيقي', 'احيائي'])) {
+                $branchName = 'علمي';
+            }
+            $branch = Branch::firstOrCreate(['name' => $branchName]);
+
+            // ✅ إنشاء الكلية مع branch_id
             $college = College::create([
                 'name'           => $item['collegeName'],
                 'college_type'   => $item['collegeType'],
                 'study_duration' => $item['studyDuration'],
                 'university_id'  => $university->id,
-                'gender'         => $genderMap[$item['gender']] ?? 2, // الافتراضي = 2 (كلاهما)
+                'branch_id'      => $branch->id,   // ✅ مهم
+                'gender'         => $genderMap[$item['gender']] ?? 2,
             ]);
 
-            // ربط الأقسام بالكلية عبر جدول pivot
+            // ✅ ربط الأقسام بالكلية عبر جدول pivot
             if (!empty($item['departments'])) {
                 $priority = 0;
                 foreach ($item['departments'] as $dep) {
                     $department = Department::firstOrCreate(['name' => $dep]);
 
-                    // syncWithoutDetaching حتى ما يكرر الربط
                     $college->departments()->syncWithoutDetaching([
                         $department->id => ['priority' => $priority],
                     ]);
@@ -57,25 +66,17 @@ class UniversitySeeder extends Seeder
                 }
             }
 
-            // حفظ بيانات القبول حسب الفروع والسنوات
-            foreach ($item['admissions'] as $adm) {
-                $branchName = $item['branch'];
-
-                // تعديل 2025 إلى علمي إذا كان تطبيقي أو احيائي
-                if ( in_array($branchName, ['تطبيقي', 'احيائي'])) {
-                    $branchName = 'علمي';
+            // ✅ حفظ بيانات القبول (بدون branch_id)
+            if (!empty($item['admissions'])) {
+                foreach ($item['admissions'] as $adm) {
+                    Admission::create([
+                        'college_id'       => $college->id,
+                        'year'             => $adm['year'],
+                        'min_average'      => $adm['minAverage'],
+                        'min_total'        => $adm['minTotal'],
+                        'preference_score' => $adm['preferenceScore'],
+                    ]);
                 }
-
-                $branch = Branch::firstOrCreate(['name' => $branchName]);
-
-                Admission::create([
-                    'college_id'       => $college->id,
-                    'branch_id'        => $branch->id,
-                    'year'             => $adm['year'],
-                    'min_average'      => $adm['minAverage'],
-                    'min_total'        => $adm['minTotal'],
-                    'preference_score' => $adm['preferenceScore'],
-                ]);
             }
         }
     }

@@ -28,7 +28,6 @@ class User extends Authenticatable
         'activation_code',
         'average',
         'gender',
-        'branch_id',
         'is_active',
         'is_admin',
     ];
@@ -56,7 +55,7 @@ class User extends Authenticatable
             'is_active'         => 'integer',
             'average'           => 'float',
             'is_admin'          => 'integer',
-            'activation_code'          => 'integer',
+            'activation_code'   => 'integer',
             'gender'            => 'integer',
         ];
     }

@@ -22,4 +22,12 @@ class Content extends Model
         'is_new'   ,  // Flag indicating if this content is new (1 = new, 0 = old)
         "viewers",
     ];
+
+    protected function casts(): array
+    {
+        return [
+            'is_new'          => 'integer',
+            'viewers'   => 'integer',
+        ];
+    }
 }

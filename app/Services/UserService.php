@@ -26,7 +26,7 @@ class UserService extends Service
     public function getAllUser($filteringData)
     {
         try {
-            $users = User::where('is_active', 0)
+            $users = User::where('is_active', "0")
                 ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
                 ->orderByDesc('created_at')
                 ->paginate(10);

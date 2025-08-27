@@ -21,7 +21,6 @@ class Admission extends Model
      */
     protected $fillable = [
         'college_id',       // Related college
-        'branch_id',        // Related branch
         'year',             // Admission year
         'min_average',      // Minimum average required
         'min_total',        // Minimum total score required
@@ -36,11 +35,5 @@ class Admission extends Model
         return $this->belongsTo(College::class);
     }
 
-    /**
-     * Get the branch associated with the admission.
-     */
-    public function branch()
-    {
-        return $this->belongsTo(Branch::class);
-    }
+
 }

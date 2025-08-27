@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -8,39 +9,38 @@ class College extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'name',
         'university_id',
         'college_type',
         'study_duration',
-        'gender'
+        'gender',
+        'branch_id',
     ];
 
- public function departments()
-{
-    return $this->belongsToMany(Department::class, 'department_college', 'college_id', 'department_id');
-}
-
-
     /**
-     * Relationship: The main/default department for the college.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * علاقة: الكلية لها عدة أقسام عبر جدول وسيط
      */
-    public function mainDepartment()
+    public function departments()
     {
-        return $this->belongsTo(Department::class, 'department_id');
+        return $this->belongsToMany(
+            Department::class,
+            'department_college',
+            'college_id',
+            'department_id'
+        );
     }
 
     /**
-     * Relationship: All admissions for this college.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * علاقة: الكلية مرتبطة بفرع واحد
+     */
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class, 'branch_id');
+    }
+
+    /**
+     * علاقة: الكلية لها عدة قبول
      */
     public function admissions()
     {
@@ -48,19 +48,7 @@ class College extends Model
     }
 
     /**
-     * Relationship: All branches related to the college via admissions.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function branches()
-    {
-        return $this->belongsToMany(Branch::class, 'admissions');
-    }
-
-    /**
-     * Relationship: The university this college belongs to.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * علاقة: الكلية تتبع لجامعة واحدة
      */
     public function university()
     {
@@ -68,39 +56,32 @@ class College extends Model
     }
 
     /**
-     * Accessor to convert the stored numeric gender value to human-readable text.
-     *
-     * @param int $value
-     * @return string
+     * Accessor: تحويل قيمة gender من رقم لنص
      */
     public function getGenderAttribute($value)
     {
         $map = [
-            0 => 'أنثى',    // Female
-            1 => 'ذكر',      // Male
-            2 => 'كلاهما',   // Both
+            0 => 'أنثى',
+            1 => 'ذكر',
+            2 => 'كلاهما',
         ];
 
         return $map[$value] ?? 'كلاهما';
     }
 
     /**
-     * Scope to filter colleges based on various criteria.
-     *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param array $filters
-     * @return \Illuminate\Database\Eloquent\Builder
+     * فلترة حسب مجموعة شروط
      */
     public function scopeFilterBy($query, $filters)
     {
-        // Filter by governorates via the university relationship
+        // فلترة حسب المحافظات عبر علاقة الجامعة
         if (!empty($filters['governorates'])) {
             $query->whereHas('university', function ($q) use ($filters) {
                 $q->whereIn('governorate_id', $filters['governorates']);
             });
         }
 
-        // Filter by minimum average score range via admissions
+        // فلترة حسب المعدل الأدنى
         if (!empty($filters['min_average_from']) && !empty($filters['min_average_to'])) {
             $query->whereHas('admissions', function ($q) use ($filters) {
                 $q->whereBetween('min_average', [
@@ -110,16 +91,16 @@ class College extends Model
             });
         }
 
-        // Optional: filter by all departments
+        // فلترة حسب الأقسام
         if (!empty($filters['departments'])) {
-            $query->whereHas('department', function ($q) use ($filters) {
+            $query->whereHas('departments', function ($q) use ($filters) {
                 $q->whereIn('id', $filters['departments']);
             });
         }
 
-        // Optional: filter by branches via admissions
+        // فلترة حسب الفروع
         if (!empty($filters['branches'])) {
-            $query->whereHas('branches', function ($q) use ($filters) {
+            $query->whereHas('branch', function ($q) use ($filters) {
                 $q->whereIn('branches.id', $filters['branches']);
             });
         }

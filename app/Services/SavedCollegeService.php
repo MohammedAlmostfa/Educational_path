@@ -84,10 +84,12 @@ class SavedCollegeService extends Service
 
             $saved = $user->savedColleges()
                 ->with([
-                    'university:id,name',
-                    'department:id,name',
-                    'admissions:id,college_id,branch_id,year,min_average,min_total,preference_score'
+                    'university:id,name,governorate_id',
+                    'departments:id,name',
+                    'admissions:id,college_id,year,min_average,min_total,preference_score',
+                    "branch",
                 ])
+
                 ->orderBy('saved_college_user.priority', 'desc') // ترتيب حسب الأولوية من الأعلى إلى الأدنى
                 ->get();
 

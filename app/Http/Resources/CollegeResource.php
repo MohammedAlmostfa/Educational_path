@@ -3,8 +3,6 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use League\CommonMark\Extension\CommonMark\Node\Block\ListData;
-use PhpParser\Node\Expr\List_;
 
 class CollegeResource extends JsonResource
 {
@@ -14,7 +12,14 @@ class CollegeResource extends JsonResource
             'id'             => $this->id,
             'universityName' => $this->university->name ?? null,
             'collegeName'    => $this->name,
-            'governorate'    => $this->governorate ?? null,
+
+            'governorate' => $this->university && $this->university->governorate
+                ? [
+                    'id'   => $this->university->governorate->id,
+                    'name' => $this->university->governorate->name,
+                ]
+                : null,
+
             'gender'         => $this->gender,
             'collegeType'    => $this->college_type ?? null,
             'studyDuration'  => (int) $this->study_duration,
@@ -27,7 +32,10 @@ class CollegeResource extends JsonResource
                 ];
             }),
 
-
+            'branch' => $this->branch ? [
+                'id'   => $this->branch->id,
+                'name' => $this->branch->name,
+            ] : null,
 
             'admissions'     => $this->admissions->map(function ($adm) {
                 return [
@@ -35,13 +43,6 @@ class CollegeResource extends JsonResource
                     'minAverage'      => (float) $adm->min_average,
                     'minTotal'        => (float) $adm->min_total,
                     'preferenceScore' => (int) $adm->preference_score,
-                    'branch' => [
-                        [
-                            'id'   => $adm->branch->id,
-                            'name' => $adm->branch->name,
-                        ]
-                    ],
-
                 ];
             }),
         ];
