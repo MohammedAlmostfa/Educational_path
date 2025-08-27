@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\content\CreatContentRequest;
+use App\Http\Requests\content\FilterContent;
 use App\Http\Requests\content\UpdateContentRequest;
 use App\Http\Resources\ContentResouce;
 use App\Services\ContentService;
@@ -37,10 +38,10 @@ class ContentController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index()
-    {
+    public function index(FilterContent $request)
+    {    $data = $request->validated();
         // Fetch all content using the service
-        $result = $this->contentService->getAll();
+        $result = $this->contentService->getAll($data);
 
         // Return paginated response if successful, otherwise error
         return $result['status'] === 200

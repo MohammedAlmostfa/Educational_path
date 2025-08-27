@@ -113,7 +113,7 @@ class AuthService extends Service
     {
         try {
 
-             $randomNumber = rand(1000, 9999);
+
 
 
 
@@ -128,7 +128,7 @@ class AuthService extends Service
 
             $payload = $response->json();
             $email = $payload['email'];
-
+           $randomNumber = rand(1000, 9999);
             $user = User::firstOrCreate(
                 ['email' => $email],
                 ['password' => bcrypt(Str::random(16))],

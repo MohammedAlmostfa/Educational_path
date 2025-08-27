@@ -19,15 +19,32 @@ class Content extends Model
         'image_url', // URL/path to the content image
         'title',     // Title of the content
         'body',      // Main body text of the content
-        'is_new'   ,  // Flag indicating if this content is new (1 = new, 0 = old)
-        "viewers",
+        'is_new',    // Flag indicating if this content is new (1 = new, 0 = old)
+        'viewers',   // Number of viewers
     ];
 
-    protected function casts(): array
+    /**
+     * Attribute casting
+     */
+    protected $casts = [
+        'is_new'  => 'integer',
+        'viewers' => 'integer',
+    ];
+
+    /**
+     * Scope to filter by provided data
+     */
+    public function scopeFilterBy($query, $filteringData)
     {
-        return [
-            'is_new'          => 'integer',
-            'viewers'   => 'integer',
-        ];
+        if (isset($filteringData['is_new'])) {
+            $query->where('is_new', $filteringData['is_new']);
+        }
+
+        if (isset($filteringData['title'])) {
+
+               $query->where('title', 'LIKE', "%{$filteringData['title']}%");
+        }
+
+        return $query;
     }
 }

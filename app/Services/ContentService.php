@@ -28,10 +28,12 @@ class ContentService extends Service
      *
      * @return array Response with paginated content (Arabic message)
      */
-    public function getAll()
+    public function getAll($filteringData)
     {
         try {
-            $content = Content::paginate(10);
+            $content = Content::when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
+                ->orderByDesc('created_at')
+                ->paginate(10);
             return $this->successResponse('تم جلب المحتوى بنجاح.', 200, $content);
         } catch (Exception $e) {
             Log::error('Error fetching contents: ' . $e->getMessage());

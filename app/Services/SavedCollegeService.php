@@ -90,7 +90,7 @@ class SavedCollegeService extends Service
                     "branch",
                 ])
 
-                ->orderBy('saved_college_user.priority', 'desc') // ترتيب حسب الأولوية من الأعلى إلى الأدنى
+                ->orderBy('saved_college_user.priority', 'desc')
                 ->get();
 
 
