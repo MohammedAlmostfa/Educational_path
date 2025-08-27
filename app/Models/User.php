@@ -28,6 +28,7 @@ class User extends Authenticatable
         'activation_code',
         'average',
         'gender',
+        'branch_id',
         'is_active',
         'is_admin',
     ];
