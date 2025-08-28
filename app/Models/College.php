@@ -55,19 +55,7 @@ class College extends Model
         return $this->belongsTo(University::class);
     }
 
-    /**
-     * Accessor: تحويل قيمة gender من رقم لنص
-     */
-    public function getGenderAttribute($value)
-    {
-        $map = [
-            0 => 'أنثى',
-            1 => 'ذكر',
-            2 => 'كلاهما',
-        ];
 
-        return $map[$value] ?? 'كلاهما';
-    }
 /**
  * Many-to-many relationship: users who saved this college
  */

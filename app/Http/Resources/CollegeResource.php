@@ -10,7 +10,8 @@ class CollegeResource extends JsonResource
     {
         return [
             'id'             => $this->id,
-            'universityName' => $this->university->name ?? null,
+            'university' => ['name'=>$this->university->name ?? null,
+            'id'=>$this->university->id ?? null,],
             'collegeName'    => $this->name,
 
             'governorate' => $this->university && $this->university->governorate
