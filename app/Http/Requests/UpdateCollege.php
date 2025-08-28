@@ -58,10 +58,10 @@ class UpdateCollege extends FormRequest
             'departments.*' => 'exists:departments,id',
             'admissions' => 'nullable|array',
             'admissions.*.id' => 'nullable|exists:admissions,id', // لتحديث admission موجود
-            'admissions.*.year' => 'required|integer|min:2000',
-            'admissions.*.min_average' => 'required|numeric|min:0|max:100',
-            'admissions.*.min_total' => 'required|numeric|min:0',
-            'admissions.*.preference_score' => 'required|numeric|min:0',
+            'admissions.*.year' => 'nullable|integer|min:2000',
+            'admissions.*.min_average' => 'nullable|numeric|min:0|max:100',
+            'admissions.*.min_total' => 'nullable|numeric|min:0',
+            'admissions.*.preference_score' => 'nullable|numeric|min:0',
         ];
     }
 
