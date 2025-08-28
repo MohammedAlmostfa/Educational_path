@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\DepartmentService;
 use Illuminate\Http\Request;
+use App\Services\DepartmentService;
+use App\Http\Requests\DepartmentFilterRequest;
+
 
 /**
  * Class DepartmentController
@@ -15,14 +17,13 @@ class DepartmentController extends Controller
 {
     /**
      * @var DepartmentService
-     * Service instance for department operations
      */
     protected $departmentService;
 
     /**
-     * DepartmentController constructor.
+     * Constructor injects the department service.
      *
-     * @param DepartmentService $departmentService Injects the department service
+     * @param DepartmentService $departmentService
      */
     public function __construct(DepartmentService $departmentService)
     {
@@ -32,17 +33,17 @@ class DepartmentController extends Controller
     /**
      * Display a listing of all departments.
      *
-     * Calls the DepartmentService to retrieve all departments
-     * and returns a standardized success or error response.
+     * Supports optional filtering via request parameters.
      *
+     * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function index()
-    {
-        // Call service to get all departments
-        $result = $this->departmentService->getAllDepartments();
 
-        // Return success response if status is 200, otherwise return error response
+    public function index(DepartmentFilterRequest $request)
+    {
+        $filteringData = $request->validated();
+        $result = $this->departmentService->getAllDepartments($filteringData);
+
         return $result['status'] === 200
             ? self::success($result['data'] ?? null, $result['message'], $result['status'])
             : self::error(null, $result['message'], $result['status']);

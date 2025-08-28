@@ -15,17 +15,21 @@ use Illuminate\Support\Facades\Log;
 class DepartmentService extends Service
 {
     /**
-     * Get all departments.
+     * Retrieve all departments, optionally filtered.
      *
-     * @return array Response with department list (Arabic message)
+     * @param array|null $filteringData Optional filtering parameters
+     * @return array JSON response with status, message, and data
      */
-    public function getAllDepartments()
+    public function getAllDepartments(?array $filteringData )
     {
         try {
-            $departments = Department::select('id', 'name')->get();
+            $departments = Department::select('id', 'name')
+                ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
+                ->get();
+
+
 
             return $this->successResponse('تم استرجاع الأقسام بنجاح.', 200, $departments);
-
         } catch (Exception $e) {
             // Log the error for debugging
             Log::error('Error while fetching departments: ' . $e->getMessage());

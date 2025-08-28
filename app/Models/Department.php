@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,11 +11,26 @@ class Department extends Model
 
     protected $fillable = ['name'];
 
+    /**
+     * علاقة: القسم مرتبط بعدة كليات عبر جدول وسيط
+     */
+    public function colleges()
+    {
+        return $this->belongsToMany(College::class, 'department_college', 'department_id', 'college_id');
+    }
 
-   public function colleges()
+    /**
+     * فلترة الأقسام حسب الاسم
+     *
+     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param array $filters
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+   public function scopeFilterBy($query, $filters)
 {
-    return $this->belongsToMany(College::class, 'department_college', 'department_id', 'college_id');
-
+    if (!empty($filters['name'])) {
+        $query->where('name', 'LIKE', "%{$filters['name']}%");
+    }
 }
 
 }
