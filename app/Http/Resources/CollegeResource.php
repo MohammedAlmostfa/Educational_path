@@ -43,7 +43,7 @@ class CollegeResource extends JsonResource
                        'id'            => (int) $adm->id,
                     'year'            => (int) $adm->year,
                     'min_average'      => (float) $adm->min_average,
-                    'min-total'        => (float) $adm->min_total,
+                    'min_total'        => (float) $adm->min_total,
                     'preference_score' => (int) $adm->preference_score,
                 ];
             }),
