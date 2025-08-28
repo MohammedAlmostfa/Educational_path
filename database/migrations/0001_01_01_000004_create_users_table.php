@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->integer('activation_code')->nullable();
             $table->decimal('average')->nullable();
-         $table->tinyInteger('gender')->nullable();
-
+            $table->tinyInteger('gender')->nullable();
             $table->foreignId('branch_id')->nullable()->constrained()->onDelete('cascade');
             $table->timestamp('email_verified_at')->nullable();
             $table->enum('is_active', ['0', '1'])->default(0);
