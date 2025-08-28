@@ -17,6 +17,10 @@ return [
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
+'fcm' => [
+    'key' => env('FIREBASE_SERVER_KEY'),
+    'credentialsPath' => env('FIREBASE_CREDENTIALS', 'firebase.json'),
+],
 
     'resend' => [
         'key' => env('RESEND_KEY'),

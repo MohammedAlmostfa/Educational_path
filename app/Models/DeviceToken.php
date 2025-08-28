@@ -17,6 +17,7 @@ class DeviceToken extends Model
      */
     protected $fillable = [
         'device_id', // Unique identifier for the device
+        'user_id',
         'fcm_token', // Firebase Cloud Messaging token
     ];
 

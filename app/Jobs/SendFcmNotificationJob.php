@@ -20,8 +20,8 @@ class SendFcmNotificationJob implements ShouldQueue
 
     public function __construct(string $title, string $body, array $tokens)
     {
-        $this->title = $title;
-        $this->body = $body;
+        $this->title  = $title;
+        $this->body   = $body;
         $this->tokens = $tokens;
     }
 
