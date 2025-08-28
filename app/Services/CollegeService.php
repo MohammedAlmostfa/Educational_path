@@ -33,6 +33,8 @@ class CollegeService extends Service
                 // Authenticated user: fetch colleges with relationships and filters
                 $colleges = College::with(['university', 'departments', 'admissions'])
                     ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
+                    // Add is_saved field for each college
+                    ->withExists(['savedByUsers as is_saved' => fn($q) => $q->where('user_id', $user->id)])
                     ->paginate(10);
             } else {
                 // Guest user: return random 4 colleges with relationships
@@ -42,10 +44,10 @@ class CollegeService extends Service
                     ->get();
             }
 
-            return $this->successResponse('Colleges fetched successfully.', 200, $colleges);
+            return $this->successResponse('تم جلب الكليات بنجاح.', 200, $colleges);
         } catch (Exception $e) {
             Log::error('Error fetching colleges: ' . $e->getMessage());
-            return $this->errorResponse('Failed to fetch colleges. Please try again.', 500);
+            return $this->errorResponse('حدث خطأ أثناء جلب الكليات. يرجى المحاولة مرة أخرى.', 500);
         }
     }
 
@@ -76,10 +78,10 @@ class CollegeService extends Service
                 $college->departments()->sync($data['departments']);
             }
 
-            return $this->successResponse('College updated successfully.', 200);
+            return $this->successResponse('تم تحديث الكلية بنجاح.', 200);
         } catch (Exception $e) {
             Log::error('Error updating college: ' . $e->getMessage());
-            return $this->errorResponse('Failed to update college. Please try again.', 500);
+            return $this->errorResponse('حدث خطأ أثناء تحديث الكلية. يرجى المحاولة مرة أخرى.', 500);
         }
     }
 
@@ -100,10 +102,10 @@ class CollegeService extends Service
             // Delete the college
             $college->delete();
 
-            return $this->successResponse('College deleted successfully.', 200);
+            return $this->successResponse('تم حذف الكلية بنجاح.', 200);
         } catch (Exception $e) {
             Log::error('Error deleting college: ' . $e->getMessage());
-            return $this->errorResponse('Failed to delete college. Please try again.', 500);
+            return $this->errorResponse('حدث خطأ أثناء حذف الكلية. يرجى المحاولة مرة أخرى.', 500);
         }
     }
 }

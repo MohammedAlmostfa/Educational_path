@@ -114,10 +114,6 @@ class AuthService extends Service
         try {
 
 
-
-
-
-
             $response = Http::get('https://oauth2.googleapis.com/tokeninfo', [
                 'id_token' => $googleToken,
             ]);

@@ -68,6 +68,18 @@ class College extends Model
 
         return $map[$value] ?? 'كلاهما';
     }
+/**
+ * Many-to-many relationship: users who saved this college
+ */
+public function savedByUsers()
+{
+    return $this->belongsToMany(
+        User::class,
+        'saved_college_user',
+        'college_id',
+        'user_id'
+    )->withPivot('priority')->withTimestamps();
+}
 
     /**
      * فلترة حسب مجموعة شروط
