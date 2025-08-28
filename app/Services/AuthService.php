@@ -129,11 +129,15 @@ class AuthService extends Service
             $payload = $response->json();
             $email = $payload['email'];
            $randomNumber = rand(1000, 9999);
-            $user = User::firstOrCreate(
-                ['email' => $email],
-                ['password' => bcrypt(Str::random(16))],
-                [ 'activation_code'=> $randomNumber]
-            );
+
+$user = User::firstOrCreate(
+    ['email' => $email],
+    [
+        'password' => bcrypt(Str::random(16)),
+        'activation_code' => $randomNumber
+    ]
+);
+
 
             Auth::login($user);
             $token = $user->createToken('authToken')->plainTextToken;
