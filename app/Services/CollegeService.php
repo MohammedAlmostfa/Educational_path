@@ -59,31 +59,60 @@ class CollegeService extends Service
      * @return array JSON response with status and message
      */
     public function updateCollege(int $id, array $data)
-    {
-        try {
-            $college = College::findOrFail($id);
+{
+    try {
+        $college = College::findOrFail($id);
 
-            // Update basic college fields
-            $college->update([
-                'name' => $data['name'] ?? $college->name,
-                'university_id' => $data['university_id'] ?? $college->university_id,
-                'college_type' => $data['college_type'] ?? $college->college_type,
-                'study_duration' => $data['study_duration'] ?? $college->study_duration,
-                'gender' => $data['gender'] ?? $college->gender,
-                'branch_id' => $data['branch_id'] ?? $college->branch_id,
-            ]);
+        // تحديث بيانات الكلية الأساسية
+        $college->update([
+            'name' => $data['name'] ?? $college->name,
+            'university_id' => $data['university_id'] ?? $college->university_id,
+            'college_type' => $data['college_type'] ?? $college->college_type,
+            'study_duration' => $data['study_duration'] ?? $college->study_duration,
+            'gender' => $data['gender'] ?? $college->gender,
+            'branch_id' => $data['branch_id'] ?? $college->branch_id,
+        ]);
 
-            // Update related departments if provided
-            if (isset($data['departments'])) {
-                $college->departments()->sync($data['departments']);
-            }
-
-            return $this->successResponse('تم تحديث الكلية بنجاح.', 200);
-        } catch (Exception $e) {
-            Log::error('Error updating college: ' . $e->getMessage());
-            return $this->errorResponse('حدث خطأ أثناء تحديث الكلية. يرجى المحاولة مرة أخرى.', 500);
+        // تحديث الأقسام المرتبطة إذا تم تمريرها
+        if (isset($data['departments'])) {
+            $college->departments()->sync($data['departments']);
         }
+
+        // تحديث المحافظة عبر الجامعة المرتبطة
+
+        // تحديث بيانات القبول (admissions) إذا تم تمريرها
+        if (isset($data['admissions']) && is_array($data['admissions'])) {
+            foreach ($data['admissions'] as $admData) {
+                // إذا تم تمرير ID، حدث admission موجود، وإلا أنشئ جديد
+                if (isset($admData['id'])) {
+                    $admission = $college->admissions()->find($admData['id']);
+                    if ($admission) {
+                        $admission->update([
+                            'year' => $admData['year'] ?? $admission->year,
+                            'min_average' => $admData['min_average'] ?? $admission->min_average,
+                            'min_total' => $admData['min_total'] ?? $admission->min_total,
+                            'preference_score' => $admData['preference_score'] ?? $admission->preference_score,
+                        ]);
+                    }
+                } else {
+                    // إنشاء admission جديد مرتبط بالكلية
+                    $college->admissions()->create([
+                        'year' => $admData['year'],
+                        'min_average' => $admData['min_average'],
+                        'min_total' => $admData['min_total'],
+                        'preference_score' => $admData['preference_score'],
+                    ]);
+                }
+            }
+        }
+
+        return $this->successResponse('تم تحديث الكلية بنجاح.', 200);
+    } catch (Exception $e) {
+        Log::error('خطأ أثناء تحديث الكلية: ' . $e->getMessage());
+        return $this->errorResponse('حدث خطأ أثناء تحديث الكلية. يرجى المحاولة مرة أخرى.', 500);
     }
+}
+
 
     /**
      * Delete a college and detach its related departments.

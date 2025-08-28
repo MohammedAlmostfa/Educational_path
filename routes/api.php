@@ -70,15 +70,15 @@ Route::middleware(['auth:sanctum'])->group(function () {
 | Admins can manage content and users.
 |
 */
-Route::middleware(['auth:sanctum', 'admin','activation'])->group(function () {
+Route::middleware(['auth:sanctum', 'admin', 'activation'])->group(function () {
     Route::post('/content', [ContentController::class, 'store']); // Create new content
     Route::post('/content/{id}', [ContentController::class, 'update']); // Update specific content
     Route::delete('/content/{content}', [ContentController::class, 'destroy']); // Delete specific content
 
     Route::get('/show-unactive-users', [UserController::class, 'index']); // List all inactive users
     // Route::put('/activation/{id}', [UserController::class, 'active']); // Activate a specific user
-     Route::get('/university', [UniversityController::class, 'index']); // Get all departments
-       Route::get('/department', [DepartmentController::class, 'index']); // Get all departments
+    Route::get('/university', [UniversityController::class, 'index']); // Get all departments
+    Route::get('/department', [DepartmentController::class, 'index']); // Get all departments
 });
 
 /*
@@ -106,7 +106,7 @@ Route::middleware(['auth:sanctum', 'activation'])->group(function () {
     Route::get('/saved', [SavedCollegeController::class, 'getSaved']); // Get all saved colleges
     Route::post('/swap-saved-collage', [SavedCollegeController::class, 'swapSavedColleges']); // Swap priorities of saved colleges
 
-     Route::get('/me', [UserController::class, 'me']); // Get current admin user info
+    Route::get('/me', [UserController::class, 'me']); // Get current admin user info
 
-        Route::post('/add-viewers/{id}', [ContentController::class, 'addViewers']);
+    Route::post('/add-viewers/{id}', [ContentController::class, 'addViewers']);
 });
