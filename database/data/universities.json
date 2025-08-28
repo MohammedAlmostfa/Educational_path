@@ -5337,7 +5337,7 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية الآثار",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "كليات انسانية",
     "studyDuration": 4,
@@ -5391,7 +5391,7 @@
   {
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية الآثار",
-    "governorate": "الكوفة",
+    "governorate": "النجف",
     "gender": "كلاهما",
     "collegeType": "كليات انسانية",
     "studyDuration": 4,
@@ -5537,7 +5537,7 @@
   {
     "universityName": "جامعة سامراء",
     "collegeName": "كلية العلوم الاسلامية",
-    "governorate": "سامراء",
+    "governorate": "صلاح الدين",
     "gender": "كلاهما",
     "collegeType": "كليات دينية",
     "studyDuration": 4,
@@ -5619,7 +5619,7 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية العلوم الاسلامية",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "كليات دينية",
     "studyDuration": 4,
@@ -5710,7 +5710,7 @@
   {
     "universityName": "جامعة الانبار",
     "collegeName": "كلية العلوم الاسلامية",
-    "governorate": "الأنبار",
+    "governorate": "الانبار",
     "gender": "كلاهما",
     "collegeType": "كليات دينية",
     "studyDuration": 4,
@@ -5739,7 +5739,7 @@
   {
     "universityName": "جامعة الفلوجة",
     "collegeName": "كلية العلوم الاسلامية",
-    "governorate": "الأنبار",
+    "governorate": "الانبار",
     "gender": "كلاهما",
     "collegeType": "كليات دينية",
     "studyDuration": 4,
@@ -5769,7 +5769,7 @@
   {
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية الفقه",
-    "governorate": "الكوفة",
+    "governorate": "النجف",
     "gender": "كلاهما",
     "collegeType": "كليات دينية",
     "studyDuration": 4,
@@ -5938,7 +5938,7 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية الفنون الجميلة",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "كلية الفنون الجميلة",
     "studyDuration": 4,
@@ -6166,7 +6166,7 @@
   {
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية الآثار",
-    "governorate": "الكوفة",
+    "governorate": "النجف",
     "gender": "كلاهما",
     "collegeType": "كليات انسانية",
     "studyDuration": 4,
@@ -6247,7 +6247,7 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية الآثار",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "كليات انسانية",
     "studyDuration": 4,
@@ -6390,7 +6390,7 @@
   {
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية الفقه",
-    "governorate": "الكوفة",
+    "governorate": "النجف",
     "gender": "كلاهما",
     "collegeType": "كليات دينية",
     "studyDuration": 4,
@@ -6483,7 +6483,7 @@
   {
     "universityName": "جامعة سامراء",
     "collegeName": "كلية العلوم الاسلامية",
-    "governorate": "سامراء",
+    "governorate": "صلاح الدين",
     "gender": "كلاهما",
     "collegeType": "كليات دينية",
     "studyDuration": 4,
@@ -6541,7 +6541,7 @@
   {
     "universityName": "جامعة الانبار",
     "collegeName": "كلية العلوم الاسلامية",
-    "governorate": "الأنبار",
+    "governorate": "الانبار",
     "gender": "كلاهما",
     "collegeType": "كليات دينية",
     "studyDuration": 4,
@@ -6570,7 +6570,7 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية العلوم الاسلامية",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "كليات دينية",
     "studyDuration": 4,
@@ -6599,7 +6599,7 @@
   {
     "universityName": "جامعة الفلوجة",
     "collegeName": "كلية العلوم الاسلامية",
-    "governorate": "الأنبار",
+    "governorate": "الانبار",
     "gender": "كلاهما",
     "collegeType": "كليات دينية",
     "studyDuration": 4,
@@ -6913,7 +6913,7 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية الفنون الجميلة",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "كلية الفنون الجميلة",
     "studyDuration": 4,
@@ -7022,7 +7022,7 @@
   {
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية التخطيط العمراني",
-    "governorate": "الكوفة",
+    "governorate": "النجف",
     "gender": "كلاهما",
     "collegeType": "تخطيط عمراني",
     "studyDuration": 4,
@@ -8823,7 +8823,7 @@
     "universityName": "جامعة الموصل",
     "collegeName": "كلية التمريض",
     "governorate": "نينوى",
-    "gender": "ذكور فقط",
+    "gender": "ذكور",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -8849,7 +8849,7 @@
     "universityName": "جامعة بغداد",
     "collegeName": "كلية التمريض",
     "governorate": "بغداد",
-    "gender": "ذكور فقط",
+    "gender": "ذكور",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -8875,7 +8875,7 @@
     "universityName": "جامعة بابل",
     "collegeName": "كلية التمريض",
     "governorate": "بابل",
-    "gender": "ذكور فقط",
+    "gender": "ذكور",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -8901,7 +8901,7 @@
     "universityName": "جامعة كربلاء",
     "collegeName": "كلية التمريض",
     "governorate": "كربلاء",
-    "gender": "ذكور فقط",
+    "gender": "ذكور",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -8927,7 +8927,7 @@
     "universityName": "جامعة ذي قار",
     "collegeName": "كلية التمريض",
     "governorate": "ذي قار",
-    "gender": "ذكور فقط",
+    "gender": "ذكور",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -8953,7 +8953,7 @@
     "universityName": "جامعة كركوك",
     "collegeName": "كلية التمريض",
     "governorate": "كركوك",
-    "gender": "ذكور فقط",
+    "gender": "ذكور",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -8979,7 +8979,7 @@
     "universityName": "جامعة القادسية",
     "collegeName": "كلية التمريض",
     "governorate": "القادسية",
-    "gender": "ذكور فقط",
+    "gender": "ذكور",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9005,7 +9005,7 @@
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية التمريض",
     "governorate": "النجف",
-    "gender": "ذكور فقط",
+    "gender": "ذكور",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9031,7 +9031,7 @@
     "universityName": "جامعة نينوى",
     "collegeName": "كلية التمريض",
     "governorate": "نينوى",
-    "gender": "ذكور فقط",
+    "gender": "ذكور",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9057,7 +9057,7 @@
     "universityName": "جامعة المثنى",
     "collegeName": "كلية التمريض",
     "governorate": "المثنى",
-    "gender": "ذكور فقط",
+    "gender": "ذكور",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9083,7 +9083,7 @@
     "universityName": "جامعة تكريت",
     "collegeName": "كلية التمريض",
     "governorate": "صلاح الدين",
-    "gender": "ذكور فقط",
+    "gender": "ذكور",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9109,7 +9109,7 @@
     "universityName": "جامعة ميسان",
     "collegeName": "كلية التمريض",
     "governorate": "ميسان",
-    "gender": "ذكور فقط",
+    "gender": "ذكور",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9135,7 +9135,7 @@
     "universityName": "جامعة تلعفر",
     "collegeName": "كلية التمريض",
     "governorate": "نينوى",
-    "gender": "ذكور فقط",
+    "gender": "ذكور",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9161,7 +9161,7 @@
     "universityName": "جامعة بغداد",
     "collegeName": "كلية التمريض",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9187,7 +9187,7 @@
     "universityName": "جامعة البصرة",
     "collegeName": "كلية التمريض",
     "governorate": "البصرة",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9213,7 +9213,7 @@
     "universityName": "جامعة بابل",
     "collegeName": "كلية التمريض",
     "governorate": "بابل",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9239,7 +9239,7 @@
     "universityName": "جامعة كربلاء",
     "collegeName": "كلية التمريض",
     "governorate": "كربلاء",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9265,7 +9265,7 @@
     "universityName": "جامعة ذي قار",
     "collegeName": "كلية التمريض",
     "governorate": "ذي قار",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9291,7 +9291,7 @@
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية التمريض",
     "governorate": "النجف",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9317,7 +9317,7 @@
     "universityName": "جامعة القادسية",
     "collegeName": "كلية التمريض",
     "governorate": "القادسية",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9343,7 +9343,7 @@
     "universityName": "جامعة المثنى",
     "collegeName": "كلية التمريض",
     "governorate": "المثنى",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9369,7 +9369,7 @@
     "universityName": "جامعة كركوك",
     "collegeName": "كلية التمريض",
     "governorate": "كركوك",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9395,7 +9395,7 @@
     "universityName": "جامعة ميسان",
     "collegeName": "كلية التمريض",
     "governorate": "ميسان",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9421,7 +9421,7 @@
     "universityName": "جامعة الموصل",
     "collegeName": "كلية التمريض",
     "governorate": "نينوى",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9447,7 +9447,7 @@
     "universityName": "جامعة البصرة",
     "collegeName": "كلية التمريض",
     "governorate": "البصرة",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9473,7 +9473,7 @@
     "universityName": "جامعة تكريت",
     "collegeName": "كلية التمريض",
     "governorate": "صلاح الدين",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9499,7 +9499,7 @@
     "universityName": "جامعة نينوى",
     "collegeName": "كلية التمريض",
     "governorate": "نينوى",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9525,7 +9525,7 @@
     "universityName": "جامعة تلعفر",
     "collegeName": "كلية التمريض",
     "governorate": "نينوى",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "المجموعة الصحية (تعيين مركزي)",
     "studyDuration": 4,
     "departments": [
@@ -9815,7 +9815,8 @@
     "collegeType": "الطب البيطري",
     "studyDuration": 5,
     "departments": [
-      "الطب البيطري/الحي"
+      "الحي",
+      "الطب البيطري"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -9976,7 +9977,8 @@
     "studyDuration": 4,
     "departments": [
       "التحليلات المرضية - تخصصات ساندة",
-      "الصحة البيئية/الفيزياء - تخصصات ساندة "
+      "الفيزياء - تخصصات ساندة",
+      "الصحة البيئية"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -10311,7 +10313,7 @@
     "universityName": "جامعة بغداد",
     "collegeName": "كلية العلوم للبنات",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تخصصات ساندة",
     "studyDuration": 4,
     "departments": [
@@ -10340,7 +10342,7 @@
     "universityName": "جامعة بغداد",
     "collegeName": "كلية العلوم للبنات-قسم الحاسوب",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "علوم الرياضيات والحاسوب",
     "studyDuration": 4,
     "departments": [
@@ -10452,7 +10454,7 @@
     "universityName": "جامعة بغداد",
     "collegeName": "كلية العلوم للبنات-قسم الرياضيات",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "علوم الرياضيات والحاسوب",
     "studyDuration": 4,
     "departments": [
@@ -10542,7 +10544,8 @@
       "الكيمياء  - تخصصات ساندة",
       "علوم الحياة  - تخصصات ساندة",
       "التحليلات المرضية - تخصصات ساندة",
-      "الجيولوجيا التطبيقية/الفيزياء - تخصصات ساندة التطبيقية"
+      "الفيزياء - تخصصات ساندة التطبيقية",
+      "الجيولوجيا التطبيقية"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -10972,7 +10975,7 @@
     "universityName": "جامعة بابل",
     "collegeName": "كلية العلوم للبنات",
     "governorate": "بابل",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تخصصات ساندة",
     "studyDuration": 4,
     "departments": [
@@ -11086,7 +11089,8 @@
     "studyDuration": 4,
     "departments": [
       "علوم الحاسوب",
-      "نظم المعلومات الحاسوبية/الانظمة الطبية الذكية",
+      "الانظمة الطبية الذكية",
+      "نظم المعلومات الحاسوبية",
       "الامن السيبراني"
     ],
     "branch": "احيائي",
@@ -11472,7 +11476,8 @@
       "الاحصاء",
       "البرمجيات",
       "بحوث العمليات والتقنيات الذكائية",
-      "الشبكات/الامن السيبراني",
+      "الامن السيبراني",
+      "الشبكات",
       "الذكاء الاصطناعي"
     ],
     "branch": "احيائي",
@@ -11500,7 +11505,8 @@
     "studyDuration": 4,
     "departments": [
       "علوم الحاسوب",
-      "نظم المعلومات الحاسوبية/الانظمة الطبية الذكية"
+      "الانظمة الطبية الذكية",
+      "نظم المعلومات الحاسوبية"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -11850,7 +11856,7 @@
     "universityName": "جامعة بغداد",
     "collegeName": "كلية التربية للبنات-قسم اللغة الانكليزية",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية انجليزي",
     "studyDuration": 4,
     "departments": [
@@ -11928,7 +11934,7 @@
     "universityName": "جامعة الشطرة",
     "collegeName": "كلية التربية للبنات-قسم رياض الاطفال",
     "governorate": "ذي قار",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية رياض اطفال",
     "studyDuration": 4,
     "departments": [
@@ -12006,7 +12012,7 @@
     "universityName": "الجامعة العراقية",
     "collegeName": "كلية التربية للبنات-قسم اللغة الانكليزية",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية انجليزي",
     "studyDuration": 4,
     "departments": [
@@ -12188,7 +12194,7 @@
     "universityName": "جامعة الانبار",
     "collegeName": "كلية التربية للبنات-قسم اللغة الانكليزية",
     "governorate": "الانبار",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية انجليزي",
     "studyDuration": 4,
     "departments": [
@@ -12266,7 +12272,7 @@
     "universityName": "جامعة تكريت",
     "collegeName": "كلية التربية للبنات-قسم اللغة الانكليزية",
     "governorate": "صلاح الدين",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية انجليزي",
     "studyDuration": 4,
     "departments": [
@@ -12426,7 +12432,7 @@
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية التربية للبنات-قسم اللغة الانكليزية",
     "governorate": "النجف",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية انجليزي",
     "studyDuration": 4,
     "departments": [
@@ -12571,7 +12577,7 @@
     "universityName": "جامعة بغداد",
     "collegeName": "كلية التربية للبنات-قسم الاقتصاد المنزلي",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية اقتصاد منزلي",
     "studyDuration": 4,
     "departments": [
@@ -12716,7 +12722,7 @@
     "universityName": "جامعة القادسية",
     "collegeName": "كلية التربية للبنات-قسم رياض الاطفال",
     "governorate": "القادسية",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية رياض اطفال",
     "studyDuration": 4,
     "departments": [
@@ -12742,7 +12748,7 @@
     "universityName": "جامعة بغداد",
     "collegeName": "كلية التربية للبنات",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -12808,7 +12814,7 @@
     "universityName": "الجامعة العراقية",
     "collegeName": "كلية التربية للبنات-قسم رياض الاطفال والتربية الخاصة",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية رياض اطفال",
     "studyDuration": 4,
     "departments": [
@@ -12834,7 +12840,7 @@
     "universityName": "جامعة القادسية",
     "collegeName": "كلية التربية للبنات",
     "governorate": "القادسية",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -12944,7 +12950,7 @@
     "universityName": "جامعة الموصل",
     "collegeName": "كلية التربية للبنات",
     "governorate": "نينوى",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -13024,7 +13030,7 @@
     "universityName": "جامعة بغداد",
     "collegeName": "كلية التربية للبنات-قسم رياض الاطفال",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية رياض اطفال",
     "studyDuration": 4,
     "departments": [
@@ -13080,7 +13086,7 @@
     "universityName": "جامعة تكريت",
     "collegeName": "كلية التربية للبنات",
     "governorate": "صلاح الدين",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -13168,7 +13174,7 @@
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية التربية للبنات",
     "governorate": "النجف",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -13230,7 +13236,7 @@
     "universityName": "جامعة الشطرة",
     "collegeName": "كلية التربية للبنات",
     "governorate": "ذي قار",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -13315,7 +13321,7 @@
     "universityName": "الجامعة العراقية",
     "collegeName": "كلية التربية للبنات",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -13346,7 +13352,7 @@
     "universityName": "جامعة الانبار",
     "collegeName": "كلية التربية للبنات",
     "governorate": "الانبار",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -13408,7 +13414,7 @@
     "universityName": "جامعة كركوك",
     "collegeName": "كلية التربية للبنات",
     "governorate": "كركوك",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -13558,7 +13564,7 @@
     "universityName": "جامعة البصرة",
     "collegeName": "كلية التربية للبنات",
     "governorate": "البصرة",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -13798,7 +13804,7 @@
     "universityName": "جامعة بغداد",
     "collegeName": "كلية التربية للبنات-قسم اللغة الانكليزية",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية انجليزي",
     "studyDuration": 4,
     "departments": [
@@ -13902,7 +13908,7 @@
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية التربية للبنات-قسم اللغة الانكليزية",
     "governorate": "النجف",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية انجليزي",
     "studyDuration": 4,
     "departments": [
@@ -14006,7 +14012,7 @@
     "universityName": "الجامعة العراقية",
     "collegeName": "كلية التربية للبنات-قسم اللغة الانكليزية",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية انجليزي",
     "studyDuration": 4,
     "departments": [
@@ -14188,7 +14194,7 @@
     "universityName": "جامعة الانبار",
     "collegeName": "كلية التربية للبنات-قسم اللغة الانكليزية",
     "governorate": "الانبار",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية انجليزي",
     "studyDuration": 4,
     "departments": [
@@ -14214,7 +14220,7 @@
     "universityName": "جامعة تكريت",
     "collegeName": "كلية التربية للبنات-قسم اللغة الانكليزية",
     "governorate": "صلاح الدين",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية انجليزي",
     "studyDuration": 4,
     "departments": [
@@ -14644,7 +14650,7 @@
     "universityName": "جامعة البصرة",
     "collegeName": "كلية التربية للبنات",
     "governorate": "البصرة",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -14855,7 +14861,7 @@
     "universityName": "جامعة القادسية",
     "collegeName": "كلية التربية للبنات",
     "governorate": "القادسية",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -14911,7 +14917,7 @@
     "universityName": "جامعة بغداد",
     "collegeName": "كلية التربية للبنات",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -15062,7 +15068,7 @@
     "universityName": "جامعة بغداد",
     "collegeName": "كلية التربية للبنات-قسم الاقتصاد المنزلي",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية اقتصاد منزلي",
     "studyDuration": 4,
     "departments": [
@@ -15151,7 +15157,7 @@
     "universityName": "جامعة بغداد",
     "collegeName": "كلية التربية للبنات-قسم رياض الاطفال",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية رياض اطفال",
     "studyDuration": 4,
     "departments": [
@@ -15177,7 +15183,7 @@
     "universityName": "الجامعة العراقية",
     "collegeName": "كلية التربية للبنات",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -15235,7 +15241,7 @@
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية التربية للبنات",
     "governorate": "النجف",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -15443,7 +15449,7 @@
     "universityName": "الجامعة العراقية",
     "collegeName": "كلية التربية للبنات-قسم رياض الاطفال والتربية الخاصة",
     "governorate": "بغداد",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية رياض اطفال",
     "studyDuration": 4,
     "departments": [
@@ -15535,7 +15541,7 @@
     "universityName": "جامعة القادسية",
     "collegeName": "كلية التربية للبنات-قسم رياض الاطفال",
     "governorate": "القادسية",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية رياض اطفال",
     "studyDuration": 4,
     "departments": [
@@ -15592,7 +15598,7 @@
     "universityName": "جامعة الشطرة",
     "collegeName": "كلية التربية للبنات",
     "governorate": "ذي قار",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -15741,7 +15747,7 @@
     "universityName": "جامعة الشطرة",
     "collegeName": "كلية التربية للبنات-قسم رياض الاطفال",
     "governorate": "ذي قار",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "تربية رياض اطفال",
     "studyDuration": 4,
     "departments": [
@@ -15854,7 +15860,7 @@
     "universityName": "جامعة تكريت",
     "collegeName": "كلية التربية للبنات",
     "governorate": "صلاح الدين",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -15887,7 +15893,7 @@
     "universityName": "جامعة كركوك",
     "collegeName": "كلية التربية للبنات",
     "governorate": "كركوك",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -15919,7 +15925,7 @@
     "universityName": "جامعة الموصل",
     "collegeName": "كلية التربية للبنات",
     "governorate": "نينوى",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -15949,7 +15955,7 @@
     "universityName": "جامعة الانبار",
     "collegeName": "كلية التربية للبنات",
     "governorate": "الانبار",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "كلية التربية",
     "studyDuration": 4,
     "departments": [
@@ -16016,7 +16022,7 @@
     "collegeType": "كلية اللغات",
     "studyDuration": 4,
     "departments": [
-      "التركي",
+      "التركية",
       "الفارسي",
       "اللغة الفرنسية",
       "الانكليزية"
@@ -16653,7 +16659,7 @@
     "collegeType": "كلية اللغات",
     "studyDuration": 4,
     "departments": [
-      "التركي",
+      "التركية",
       "الفارسي",
       "اللغة الفرنسية",
       "الانكليزية"
@@ -19237,7 +19243,7 @@
     "universityName": "جامعة الفرات الاوسط التقنية",
     "collegeName": "المعهد التقني الكوفة/التخصصات الطبية-قسم تقنيات التمريض",
     "governorate": "النجف",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -19263,7 +19269,7 @@
     "universityName": "الجامعة التقنية الجنوبية",
     "collegeName": "المعهد التقني العمارة/التخصصات الطبية-قسم تقنيات التمريض",
     "governorate": "ميسان",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -19289,7 +19295,7 @@
     "universityName": "الجامعة التقنية الوسطى",
     "collegeName": "المعهد التقني الكوت/التخصصات الطبية-قسم تقنيات التمريض",
     "governorate": "واسط",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -19315,7 +19321,7 @@
     "universityName": "الجامعة التقنية الوسطى",
     "collegeName": "المعهد التقني بعقوبة/التخصصات الطبية-قسم تقنيات التمريض",
     "governorate": "ديالى",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -19341,7 +19347,7 @@
     "universityName": "جامعة الفرات الاوسط التقنية",
     "collegeName": "المعهد التقني بابل/التخصصات الطبية-قسم تقنيات التمريض",
     "governorate": "بابل",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -19367,7 +19373,7 @@
     "universityName": "الجامعة التقنية الشمالية",
     "collegeName": "المعهد التقني الطبي/الموصل-قسم تقنيات التمريض",
     "governorate": "نينوى",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -19445,7 +19451,7 @@
     "universityName": "الجامعة التقنية الشمالية",
     "collegeName": "المعهد التقني الطبي/كركوك-قسم تقنيات التمريض",
     "governorate": "كركوك",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -19586,7 +19592,7 @@
     "universityName": "جامعة الفرات الاوسط التقنية",
     "collegeName": "المعهد التقني القادسية/التخصصات الطبية-قسم تقنيات التمريض",
     "governorate": "القادسية",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -19612,7 +19618,7 @@
     "universityName": "الجامعة التقنية الوسطى",
     "collegeName": "المعهد التقني الصويرة/التخصصات الطبية-قسم تقنيات التمريض",
     "governorate": "واسط",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -19667,7 +19673,7 @@
     "universityName": "جامعة الفرات الاوسط التقنية",
     "collegeName": "المعهد التقني السماوة/التخصصات الطبية-قسم تقنيات التمريض",
     "governorate": "المثنى",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -20072,7 +20078,7 @@
     "universityName": "جامعة الفرات الاوسط التقنية",
     "collegeName": "المعهد التقني الكوفة/التخصصات الطبية-قسم تقنيات التمريض",
     "governorate": "النجف",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -20098,7 +20104,7 @@
     "universityName": "الجامعة التقنية الجنوبية",
     "collegeName": "المعهد التقني العمارة/التخصصات الطبية-قسم تقنيات التمريض",
     "governorate": "ميسان",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -20124,7 +20130,7 @@
     "universityName": "الجامعة التقنية الوسطى",
     "collegeName": "المعهد التقني الكوت/التخصصات الطبية-قسم تقنيات التمريض",
     "governorate": "واسط",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -20150,7 +20156,7 @@
     "universityName": "الجامعة التقنية الوسطى",
     "collegeName": "المعهد التقني بعقوبة/التخصصات الطبية-قسم تقنيات التمريض",
     "governorate": "ديالى",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -20176,7 +20182,7 @@
     "universityName": "جامعة الفرات الاوسط التقنية",
     "collegeName": "المعهد التقني بابل/التخصصات الطبية-قسم تقنيات التمريض",
     "governorate": "بابل",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -20202,7 +20208,7 @@
     "universityName": "الجامعة التقنية الشمالية",
     "collegeName": "المعهد التقني الطبي/الموصل-قسم تقنيات التمريض",
     "governorate": "نينوى",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -20280,7 +20286,7 @@
     "universityName": "الجامعة التقنية الشمالية",
     "collegeName": "المعهد التقني الطبي/كركوك-قسم تقنيات التمريض",
     "governorate": "كركوك",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -20421,7 +20427,7 @@
     "universityName": "جامعة الفرات الاوسط التقنية",
     "collegeName": "المعهد التقني القادسية/التخصصات الطبية-قسم تقنيات التمريض",
     "governorate": "القادسية",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -20447,7 +20453,7 @@
     "universityName": "الجامعة التقنية الوسطى",
     "collegeName": "المعهد التقني الصويرة/التخصصات الطبية-قسم تقنيات التمريض",
     "governorate": "واسط",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -20502,7 +20508,7 @@
     "universityName": "جامعة الفرات الاوسط التقنية",
     "collegeName": "المعهد التقني السماوة/التخصصات الطبية-قسم تقنيات التمريض",
     "governorate": "المثنى",
-    "gender": "اناث فقط",
+    "gender": "اناث",
     "collegeType": "معهد تمريض - تعيين مركزي",
     "studyDuration": 2,
     "departments": [
@@ -20693,7 +20699,7 @@
     "collegeType": "الكلية التقنية الادارية",
     "studyDuration": 4,
     "departments": [
-      "تقنيات ادارة الاعمال",
+      "تقنيات إدارة الأعمال",
       "تقنيات المالية والمصرفية"
     ],
     "branch": "ادبي",
@@ -20773,7 +20779,7 @@
     "studyDuration": 4,
     "departments": [
       "تقنيات المحاسبة",
-      "تقنيات ادارة الاعمال",
+      "تقنيات إدارة الأعمال",
       "ادارة تقنيات المعلومات"
     ],
     "branch": "ادبي",
@@ -20802,7 +20808,7 @@
     "departments": [
       "ادارة تقنيات المعلومات",
       "تقنيات الاحصاء والمعلوماتية",
-      "تقنيات ادارة الاعمال",
+      "تقنيات إدارة الأعمال",
       "تقنيات المحاسبة"
     ],
     "branch": "ادبي",
@@ -20830,7 +20836,7 @@
     "studyDuration": 4,
     "departments": [
       "تقنيات المحاسبة",
-      "تقنيات ادارة الاعمال",
+      "تقنيات إدارة الأعمال",
       "تقنيات ادارة الجودة الشاملة",
       "تقنيات العلوم المالية والمصرفية",
       "تقنيات ادارة السياحة",
@@ -22909,7 +22915,7 @@
     "studyDuration": 4,
     "departments": [
       "تقنيات المحاسبة",
-      "تقنيات ادارة الاعمال",
+      "تقنيات إدارة الأعمال",
       "ادارة تقنيات المعلومات"
     ],
     "branch": "تطبيقي",
@@ -22989,7 +22995,7 @@
     "studyDuration": 4,
     "departments": [
       "تقنيات المحاسبة",
-      "تقنيات ادارة الاعمال",
+      "تقنيات إدارة الأعمال",
       "تقنيات ادارة الجودة الشاملة",
       "تقنيات العلوم المالية والمصرفية",
       "تقنيات ادارة السياحة",
@@ -23019,7 +23025,7 @@
     "collegeType": "الكلية التقنية الادارية",
     "studyDuration": 4,
     "departments": [
-      "تقنيات ادارة الاعمال",
+      "تقنيات إدارة الأعمال",
       "تقنيات المحاسبة",
       "ادارة تقنيات المعلومات"
     ],
@@ -23047,7 +23053,7 @@
     "collegeType": "الكلية التقنية الادارية",
     "studyDuration": 4,
     "departments": [
-      "تقنيات ادارة الاعمال",
+      "تقنيات إدارة الأعمال",
       "تقنيات المالية والمصرفية"
     ],
     "branch": "تطبيقي",
@@ -23076,7 +23082,7 @@
     "departments": [
       "ادارة تقنيات المعلومات",
       "تقنيات الاحصاء والمعلوماتية",
-      "تقنيات ادارة الاعمال",
+      "تقنيات إدارة الأعمال",
       "تقنيات المحاسبة"
     ],
     "branch": "تطبيقي",
@@ -23341,7 +23347,7 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية الآداب-قسم المعلومات وتقنيات المعرفة",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "كلية الاداب",
     "studyDuration": 4,
@@ -23532,7 +23538,7 @@
   {
     "universityName": "جامعة الانبار",
     "collegeName": "كلية الآداب",
-    "governorate": "الأنبار",
+    "governorate": "الانبار",
     "gender": "كلاهما",
     "collegeType": "كلية الاداب",
     "studyDuration": 4,
@@ -23625,7 +23631,7 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية الآداب",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "كلية الاداب",
     "studyDuration": 4,
@@ -23633,7 +23639,8 @@
       "اللغة الانكليزية",
       "التاريخ",
       "الاجتماع",
-      "اللغة العربية/الترجمة",
+      "اللغة العربية",
+      "الترجمة",
       "الفلسفة",
       "الاعلام",
       "اللغة الفرنسية",
@@ -23777,7 +23784,7 @@
   {
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية الآداب",
-    "governorate": "الكوفة",
+    "governorate": "النجف",
     "gender": "كلاهما",
     "collegeType": "كلية الاداب",
     "studyDuration": 4,
@@ -23838,7 +23845,7 @@
   {
     "universityName": "جامعة سامراء",
     "collegeName": "كلية الآداب",
-    "governorate": "سامراء",
+    "governorate": "صلاح الدين",
     "gender": "كلاهما",
     "collegeType": "كلية الاداب",
     "studyDuration": 4,
@@ -24095,7 +24102,7 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية التربية الأساسية-قسم اللغة الانكليزية",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "تربية انكليزي",
     "studyDuration": 4,
@@ -24154,7 +24161,7 @@
     "departments": [
       "اللغة العربية",
       "التاريخ",
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "ادبي",
     "admissions": [
@@ -24180,7 +24187,7 @@
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "ادبي",
     "admissions": [
@@ -24207,7 +24214,7 @@
     "studyDuration": 4,
     "departments": [
       "اللغة العربية",
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "ادبي",
     "admissions": [
@@ -24233,7 +24240,7 @@
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "ادبي",
     "admissions": [
@@ -24283,7 +24290,7 @@
     "universityName": "جامعة كركوك",
     "collegeName": "كلية التربية الأساسية-قسم رياض الاطفال",
     "governorate": "كركوك",
-    "gender": "انثى فقط",
+    "gender": "انثى",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
@@ -24307,13 +24314,13 @@
   },
   {
     "universityName": "جامعة الموصل",
-    "collegeName": "كلية التربية الأساسية-قسم معلم الصفوف الاولى",
-    "governorate": "الموصل",
+    "collegeName": "كلية التربية الأساسية-قسم معلم الصفوف الأولى",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "ادبي",
     "admissions": [
@@ -24334,8 +24341,8 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية التربية الأساسية-قسم رياض الاطفال للبنات",
-    "governorate": "الموصل",
-    "gender": "انثى فقط",
+    "governorate": "نينوى",
+    "gender": "انثى",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
@@ -24361,7 +24368,7 @@
     "universityName": "جامعة واسط",
     "collegeName": "كلية التربية الأساسية/العزيزية-قسم رياض الاطفال",
     "governorate": "واسط",
-    "gender": "انثى فقط",
+    "gender": "انثى",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
@@ -24386,12 +24393,12 @@
   {
     "universityName": "جامعة الانبار",
     "collegeName": "كلية التربية الأساسية/حديثة-قسم معلم الصفوف الأولى",
-    "governorate": "الأنبار",
+    "governorate": "الانبار",
     "gender": "كلاهما",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "ادبي",
     "admissions": [
@@ -24426,7 +24433,7 @@
       "التربية الفنية",
       "اللغة الانكليزية",
       "رياض الاطفال",
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "ادبي",
     "admissions": [
@@ -24447,7 +24454,7 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية التربية الأساسية",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
@@ -24458,7 +24465,7 @@
       "تربية اسلامية",
       "اللغة الانكليزية",
       "تربية خاصة",
-      "معلم الصفوف الاولى",
+      "معلم الصفوف الأولى",
       "رياض الاطفال للبنات"
     ],
     "branch": "ادبي",
@@ -24507,7 +24514,7 @@
     "universityName": "الجامعة المستنصرية",
     "collegeName": "كلية التربية الأساسية-قسم رياض الاطفال",
     "governorate": "بغداد",
-    "gender": "انثى فقط",
+    "gender": "انثى",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
@@ -24537,7 +24544,7 @@
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "ادبي",
     "admissions": [
@@ -24563,7 +24570,7 @@
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "ادبي",
     "admissions": [
@@ -24615,7 +24622,7 @@
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "ادبي",
     "admissions": [
@@ -24661,13 +24668,13 @@
   },
   {
     "universityName": "جامعة ميسان",
-    "collegeName": "كلية التربية الأساسية-قسم معلم الصفوف الاولى",
+    "collegeName": "كلية التربية الأساسية-قسم معلم الصفوف الأولى",
     "governorate": "ميسان",
     "gender": "كلاهما",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "ادبي",
     "admissions": [
@@ -24699,7 +24706,7 @@
       "التربية الاسلامية",
       "التربية الفنية",
       "اللغة الانكليزية",
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "ادبي",
     "admissions": [
@@ -24750,7 +24757,7 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية التربية الأساسية-قسم التربية الخاصة",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
@@ -24776,7 +24783,7 @@
   {
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية التربية الاساسية",
-    "governorate": "الكوفة",
+    "governorate": "النجف",
     "gender": "كلاهما",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
@@ -24818,7 +24825,7 @@
       "التربية الفنية",
       "اللغة الانكليزية",
       "رياض الاطفال",
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "ادبي",
     "admissions": [
@@ -24900,8 +24907,8 @@
   {
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية التربية الاساسية-قسم رياض الاطفال",
-    "governorate": "الكوفة",
-    "gender": "انثى فقط",
+    "governorate": "النجف",
+    "gender": "انثى",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
@@ -25182,7 +25189,7 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية الآداب",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "كلية الاداب",
     "studyDuration": 4,
@@ -25190,7 +25197,8 @@
       "اللغة الانكليزية",
       "التاريخ",
       "الاجتماع",
-      "اللغة العربية/الترجمة",
+      "اللغة العربية",
+      "الترجمة",
       "الفلسفة",
       "الاعلام",
       "اللغة الفرنسية",
@@ -25273,7 +25281,7 @@
   {
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية الآداب",
-    "governorate": "الكوفة",
+    "governorate": "النجف",
     "gender": "كلاهما",
     "collegeType": "كلية الاداب",
     "studyDuration": 4,
@@ -25420,7 +25428,7 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية الآداب-قسم المعلومات وتقنيات المعرفة",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "كلية الاداب",
     "studyDuration": 4,
@@ -25476,7 +25484,7 @@
   {
     "universityName": "جامعة الانبار",
     "collegeName": "كلية الآداب",
-    "governorate": "الأنبار",
+    "governorate": "الانبار",
     "gender": "كلاهما",
     "collegeType": "كلية الاداب",
     "studyDuration": 4,
@@ -25598,7 +25606,7 @@
   {
     "universityName": "جامعة سامراء",
     "collegeName": "كلية الآداب",
-    "governorate": "سامراء",
+    "governorate": "صلاح الدين",
     "gender": "كلاهما",
     "collegeType": "كلية الاداب",
     "studyDuration": 4,
@@ -25706,7 +25714,7 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية التربية الأساسية-قسم اللغة الانكليزية",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "تربية انكليزي",
     "studyDuration": 4,
@@ -25815,7 +25823,7 @@
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -25841,7 +25849,7 @@
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -25861,13 +25869,13 @@
   },
   {
     "universityName": "جامعة ميسان",
-    "collegeName": "كلية التربية الأساسية-قسم معلم الصفوف الاولى",
+    "collegeName": "كلية التربية الأساسية-قسم معلم الصفوف الأولى",
     "governorate": "ميسان",
     "gender": "كلاهما",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -25887,13 +25895,13 @@
   },
   {
     "universityName": "جامعة سومر",
-    "collegeName": "كلية التربية الأساسية-قسم معلم الصفوف الاولى",
+    "collegeName": "كلية التربية الأساسية-قسم معلم الصفوف الأولى",
     "governorate": "ذي قار",
     "gender": "كلاهما",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -25948,7 +25956,7 @@
       "اللغة العربية",
       "التاريخ",
       "العلوم",
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -25974,7 +25982,7 @@
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -26002,7 +26010,7 @@
     "departments": [
       "اللغة العربية",
       "العلوم",
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -26055,7 +26063,7 @@
   {
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية التربية الاساسية",
-    "governorate": "الكوفة",
+    "governorate": "النجف",
     "gender": "كلاهما",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
@@ -26084,12 +26092,12 @@
   {
     "universityName": "جامعة الانبار",
     "collegeName": "كلية التربية الأساسية/حديثة-قسم معلم الصفوف الأولى",
-    "governorate": "الأنبار",
+    "governorate": "الانبار",
     "gender": "كلاهما",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -26110,12 +26118,12 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية التربية الأساسية-قسم معلم الصفوف الأولى",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -26136,8 +26144,8 @@
   {
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية التربية الاساسية-قسم رياض الاطفال",
-    "governorate": "الكوفة",
-    "gender": "انثى فقط",
+    "governorate": "النجف",
+    "gender": "انثى",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
@@ -26175,7 +26183,7 @@
       "الرياضيات",
       "العلوم",
       "اللغة الانكليزية",
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -26228,7 +26236,7 @@
     "universityName": "جامعة واسط",
     "collegeName": "كلية التربية الأساسية/العزيزية-قسم رياض الاطفال",
     "governorate": "واسط",
-    "gender": "انثى فقط",
+    "gender": "انثى",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
@@ -26270,7 +26278,7 @@
       "علوم الحاسوب",
       "اللغة الانكليزية",
       "رياض الاطفال",
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -26292,7 +26300,7 @@
     "universityName": "الجامعة المستنصرية",
     "collegeName": "كلية التربية الأساسية-قسم رياض الاطفال",
     "governorate": "بغداد",
-    "gender": "انثى فقط",
+    "gender": "انثى",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
@@ -26347,8 +26355,8 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية التربية الأساسية-قسم رياض الاطفال للبنات",
-    "governorate": "الموصل",
-    "gender": "انثى فقط",
+    "governorate": "نينوى",
+    "gender": "انثى",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
@@ -26378,7 +26386,7 @@
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -26399,7 +26407,7 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية التربية الأساسية",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
@@ -26412,7 +26420,7 @@
       "الرياضيات",
       "اللغة الانكليزية",
       "تربية خاصة",
-      "معلم الصفوف الاولى",
+      "معلم الصفوف الأولى",
       "رياض الاطفال للبنات"
     ],
     "branch": "احيائي",
@@ -26435,7 +26443,7 @@
     "universityName": "جامعة كركوك",
     "collegeName": "كلية التربية الأساسية-قسم رياض الاطفال",
     "governorate": "كركوك",
-    "gender": "انثى فقط",
+    "gender": "انثى",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
     "departments": [
@@ -26460,7 +26468,7 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية التربية الأساسية-قسم التربية الخاصة",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
@@ -26512,7 +26520,7 @@
   {
     "universityName": "جامعة الانبار",
     "collegeName": "كلية التربية الأساسية/حديثة",
-    "governorate": "الأنبار",
+    "governorate": "الانبار",
     "gender": "كلاهما",
     "collegeType": "كلية التربية ألاساسية",
     "studyDuration": 4,
@@ -26520,7 +26528,7 @@
       "اللغة العربية",
       "التاريخ",
       "العلوم",
-      "معلم الصفوف الاولى"
+      "معلم الصفوف الأولى"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -26665,7 +26673,7 @@
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة الاعمال",
+      "إدارة الأعمال",
       "الاقتصاد",
       "المحاسبة",
       "العلوم المالية والمصرفية"
@@ -26695,7 +26703,7 @@
     "studyDuration": 4,
     "departments": [
       "العلوم المالية والمصرفية",
-      "ادارة اعمال",
+      "إدارة الأعمال",
       "محاسبة"
     ],
     "branch": "ادبي",
@@ -26724,7 +26732,7 @@
     "departments": [
       "المحاسبة",
       "علوم مالية ومصرفية",
-      "ادارة الاعمال"
+      "إدارة الأعمال"
     ],
     "branch": "ادبي",
     "admissions": [
@@ -26779,7 +26787,7 @@
     "departments": [
       "الاقتصاد",
       "المحاسبة",
-      "ادارة الاعمال"
+      "إدارة الأعمال"
     ],
     "branch": "ادبي",
     "admissions": [
@@ -26806,7 +26814,7 @@
     "studyDuration": 4,
     "departments": [
       "إدارة عامة",
-      "إدارة الاعمال",
+      "إدارة الأعمال",
       "المحاسبة"
     ],
     "branch": "ادبي",
@@ -26835,7 +26843,7 @@
     "departments": [
       "الاقتصاد",
       "المحاسبة",
-      "ادارة الاعمال",
+      "إدارة الأعمال",
       "العلوم المالية والمصرفية"
     ],
     "branch": "ادبي",
@@ -26857,12 +26865,12 @@
   {
     "universityName": "جامعة الانبار",
     "collegeName": "كلية الادارة والاقتصاد",
-    "governorate": "الأنبار",
+    "governorate": "الانبار",
     "gender": "كلاهما",
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة الاعمال",
+      "إدارة الأعمال",
       "الاقتصاد",
       "المحاسبة",
       "الادارة العامة",
@@ -26887,12 +26895,12 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية الادارة والاقتصاد",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة اعمال",
+      "إدارة الأعمال",
       "الاقتصاد",
       "المحاسبة",
       "الادارة الصناعية",
@@ -26918,13 +26926,13 @@
   {
     "universityName": "جامعة سامراء",
     "collegeName": "كلية الادارة والاقتصاد",
-    "governorate": "سامراء",
+    "governorate": "صلاح الدين",
     "gender": "كلاهما",
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
       "الاقتصاد",
-      "إدارة الاعمال"
+      "إدارة الأعمال"
     ],
     "branch": "ادبي",
     "admissions": [
@@ -26979,7 +26987,7 @@
     "departments": [
       "العلوم المالية والمصرفية",
       "الاقتصاد بفرعيه",
-      "ادارة الاعمال",
+      "إدارة الأعمال",
       "المحاسبة"
     ],
     "branch": "ادبي",
@@ -27006,7 +27014,7 @@
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة أعمال",
+      "إدارة الأعمال",
       "المحاسبة",
       "علوم مالية ومصرفية",
       "الاقتصاد وفروعه"
@@ -27036,7 +27044,7 @@
     "studyDuration": 4,
     "departments": [
       "العلوم المالية والمصرفية",
-      "ادارة الاعمال",
+      "إدارة الأعمال",
       "الاقتصاد",
       "المحاسبة"
     ],
@@ -27064,7 +27072,7 @@
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة الأعمال",
+      "إدارة الأعمال",
       "الاقتصاد",
       "المحاسبة",
       "العلوم المالية والمصرفية"
@@ -27093,7 +27101,7 @@
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة الاعمال",
+      "إدارة الأعمال",
       "الاقتصاد",
       "المحاسبة",
       "العلوم المالية والمصرفية",
@@ -27124,7 +27132,7 @@
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة الأعمال",
+      "إدارة الأعمال",
       "الاقتصاد",
       "علوم مالية ومصرفية",
       "المحاسبة"
@@ -27148,12 +27156,12 @@
   {
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية الادارة والاقتصاد",
-    "governorate": "الكوفة",
+    "governorate": "النجف",
     "gender": "كلاهما",
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة الأعمال",
+      "إدارة الأعمال",
       "الاقتصاد",
       "المحاسبة",
       "العلوم المصرفية والمالية",
@@ -27178,7 +27186,7 @@
   {
     "universityName": "جامعة الفلوجة",
     "collegeName": "كلية الادارة والاقتصاد",
-    "governorate": "الأنبار",
+    "governorate": "الانبار",
     "gender": "كلاهما",
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
@@ -27186,7 +27194,8 @@
       "ادارة عامة",
       "الاقتصاد",
       "العلوم المالية والمصرفية",
-      "إدارة الاعمال/المحاسبة"
+      "إدارة الأعمال",
+      "المحاسبة"
     ],
     "branch": "ادبي",
     "admissions": [
@@ -27212,7 +27221,7 @@
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة الاعمال",
+      "إدارة الأعمال",
       "الاقتصاد"
     ],
     "branch": "ادبي",
@@ -27239,7 +27248,7 @@
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة الاعمال",
+      "إدارة الأعمال",
       "المحاسبة"
     ],
     "branch": "ادبي",
@@ -27327,7 +27336,7 @@
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة الاعمال",
+      "إدارة الأعمال",
       "الاقتصاد",
       "المحاسبة",
       "العلوم المالية والمصرفية",
@@ -27357,7 +27366,7 @@
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة أعمال",
+      "إدارة الأعمال",
       "المحاسبة",
       "علوم مالية ومصرفية",
       "نظم المعلومات الادارية",
@@ -27390,7 +27399,7 @@
     "departments": [
       "المحاسبة",
       "علوم مالية ومصرفية",
-      "ادارة الاعمال"
+      "إدارة الأعمال"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -27444,7 +27453,7 @@
     "studyDuration": 4,
     "departments": [
       "العلوم المالية والمصرفية",
-      "ادارة اعمال",
+      "إدارة الأعمال",
       "محاسبة"
     ],
     "branch": "احيائي",
@@ -27473,7 +27482,7 @@
     "departments": [
       "العلوم المالية والمصرفية",
       "الاقتصاد بفرعيه",
-      "ادارة الاعمال",
+      "إدارة الأعمال",
       "المحاسبة"
     ],
     "branch": "احيائي",
@@ -27500,7 +27509,7 @@
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة الأعمال",
+      "إدارة الأعمال",
       "الاقتصاد",
       "علوم مالية ومصرفية",
       "المحاسبة",
@@ -27531,7 +27540,7 @@
     "studyDuration": 4,
     "departments": [
       "العلوم المالية والمصرفية",
-      "ادارة الاعمال",
+      "إدارة الأعمال",
       "الاقتصاد",
       "المحاسبة"
     ],
@@ -27561,7 +27570,7 @@
     "departments": [
       "الاقتصاد",
       "المحاسبة",
-      "ادارة الاعمال"
+      "إدارة الأعمال"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -27582,12 +27591,12 @@
   {
     "universityName": "جامعة الكوفة",
     "collegeName": "كلية الادارة والاقتصاد",
-    "governorate": "الكوفة",
+    "governorate": "النجف",
     "gender": "كلاهما",
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة الأعمال",
+      "إدارة الأعمال",
       "الاقتصاد",
       "المحاسبة",
       "العلوم المصرفية والمالية",
@@ -27612,13 +27621,13 @@
   {
     "universityName": "جامعة سامراء",
     "collegeName": "كلية الادارة والاقتصاد",
-    "governorate": "سامراء",
+    "governorate": "صلاح الدين",
     "gender": "كلاهما",
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
       "الاقتصاد",
-      "إدارة الاعمال"
+      "إدارة الأعمال"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -27673,7 +27682,7 @@
     "studyDuration": 4,
     "departments": [
       "إدارة عامة",
-      "إدارة الاعمال",
+      "إدارة الأعمال",
       "المحاسبة",
       "الاحصاء"
     ],
@@ -27701,7 +27710,7 @@
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة الأعمال",
+      "إدارة الأعمال",
       "الاقتصاد",
       "المحاسبة",
       "العلوم المالية والمصرفية",
@@ -27733,7 +27742,7 @@
     "departments": [
       "الاقتصاد",
       "المحاسبة",
-      "ادارة الاعمال",
+      "إدارة الأعمال",
       "العلوم المالية والمصرفية",
       "الاحصاء"
     ],
@@ -27756,12 +27765,12 @@
   {
     "universityName": "جامعة الانبار",
     "collegeName": "كلية الادارة والاقتصاد",
-    "governorate": "الأنبار",
+    "governorate": "الانبار",
     "gender": "كلاهما",
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة الاعمال",
+      "إدارة الأعمال",
       "الاقتصاد",
       "المحاسبة",
       "الادارة العامة",
@@ -27791,7 +27800,7 @@
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة الاعمال",
+      "إدارة الأعمال",
       "الاقتصاد",
       "الاحصاء"
     ],
@@ -27819,7 +27828,7 @@
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة الاعمال",
+      "إدارة الأعمال",
       "المحاسبة"
     ],
     "branch": "احيائي",
@@ -27841,12 +27850,12 @@
   {
     "universityName": "جامعة الموصل",
     "collegeName": "كلية الادارة والاقتصاد",
-    "governorate": "الموصل",
+    "governorate": "نينوى",
     "gender": "كلاهما",
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة اعمال",
+      "إدارة الأعمال",
       "الاقتصاد",
       "المحاسبة",
       "الادارة الصناعية",
@@ -27873,7 +27882,7 @@
   {
     "universityName": "جامعة الفلوجة",
     "collegeName": "كلية الادارة والاقتصاد",
-    "governorate": "الأنبار",
+    "governorate": "الانبار",
     "gender": "كلاهما",
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
@@ -27881,7 +27890,7 @@
       "ادارة عامة",
       "الاقتصاد",
       "العلوم المالية والمصرفية",
-      "إدارة الاعمال/المحاسبة"
+      "إدارة الأعمال/المحاسبة"
     ],
     "branch": "احيائي",
     "admissions": [
@@ -27907,7 +27916,7 @@
     "collegeType": "الادارة والاقتصاد",
     "studyDuration": 4,
     "departments": [
-      "ادارة الاعمال",
+      "إدارة الأعمال",
       "الاقتصاد",
       "المحاسبة",
       "العلوم المالية والمصرفية",
@@ -28222,7 +28231,7 @@
   {
     "universityName": "جامعة الفلوجة",
     "collegeName": "كلية الطب",
-    "governorate": "الأنبار",
+    "governorate": "الانبار",
     "gender": "كلاهما",
     "collegeType": "المجموعة الطبية",
     "studyDuration": 6,
@@ -28390,7 +28399,7 @@
   {
     "universityName": "جامعة الانبار",
     "collegeName": "كلية الطب",
-    "governorate": "الأنبار",
+    "governorate": "الانبار",
     "gender": "كلاهما",
     "collegeType": "المجموعة الطبية",
     "studyDuration": 6,
@@ -29014,7 +29023,7 @@
   {
     "universityName": "جامعة الانبار",
     "collegeName": "كلية طب الاسنان",
-    "governorate": "الأنبار",
+    "governorate": "الانبار",
     "gender": "كلاهما",
     "collegeType": "المجموعة الطبية",
     "studyDuration": 5,
@@ -29206,7 +29215,7 @@
   {
     "universityName": "جامعة الانبار",
     "collegeName": "كلية الصيدلة",
-    "governorate": "الأنبار",
+    "governorate": "الانبار",
     "gender": "كلاهما",
     "collegeType": "المجموعة الطبية",
     "studyDuration": 5,

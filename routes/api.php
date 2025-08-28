@@ -78,6 +78,7 @@ Route::middleware(['auth:sanctum', 'admin','activation'])->group(function () {
     Route::get('/show-unactive-users', [UserController::class, 'index']); // List all inactive users
     // Route::put('/activation/{id}', [UserController::class, 'active']); // Activate a specific user
      Route::get('/university', [UniversityController::class, 'index']); // Get all departments
+       Route::get('/department', [DepartmentController::class, 'index']); // Get all departments
 });
 
 /*
