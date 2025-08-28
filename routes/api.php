@@ -56,6 +56,8 @@ Route::get('/get-colleges', [CollegeController::class, 'index']);
 */
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/check-activation_code', [UserController::class, 'checkActivationCode']); // Verify activation code
+    Route::put('/college/{id}', [CollegeController::class, 'update']);
+    Route::delete('college/{id}', [CollegeController::class, 'delete']);
 });
 
 /*
