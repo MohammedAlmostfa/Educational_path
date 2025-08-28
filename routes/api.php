@@ -1,16 +1,17 @@
 <?php
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\CollegeController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\UniversityController;
 use App\Http\Controllers\DeviceTokenController;
-use App\Http\Controllers\FavoriteCollegeController;
 use App\Http\Controllers\GovernorateController;
 use App\Http\Controllers\SavedCollegeController;
-use App\Http\Controllers\UserController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FavoriteCollegeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,6 +77,7 @@ Route::middleware(['auth:sanctum', 'admin','activation'])->group(function () {
 
     Route::get('/show-unactive-users', [UserController::class, 'index']); // List all inactive users
     // Route::put('/activation/{id}', [UserController::class, 'active']); // Activate a specific user
+     Route::get('/university', [UniversityController::class, 'index']); // Get all departments
 });
 
 /*
@@ -90,7 +92,7 @@ Route::middleware(['auth:sanctum', 'admin','activation'])->group(function () {
 */
 Route::middleware(['auth:sanctum', 'activation'])->group(function () {
     Route::get('/content', [ContentController::class, 'index']); // View content
-    Route::get('/department', [DepartmentController::class, 'index']); // Get all departments
+
     Route::get('/governorate', [GovernorateController::class, 'index']); // Get all governorates
 
     // User information management

@@ -74,8 +74,7 @@ class AuthService extends Service
                 'token' => $token,
                 'user' => new UserResource($user),
             ]);
-        } catch (ValidationException $e) {
-            return $this->errorResponse($e->errors(), 422);
+
         } catch (Exception $e) {
             Log::error('Error while logging in user: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء تسجيل الدخول. يرجى المحاولة مرة أخرى.', 500);
