@@ -10,8 +10,10 @@ class CollegeResource extends JsonResource
     {
         return [
             'id'             => $this->id,
-            'university' => ['name'=>$this->university->name ?? null,
-            'id'=>$this->university->id ?? null,],
+            'university' => [
+                'name' => $this->university->name ?? null,
+                'id' => $this->university->id ?? null,
+            ],
             'collegeName'    => $this->name,
 
             'governorate' => $this->university && $this->university->governorate
@@ -40,7 +42,7 @@ class CollegeResource extends JsonResource
 
             'admissions'     => $this->admissions->map(function ($adm) {
                 return [
-                       'id'            => (int) $adm->id,
+                    'id'            => (int) $adm->id,
                     'year'            => (int) $adm->year,
                     'min_average'      => (float) $adm->min_average,
                     'min_total'        => (float) $adm->min_total,

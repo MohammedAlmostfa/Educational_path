@@ -19,7 +19,9 @@ return [
     ],
 'fcm' => [
     'key' => env('FIREBASE_SERVER_KEY'),
-    'credentialsPath' => env('FIREBASE_CREDENTIALS', 'firebase.json'),
+
+    'credentialsPath' => storage_path(env('FIREBASE_CREDENTIALS')),
+
 ],
 
     'resend' => [

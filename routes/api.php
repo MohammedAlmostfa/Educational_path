@@ -78,7 +78,7 @@ Route::middleware(['auth:sanctum', 'admin', 'activation'])->group(function () {
     Route::get('/show-unactive-users', [UserController::class, 'index']); // List all inactive users
     // Route::put('/activation/{id}', [UserController::class, 'active']); // Activate a specific user
     Route::get('/university', [UniversityController::class, 'index']); // Get all departments
-    Route::get('/department', [DepartmentController::class, 'index']); // Get all departments
+
 });
 
 /*
@@ -95,7 +95,7 @@ Route::middleware(['auth:sanctum', 'activation'])->group(function () {
     Route::get('/content', [ContentController::class, 'index']); // View content
 
     Route::get('/governorate', [GovernorateController::class, 'index']); // Get all governorates
-
+  Route::get('/department', [DepartmentController::class, 'index']); // Get all departments
     // User information management
     Route::post('/set-user-information', [UserController::class, 'creat']); // Save user info
     Route::post('/update-user-information', [UserController::class, 'update']); // Update user info
