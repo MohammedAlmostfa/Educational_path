@@ -82,8 +82,7 @@ class ContentService extends Service
             DB::commit();
 
             // Send FCM notification to all users
-            $tokens = DeviceToken::whereNotNull('user_id')
-                ->pluck('fcm_token')
+            $tokens = DeviceToken::pluck('fcm_token')
                 ->filter()
                 ->toArray();
 
