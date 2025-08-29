@@ -11,7 +11,7 @@ use App\Http\Controllers\UniversityController;
 use App\Http\Controllers\DeviceTokenController;
 use App\Http\Controllers\GovernorateController;
 use App\Http\Controllers\SavedCollegeController;
-use App\Http\Controllers\FavoriteCollegeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +24,14 @@ use App\Http\Controllers\FavoriteCollegeController;
 |
 */
 
-// Route to test authenticated user only
+/*
+|--------------------------------------------------------------------------
+| Test Authenticated User Route
+|--------------------------------------------------------------------------
+|
+| Route to return the authenticated user's info.
+|
+*/
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
@@ -34,8 +41,8 @@ Route::get('/user', function (Request $request) {
 | Authentication Routes
 |--------------------------------------------------------------------------
 |
-| Routes for user registration, login, logout, and third-party login (Google)
-| Also includes saving device FCM tokens.
+| Routes for user registration, login, logout, Google login,
+| and saving/updating device FCM tokens.
 |
 */
 Route::post('/register', [AuthController::class, 'register']); // Register a new user
@@ -44,15 +51,19 @@ Route::post('/logout', [AuthController::class, 'logout']); // User logout
 Route::post('/access-with-google', [AuthController::class, 'loginWithGoogle']); // Login via Google
 Route::post('/save-fcm', [DeviceTokenController::class, 'createOrUpdate']); // Save or update device FCM token
 
-// Route to get all colleges (public access)
+// Public access: Get all colleges
 Route::get('/get-colleges', [CollegeController::class, 'index']);
+
+// Public content routes
+Route::get('/content', [ContentController::class, 'index']); // Get all content
+Route::post('/add-viewers/{id}', [ContentController::class, 'addViewers']); // Increment content viewers
 
 /*
 |--------------------------------------------------------------------------
 | Authenticated User Routes
 |--------------------------------------------------------------------------
 |
-| Routes that require the user to be logged in.
+| Routes that require the user to be logged in (auth:sanctum).
 |
 */
 Route::middleware(['auth:sanctum'])->group(function () {
@@ -66,8 +77,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
 | Admin Routes
 |--------------------------------------------------------------------------
 |
-| Routes that require both authentication and admin role.
-| Admins can manage content and users.
+| Routes that require authentication + admin role + activation check.
+| Admins can manage content, users, and universities.
 |
 */
 Route::middleware(['auth:sanctum', 'admin', 'activation'])->group(function () {
@@ -81,7 +92,7 @@ Route::middleware(['auth:sanctum', 'admin', 'activation'])->group(function () {
     // Route::put('/activation/{id}', [UserController::class, 'active']); // Activate a specific user (commented out)
 
     // University management
-    Route::get('/university', [UniversityController::class, 'index']); // Get all departments
+    Route::get('/university', [UniversityController::class, 'index']); // Get all universities/departments
 });
 
 /*
@@ -89,14 +100,13 @@ Route::middleware(['auth:sanctum', 'admin', 'activation'])->group(function () {
 | Authenticated & Activated User Routes
 |--------------------------------------------------------------------------
 |
-| Routes that require authentication and user activation.
-| Includes content viewing, department/governorate listing, user info update,
-| and managing saved colleges.
+| Routes that require authentication + user activation.
+| Includes content viewing, location data, user info management, and saved colleges.
 |
 */
 Route::middleware(['auth:sanctum', 'activation'])->group(function () {
     // Content
-    Route::get('/content', [ContentController::class, 'index']); // View content
+
     Route::post('/add-viewers/{id}', [ContentController::class, 'addViewers']); // Increment content viewers
 
     // Location data
