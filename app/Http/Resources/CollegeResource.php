@@ -42,8 +42,8 @@ class CollegeResource extends JsonResource
 
             'admissions'     => $this->admissions->map(function ($adm) {
                 return [
-                    'id'            => (int) $adm->id,
-                    'year'            => (int) $adm->year,
+                    'id'               => (int) $adm->id,
+                    'year'             => (int) $adm->year,
                     'min_average'      => (float) $adm->min_average,
                     'min_total'        => (float) $adm->min_total,
                     'preference_score' => (int) $adm->preference_score,

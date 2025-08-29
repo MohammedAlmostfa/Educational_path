@@ -33,7 +33,7 @@ class AuthService extends Service
     public function register($data)
     {
         try {
-    $activationCode = Str::lower(Str::random(4));
+    $activationCode = Str::lower(Str::random(6));
 
 
 
@@ -123,7 +123,7 @@ class AuthService extends Service
 
             $payload = $response->json();
             $email = $payload['email'];
-    $activationCode = Str::lower(Str::random(4));
+    $activationCode = Str::lower(Str::random(6));
 
             $user = User::firstOrCreate(
                 ['email' => $email],

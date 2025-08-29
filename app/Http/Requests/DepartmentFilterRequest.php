@@ -9,40 +9,53 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 /**
  * Class DepartmentFilterRequest
  *
- * Handles validation for filtering departments.
+ * 📌 This FormRequest handles validation for filtering departments.
+ *
+ * - Authorization: Allows all users to send this request.
+ * - Validation Rules: Optional string parameter for filtering by name.
+ * - Custom Response: Returns a JSON response with an Arabic error message if validation fails.
  */
 class DepartmentFilterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     *  Allow all users to send this request.
      */
     public function authorize(): bool
     {
-        return true; // السماح لجميع المستخدمين بإرسال الطلب
+        return true;
     }
 
     /**
-     * Validation rules.
+     * Get the validation rules for this request.
      *
-     * For filtering, 'name' should be an array of strings (optional).
+     * @return array<string, string>
+     *  Rules:
+     * - name: optional string (nullable).
      */
     public function rules(): array
     {
         return [
             'name' => 'nullable|string',
-
         ];
     }
 
     /**
-     * Customize failed validation response.
+     * Handle a failed validation attempt.
+     *
+     * @param  Validator  $validator
+     * @throws HttpResponseException
+     *  Returns a JSON response with Arabic error message
+     * if validation does not pass.
      */
     protected function failedValidation(Validator $validator): void
     {
         throw new HttpResponseException(response()->json([
-            'status' => 'error',
-            'message' => 'Validation failed for department filter data',
-            'errors' => $validator->errors(),
+            'status'  => 'error',
+            'message' => 'فشل التحقق من صحة بيانات الفلترة الخاصة بالأقسام', // Arabic message
+            'errors'  => $validator->errors(),
         ], 422));
     }
 }

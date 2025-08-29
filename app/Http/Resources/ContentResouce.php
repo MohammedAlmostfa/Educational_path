@@ -21,7 +21,7 @@ class ContentResouce extends JsonResource
             'title'      => $this->title,
             'body'       => $this->body,
             'viewers'=>$this->viewers,
-            'is_new'     =>  $this->is_new, // يتحول لبوليني بدل سترينغ
+            'is_new'     =>  $this->is_new,
             'created_at' => $this->created_at?->toDateTimeString(),
 
         ];
