@@ -45,8 +45,10 @@ class FcmNotification extends Notification
             return;
         }
 
-        $credentialsPath = config('services.fcm.credentialsPath');
-        $fullPath = storage_path($credentialsPath);
+
+
+$fullPath = storage_path('app/' . config('services.fcm.credentialsPath'));
+
 
         if (!file_exists($fullPath)) {
             Log::error("FCM credentials not found at: $fullPath");

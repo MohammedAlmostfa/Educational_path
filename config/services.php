@@ -19,10 +19,9 @@ return [
     ],
 'fcm' => [
     'key' => env('FIREBASE_SERVER_KEY'),
-
-    'credentialsPath' => storage_path(env('FIREBASE_CREDENTIALS')),
-
+    'credentialsPath' => env('FIREBASE_CREDENTIALS'), // فقط اسم الملف
 ],
+
 
     'resend' => [
         'key' => env('RESEND_KEY'),
