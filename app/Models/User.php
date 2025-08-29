@@ -56,7 +56,7 @@ class User extends Authenticatable
             'is_active'         => 'integer',
             'average'           => 'float',
             'is_admin'          => 'integer',
-            'activation_code'   => 'integer',
+            'activation_code'   => 'string',
             'gender'            => 'integer',
         ];
     }

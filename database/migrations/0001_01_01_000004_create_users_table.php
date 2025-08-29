@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('email')->unique();
-            $table->integer('activation_code')->nullable();
+            $table->string('activation_code')->nullable();
             $table->decimal('average')->nullable();
             $table->tinyInteger('gender')->nullable();
             $table->foreignId('branch_id')->nullable()->constrained()->onDelete('cascade');

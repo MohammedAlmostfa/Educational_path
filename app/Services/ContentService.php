@@ -24,9 +24,10 @@ use App\Models\DeviceToken;
 class ContentService extends Service
 {
     /**
-     * Get all contents with pagination.
+     * Get all contents with optional filtering and pagination.
      *
-     * @return array Response with paginated content (Arabic message)
+     * @param array $filteringData Optional filtering parameters
+     * @return array Response with paginated content and Arabic message
      */
     public function getAll($filteringData)
     {
@@ -34,6 +35,7 @@ class ContentService extends Service
             $content = Content::when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
                 ->orderByDesc('created_at')
                 ->paginate(10);
+
             return $this->successResponse('تم جلب المحتوى بنجاح.', 200, $content);
         } catch (Exception $e) {
             Log::error('Error fetching contents: ' . $e->getMessage());
@@ -44,8 +46,10 @@ class ContentService extends Service
     /**
      * Create a new content.
      *
-     * @param array $data Content data (title, body, optional image and is_new flag)
-     * @return array Response with created content (Arabic message)
+     * Handles optional image upload and dispatches FCM notification to all device tokens.
+     *
+     * @param array $data Content data (title, body, optional image, is_new flag)
+     * @return array Response with created content and Arabic message
      */
     public function createContent(array $data)
     {
@@ -58,6 +62,7 @@ class ContentService extends Service
                 'is_new' => $data['is_new'] ?? 1,
             ];
 
+            // Handle image upload if provided
             if (!empty($data['image'])) {
                 $photo = $data['image'];
                 $folder = 'content/' . date('Y-m-d');
@@ -72,9 +77,11 @@ class ContentService extends Service
                 $contentData['image_url'] = $folder . '/' . $imageName;
             }
 
+            // Create content in DB
             $content = Content::create($contentData);
             DB::commit();
 
+            // Send FCM notification to all users
             $tokens = DeviceToken::whereNotNull('user_id')
                 ->pluck('fcm_token')
                 ->filter()
@@ -95,9 +102,11 @@ class ContentService extends Service
     /**
      * Update an existing content by ID.
      *
+     * Handles optional image replacement and retains old data if fields are missing.
+     *
      * @param int $id Content ID
-     * @param array $data Content data (title, body, optional image and is_new flag)
-     * @return array Response with updated content (Arabic message)
+     * @param array $data Content data (title, body, optional image, is_new flag)
+     * @return array Response with updated content and Arabic message
      */
     public function updateContent(int $id, array $data)
     {
@@ -110,6 +119,7 @@ class ContentService extends Service
             $content->body   = $data['body'] ?? $content->body;
             $content->is_new = $data['is_new'] ?? $content->is_new;
 
+            // Replace image if new image is provided
             if (!empty($data['image'])) {
                 if (!empty($content->image_url)) {
                     $oldImagePath = public_path($content->image_url);
@@ -143,8 +153,10 @@ class ContentService extends Service
     /**
      * Delete a content by ID.
      *
+     * Removes associated image file if exists.
+     *
      * @param int $id Content ID
-     * @return array Response with success or error (Arabic message)
+     * @return array Response with success or error message in Arabic
      */
     public function deleteContent(int $id)
     {
@@ -170,6 +182,13 @@ class ContentService extends Service
             return $this->errorResponse('حدث خطأ أثناء حذف المحتوى. يرجى المحاولة مرة أخرى.', 500);
         }
     }
+
+    /**
+     * Increment the viewers count for a specific content.
+     *
+     * @param int $id Content ID
+     * @return array Response with success or error message in Arabic
+     */
     public function addViewers(int $id)
     {
         try {

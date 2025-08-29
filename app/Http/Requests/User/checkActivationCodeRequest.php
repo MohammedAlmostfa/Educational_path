@@ -34,7 +34,7 @@ class checkActivationCodeRequest extends FormRequest
     {
         // Validation rules: activation code is required and must be an integer
         return [
-            'activation_code' => 'required|integer'
+            'activation_code' => 'required|string'
         ];
     }
 

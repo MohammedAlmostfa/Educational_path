@@ -17,7 +17,7 @@ class SendReminderNotificationJob implements ShouldQueue
 
     public function handle()
     {
-        $tokens = DeviceToken::pluck('fcm_token')->filter()->toArray();
+        $tokens = DeviceToken::where('user_id',null)->pluck('fcm_token')->filter()->toArray();
 
         if (empty($tokens)) {
             Log::info('No tokens found for reminder notification.');

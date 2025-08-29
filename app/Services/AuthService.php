@@ -33,13 +33,14 @@ class AuthService extends Service
     public function register($data)
     {
         try {
-            $randomNumber = rand(1000, 9999);
+    $activationCode = Str::lower(Str::random(4));
+
 
 
             $user = User::create([
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
-            'activation_code'=> $randomNumber,
+                'activation_code' => $activationCode,
             ]);
 
             $token = $user->createToken('auth_token')->plainTextToken;
@@ -74,7 +75,6 @@ class AuthService extends Service
                 'token' => $token,
                 'user' => new UserResource($user),
             ]);
-
         } catch (Exception $e) {
             Log::error('Error while logging in user: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء تسجيل الدخول. يرجى المحاولة مرة أخرى.', 500);
@@ -123,15 +123,15 @@ class AuthService extends Service
 
             $payload = $response->json();
             $email = $payload['email'];
-           $randomNumber = rand(1000, 9999);
+    $activationCode = Str::lower(Str::random(4));
 
-$user = User::firstOrCreate(
-    ['email' => $email],
-    [
-        'password' => bcrypt(Str::random(16)),
-        'activation_code' => $randomNumber
-    ]
-);
+            $user = User::firstOrCreate(
+                ['email' => $email],
+                [
+                    'password' => bcrypt(Str::random(16)),
+                    'activation_code' => $activationCode
+                ]
+            );
 
 
             Auth::login($user);
