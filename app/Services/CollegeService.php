@@ -40,6 +40,7 @@ class CollegeService extends Service
                 // Guest user: return random 4 colleges with relationships
                 $colleges = College::with(['university', 'departments', 'admissions'])
                     ->inRandomOrder()
+                     ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
                     ->limit(4)
                     ->get();
             }
