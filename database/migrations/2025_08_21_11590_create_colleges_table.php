@@ -12,8 +12,10 @@ return new class extends Migration {
             $table->foreignId('university_id')->constrained()->onDelete('cascade');
             $table->foreignId('branch_id')->constrained()->onDelete('cascade');
             $table->string('name');
-            $table->tinyInteger('gender')->nullable(); // بدل enum
-            $table->foreignId('college_type_id')->constrained()->onDelete('cascade');
+            $table->tinyInteger('gender')->nullable();
+            $table->foreignId('college_type_id')
+                ->constrained('departments')
+                ->onDelete('cascade');
             $table->integer('study_duration');
             $table->timestamps();
         });

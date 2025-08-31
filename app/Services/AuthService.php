@@ -10,32 +10,17 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
-use Illuminate\Validation\ValidationException;
 use Exception;
 
-/**
- * Class AuthService
- *
- * Service responsible for authentication operations:
- * - User registration
- * - Login (email/password)
- * - Logout
- * - Google OAuth login
- */
 class AuthService extends Service
 {
     /**
      * Register a new user.
-     *
-     * @param array $data ['email', 'password']
-     * @return array Response with message (Arabic), status, and optional data (token)
      */
     public function register($data)
     {
         try {
-    $activationCode = Str::lower(Str::random(6));
-
-
+            $activationCode = Str::lower(Str::random(6));
 
             $user = User::create([
                 'email' => $data['email'],
@@ -56,9 +41,7 @@ class AuthService extends Service
 
     /**
      * Login a user with email and password.
-     *
-     * @param array $data ['email', 'password']
-     * @return array Response with user data and access token (messages in Arabic)
+     * Prevent multiple logins for the same user.
      */
     public function login($data)
     {
@@ -67,6 +50,11 @@ class AuthService extends Service
 
             if (!$user || !Hash::check($data['password'], $user->password)) {
                 return $this->errorResponse('بيانات تسجيل الدخول غير صحيحة.', 422);
+            }
+
+            // ✅ إذا المستخدم مسجل دخول بالفعل
+            if ($user->tokens()->count() > 0) {
+                return $this->errorResponse('أنت مسجل دخول بالفعل من جهاز آخر.', 403);
             }
 
             $token = $user->createToken('auth_token')->plainTextToken;
@@ -82,17 +70,15 @@ class AuthService extends Service
     }
 
     /**
-     * Logout the current authenticated user and delete their token.
-     *
-     * @return array Response with success or error message (Arabic)
+     * Logout the current authenticated user (current token only).
      */
     public function logout()
     {
         try {
-            $user = Auth::guard('sanctum')->user();
+            $user = Auth::user();
 
             if ($user && $user->currentAccessToken()) {
-                $user->currentAccessToken()->delete();
+                $user->currentAccessToken()->delete(); // حذف التوكن الحالي فقط
             }
 
             return $this->successResponse('تم تسجيل الخروج بنجاح.', 200);
@@ -104,15 +90,11 @@ class AuthService extends Service
 
     /**
      * Login using Google OAuth token.
-     *
-     * @param string $googleToken Google ID token
-     * @return array Response with user data and access token (Arabic messages)
+     * Prevent multiple logins for the same user.
      */
     public function loginWithGoogle(string $googleToken)
     {
         try {
-
-
             $response = Http::get('https://oauth2.googleapis.com/tokeninfo', [
                 'id_token' => $googleToken,
             ]);
@@ -123,19 +105,23 @@ class AuthService extends Service
 
             $payload = $response->json();
             $email = $payload['email'];
-    $activationCode = Str::lower(Str::random(6));
+            $activationCode = Str::lower(Str::random(6));
 
             $user = User::firstOrCreate(
                 ['email' => $email],
                 [
                     'password' => bcrypt(Str::random(16)),
-                    'activation_code' => $activationCode
+                    'activation_code' => $activationCode,
                 ]
             );
 
+            // ✅ تحقق إذا مسجل دخول
+            if ($user->tokens()->count() > 0) {
+                return $this->errorResponse('أنت مسجل دخول بالفعل من جهاز آخر.', 403);
+            }
 
             Auth::login($user);
-            $token = $user->createToken('authToken')->plainTextToken;
+            $token = $user->createToken('auth_token')->plainTextToken;
 
             return $this->successResponse('تم تسجيل الدخول باستخدام Google بنجاح.', 200, [
                 'user' => new UserResource($user),

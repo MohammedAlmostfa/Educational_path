@@ -8,7 +8,6 @@ use App\Models\College;
 use App\Models\Department;
 use App\Models\Governorate;
 use App\Models\University;
-use App\Models\CollegeType; // ✅ استدعاء الموديل الجديد
 use Illuminate\Database\Seeder;
 
 class UniversitySeeder extends Seeder
@@ -26,42 +25,49 @@ class UniversitySeeder extends Seeder
         ];
 
         foreach ($data as $item) {
-            // ✅ حفظ المحافظة
+            // حفظ المحافظة
             $governorate = Governorate::firstOrCreate([
                 'name' => $item['governorate']
             ]);
 
-            // ✅ حفظ الجامعة
+            // حفظ الجامعة
             $university = University::firstOrCreate([
                 'name'           => $item['universityName'],
                 'governorate_id' => $governorate->id,
             ]);
 
-            // ✅ جلب أو إنشاء الفرع (لكل كلية)
+            // جلب أو إنشاء الفرع (لكل كلية)
             $branchName = $item['branch'] ?? 'عام';
             if (in_array($branchName, ['تطبيقي', 'احيائي'])) {
                 $branchName = 'علمي';
             }
             $branch = Branch::firstOrCreate(['name' => $branchName]);
 
-            // ✅ جلب أو إنشاء نوع الكلية
-            $collegeType = CollegeType::firstOrCreate(['name' => $item['collegeType']]);
+            // جلب أو إنشاء "نوع الكلية" في جدول departments مع type = 1
+            $collegeType = Department::firstOrCreate(
+                ['name' => $item['collegeType']], // الاسم
+                ['type' => 1]                     // type = 1 يعني نوع كلية
+            );
 
-            // ✅ إنشاء الكلية مع college_type_id
+            // إنشاء الكلية وربطها بالـ "نوع" المخزن في departments
             $college = College::create([
                 'name'             => $item['collegeName'],
-                'college_type_id'  => $collegeType->id,  // ✅ تعديل هنا
+                'college_type_id'  => $collegeType->id,
                 'study_duration'   => $item['studyDuration'],
                 'university_id'    => $university->id,
                 'branch_id'        => $branch->id,
                 'gender'           => $genderMap[$item['gender']] ?? 2,
             ]);
 
-            // ✅ ربط الأقسام بالكلية عبر جدول pivot
+            // ربط الأقسام بالكلية عبر pivot
             if (!empty($item['departments'])) {
                 $priority = 0;
                 foreach ($item['departments'] as $dep) {
-                    $department = Department::firstOrCreate(['name' => $dep]);
+                    // تخزين القسم العادي مع type = 0
+                    $department = Department::firstOrCreate(
+                        ['name' => $dep],
+                        ['type' => 0] // type = 0 يعني قسم عادي
+                    );
 
                     $college->departments()->syncWithoutDetaching([
                         $department->id => ['priority' => $priority],
@@ -70,7 +76,7 @@ class UniversitySeeder extends Seeder
                 }
             }
 
-            // ✅ حفظ بيانات القبول
+            // حفظ بيانات القبول
             if (!empty($item['admissions'])) {
                 foreach ($item['admissions'] as $adm) {
                     Admission::create([

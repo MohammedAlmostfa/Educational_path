@@ -45,14 +45,12 @@ class UpdateCollege extends FormRequest
      * - branch_id: optional, must exist in branches table.
      * - departments: optional array of IDs existing in the departments table.
      */
-    public function rules(): array
-    {
-
+  public function rules(): array
 {
     return [
         'name' => 'nullable|string|max:255',
         'university_id' => 'nullable|exists:universities,id',
-        'college_type_id' => 'nullable|exists:college_types,id',
+        'college_type_id' => 'nullable|exists:departments,id',
         'study_duration' => 'nullable|integer|min:1',
         'gender' => 'nullable|in:0,1,2',
         'branch_id' => 'nullable|exists:branches,id',
@@ -67,7 +65,6 @@ class UpdateCollege extends FormRequest
     ];
 }
 
-    }
 
     /**
      * Handle a failed validation attempt.

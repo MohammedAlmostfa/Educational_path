@@ -55,10 +55,10 @@ class College extends Model
     {
         return $this->belongsTo(Branch::class, 'branch_id');
     }
-       public function collegeType()
-    {
-        return $this->belongsTo(CollegeType::class, 'college_type_id');
-    }
+   public function collegeType()
+{
+    return $this->belongsTo(Department::class, 'college_type_id');
+}
 
     /**
      * Relationship: A college has many admissions.

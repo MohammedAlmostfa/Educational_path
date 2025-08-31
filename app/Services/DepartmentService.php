@@ -25,6 +25,7 @@ class DepartmentService extends Service
         try {
             $departments = Department::select('id', 'name')
                 ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
+                 ->where('type', 0)
                 ->get();
 
 

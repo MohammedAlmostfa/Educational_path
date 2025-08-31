@@ -2,16 +2,19 @@
 
 namespace App\Services;
 
-use App\Models\CollegeType; // ✅ استدعاء الموديل
+use App\Models\Department;
 use Exception;
-use Illuminate\Support\Facades\Log; // ✅ استدعاء Log
+use Illuminate\Support\Facades\Log;
 
 class CollegeTypeService extends Service
 {
     public function getCollegeTypes()
     {
         try {
-            $collegeTypes = CollegeType::select('id', 'name')->get();
+
+            $collegeTypes = Department::select('id', 'name')
+                ->where('type', 1)
+                ->get();
 
             return $this->successResponse(
                 'تم استرجاع أنواع الكليات بنجاح.',
