@@ -8,6 +8,7 @@ use App\Models\College;
 use App\Models\Department;
 use App\Models\Governorate;
 use App\Models\University;
+use App\Models\CollegeType; // ✅ استدعاء الموديل الجديد
 use Illuminate\Database\Seeder;
 
 class UniversitySeeder extends Seeder
@@ -43,14 +44,17 @@ class UniversitySeeder extends Seeder
             }
             $branch = Branch::firstOrCreate(['name' => $branchName]);
 
-            // ✅ إنشاء الكلية مع branch_id
+            // ✅ جلب أو إنشاء نوع الكلية
+            $collegeType = CollegeType::firstOrCreate(['name' => $item['collegeType']]);
+
+            // ✅ إنشاء الكلية مع college_type_id
             $college = College::create([
-                'name'           => $item['collegeName'],
-                'college_type'   => $item['collegeType'],
-                'study_duration' => $item['studyDuration'],
-                'university_id'  => $university->id,
-                'branch_id'      => $branch->id,   // ✅ مهم
-                'gender'         => $genderMap[$item['gender']] ?? 2,
+                'name'             => $item['collegeName'],
+                'college_type_id'  => $collegeType->id,  // ✅ تعديل هنا
+                'study_duration'   => $item['studyDuration'],
+                'university_id'    => $university->id,
+                'branch_id'        => $branch->id,
+                'gender'           => $genderMap[$item['gender']] ?? 2,
             ]);
 
             // ✅ ربط الأقسام بالكلية عبر جدول pivot
@@ -66,7 +70,7 @@ class UniversitySeeder extends Seeder
                 }
             }
 
-            // ✅ حفظ بيانات القبول (بدون branch_id)
+            // ✅ حفظ بيانات القبول
             if (!empty($item['admissions'])) {
                 foreach ($item['admissions'] as $adm) {
                     Admission::create([

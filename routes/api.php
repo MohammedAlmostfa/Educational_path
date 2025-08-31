@@ -8,6 +8,7 @@ use App\Http\Controllers\CollegeController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\UniversityController;
+use App\Http\Controllers\CollegeTypeController;
 use App\Http\Controllers\DeviceTokenController;
 use App\Http\Controllers\GovernorateController;
 use App\Http\Controllers\SavedCollegeController;
@@ -32,6 +33,7 @@ use App\Http\Controllers\SavedCollegeController;
 | Route to return the authenticated user's info.
 |
 */
+
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
@@ -88,8 +90,8 @@ Route::middleware(['auth:sanctum', 'admin', 'activation'])->group(function () {
     Route::delete('/content/{content}', [ContentController::class, 'destroy']); // Delete specific content
 
     // User management
-Route::get('/show-unactive-users', [UserController::class, 'index'])->name('show-unactive-users');
- // List all inactive users
+    Route::get('/show-unactive-users', [UserController::class, 'index'])->name('show-unactive-users');
+    // List all inactive users
     // Route::put('/activation/{id}', [UserController::class, 'active']); // Activate a specific user (commented out)
 
     // University management
@@ -111,6 +113,8 @@ Route::middleware(['auth:sanctum', 'activation'])->group(function () {
     Route::post('/add-viewers/{id}', [ContentController::class, 'addViewers']); // Increment content viewers
 
     // Location data
+    Route::get('/college-types', [CollegeTypeController::class, 'index']);
+
     Route::get('/governorate', [GovernorateController::class, 'index']); // Get all governorates
     Route::get('/department', [DepartmentController::class, 'index']); // Get all departments
 

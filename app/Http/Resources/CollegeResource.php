@@ -24,7 +24,12 @@ class CollegeResource extends JsonResource
                 : null,
 
             'gender'         => $this->gender,
-            'collegeType'    => $this->college_type ?? null,
+
+            'collegeType' => $this->collegeType ? [
+                'id'   => $this->collegeType->id,
+                'name' => $this->collegeType->name,
+            ] : null,
+
             'studyDuration'  => (int) $this->study_duration,
             'isSaved'        => $this->is_saved ?? false,
 

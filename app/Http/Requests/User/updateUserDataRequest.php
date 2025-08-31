@@ -33,13 +33,10 @@ class UpdateUserDataRequest extends FormRequest
     public function rules(): array
     {
         return [
-            // Average is optional, numeric, and between 0 and 100
+
             'average'   => 'nullable|numeric|min:0|max:100',
-
-            // Gender is optional and must be 0 (male) or 1 (female)
+            'name'      =>'nullable|string',
             'gender'    => 'nullable|in:0,1',
-
-            // Branch ID is optional but must exist in the branches table
             'branch_id' => 'nullable|exists:branches,id',
         ];
     }

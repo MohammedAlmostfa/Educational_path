@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('activation_code')->nullable();
+            $table->string('name')->nullable();
             $table->decimal('average')->nullable();
             $table->tinyInteger('gender')->nullable();
             $table->foreignId('branch_id')->nullable()->constrained()->onDelete('cascade');

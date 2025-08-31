@@ -34,6 +34,7 @@ class FilterUser extends FormRequest
     {
         return [
             // Email is optional for filtering
+            'name'=>'nullable',
             'email' => 'nullable',
         ];
     }

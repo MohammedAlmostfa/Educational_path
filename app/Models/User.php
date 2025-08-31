@@ -24,6 +24,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'email',
+        'name',
         'password',
         'activation_code',
         'average',
@@ -104,6 +105,11 @@ class User extends Authenticatable
         if (isset($filteringData['email'])) {
             $query->where(function ($q) use ($filteringData) {
                 $q->where('email', 'LIKE', "%{$filteringData['email']}%");
+            });
+        }
+        if (isset($filteringData['namr'])) {
+            $query->where(function ($q) use ($filteringData) {
+                $q->where('namr', 'LIKE', "%{$filteringData['namr']}%");
             });
         }
         return $query;

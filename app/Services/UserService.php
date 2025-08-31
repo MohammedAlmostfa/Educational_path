@@ -32,7 +32,6 @@ class UserService extends Service
                 ->paginate(10);
 
             return $this->successResponse('تم جلب المستخدمين بنجاح', 200, $users);
-
         } catch (Exception $e) {
             Log::error('Error fetching users: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء معالجة المستخدمين، يرجى المحاولة مرة أخرى.', 500);
@@ -87,7 +86,6 @@ class UserService extends Service
             } else {
                 return $this->errorResponse('الكود المستخدم خاطئ', 400);
             }
-
         } catch (Exception $e) {
             Log::error('Error verifying activation code: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء التحقق من الكود، يرجى المحاولة مرة أخرى.', 500);
@@ -114,12 +112,12 @@ class UserService extends Service
 
             $user->update([
                 "average"   => $data['average'] ?? null,
+                "name"   => $data['name'] ?? null,
                 "gender"    => $data['gender'] ?? null,
                 "branch_id" => $data['branch_id'] ?? null,
             ]);
 
             return $this->successResponse('تم اضافة بيانات المستخدم بنجاح', 200, $user);
-
         } catch (Exception $e) {
             Log::error('Error adding user data: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء اضافة بيانات المستخدم، يرجى المحاولة مرة أخرى.', 500);
@@ -142,12 +140,12 @@ class UserService extends Service
 
             $user->update([
                 "average"   => $data['average'] ?? $user->average,
+                "name"   => $data['name'] ?? $user->name,
                 "gender"    => $data['gender'] ?? $user->gender,
                 "branch_id" => $data['branch_id'] ?? $user->branch_id,
             ]);
 
             return $this->successResponse('تم تحديث بيانات المستخدم بنجاح', 200, $user);
-
         } catch (Exception $e) {
             Log::error('Error updating user data: ' . $e->getMessage());
             return $this->errorResponse('حدث خطأ أثناء تحديث بيانات المستخدم، يرجى المحاولة مرة أخرى.', 500);

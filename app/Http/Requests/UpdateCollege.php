@@ -47,22 +47,26 @@ class UpdateCollege extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            'name' => 'nullable|string|max:255',
-            'university_id' => 'nullable|exists:universities,id',
-            'college_type' => 'nullable|string|max:100',
-            'study_duration' => 'nullable|integer|min:1',
-            'gender' => 'nullable|in:0,1,2',
-            'branch_id' => 'nullable|exists:branches,id',
-            'departments' => 'nullable|array',
-            'departments.*' => 'exists:departments,id',
-            'admissions' => 'nullable|array',
-            'admissions.*.id' => 'nullable|exists:admissions,id', // لتحديث admission موجود
-            'admissions.*.year' => 'nullable|integer|min:2000',
-            'admissions.*.min_average' => 'nullable|numeric|min:0|max:100',
-            'admissions.*.min_total' => 'nullable|numeric|min:0',
-            'admissions.*.preference_score' => 'nullable|numeric|min:0',
-        ];
+
+{
+    return [
+        'name' => 'nullable|string|max:255',
+        'university_id' => 'nullable|exists:universities,id',
+        'college_type_id' => 'nullable|exists:college_types,id',
+        'study_duration' => 'nullable|integer|min:1',
+        'gender' => 'nullable|in:0,1,2',
+        'branch_id' => 'nullable|exists:branches,id',
+        'departments' => 'nullable|array',
+        'departments.*' => 'exists:departments,id',
+        'admissions' => 'nullable|array',
+        'admissions.*.id' => 'nullable|exists:admissions,id',
+        'admissions.*.year' => 'nullable|integer|min:2000',
+        'admissions.*.min_average' => 'nullable|numeric|min:0|max:100',
+        'admissions.*.min_total' => 'nullable|numeric|min:0',
+        'admissions.*.preference_score' => 'nullable|numeric|min:0',
+    ];
+}
+
     }
 
     /**

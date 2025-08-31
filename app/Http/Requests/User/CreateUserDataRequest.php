@@ -33,6 +33,7 @@ class CreateUserDataRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'name'      =>'required|string',
             'average'   => 'required|numeric|min:0|max:100',
             'gender'    => 'required|in:0,1', // Only 0 or 1 allowed
             'branch_id' => 'required|exists:branches,id',

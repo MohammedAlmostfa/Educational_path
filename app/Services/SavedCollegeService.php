@@ -88,6 +88,7 @@ class SavedCollegeService extends Service
                     'departments:id,name',
                     'admissions:id,college_id,year,min_average,min_total,preference_score',
                     "branch",
+                    'collegeType'
                 ])
 
                 ->orderBy('saved_college_user.priority', 'desc')

@@ -24,6 +24,7 @@ class College extends Model
     protected $fillable = [
         'name',
         'university_id',
+        "college_type_id",
         'college_type',
         'study_duration',
         'gender',
@@ -53,6 +54,10 @@ class College extends Model
     public function branch()
     {
         return $this->belongsTo(Branch::class, 'branch_id');
+    }
+       public function collegeType()
+    {
+        return $this->belongsTo(CollegeType::class, 'college_type_id');
     }
 
     /**
