@@ -52,9 +52,11 @@ class AuthService extends Service
                 return $this->errorResponse('بيانات تسجيل الدخول غير صحيحة.', 422);
             }
 
-            // ✅ إذا المستخدم مسجل دخول بالفعل
-            if ($user->tokens()->count() > 0) {
-                         Log::info('User tokens count: ' . $user->tokens()->count());
+
+            if ($user->is_admin == 0 && $user->tokens()->count() > 0) {
+
+                Log::info('User tokens count for ' . $user->email . ': ' . $user->tokens()->count());
+
                 return $this->errorResponse('أنت مسجل دخول بالفعل من جهاز آخر.', 403);
             }
 
@@ -75,24 +77,24 @@ class AuthService extends Service
     /**
      * Logout the current authenticated user (current token only).
      */
-  public function logout()
-{
-    try {
-        $user = Auth::guard('sanctum')->user();
+    public function logout()
+    {
+        try {
+            $user = Auth::guard('sanctum')->user();
 
-        if ($user) {
-            Log::info('User tokens count before logout: ' . $user->tokens()->count());
+            if ($user) {
+                Log::info('User tokens count before logout: ' . $user->tokens()->count());
 
-            // حذف التوكن الحالي فقط
-             auth()->user()->tokens()->delete();
+                // حذف التوكن الحالي فقط
+                auth()->user()->tokens()->delete();
+            }
+
+            return $this->successResponse('تم تسجيل الخروج بنجاح.', 200);
+        } catch (Exception $e) {
+            Log::error('Error while logging out user: ' . $e->getMessage());
+            return $this->errorResponse('حدث خطأ أثناء تسجيل الخروج. يرجى المحاولة مرة أخرى.', 500);
         }
-
-        return $this->successResponse('تم تسجيل الخروج بنجاح.', 200);
-    } catch (Exception $e) {
-        Log::error('Error while logging out user: ' . $e->getMessage());
-        return $this->errorResponse('حدث خطأ أثناء تسجيل الخروج. يرجى المحاولة مرة أخرى.', 500);
     }
-}
 
 
     /**
