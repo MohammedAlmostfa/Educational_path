@@ -72,6 +72,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/check-activation_code', [UserController::class, 'checkActivationCode']); // Verify activation code
     Route::put('/college/{id}', [CollegeController::class, 'update']); // Update college info
     Route::delete('college/{id}', [CollegeController::class, 'delete']); // Delete a college
+    Route::post('/logout', [AuthController::class, 'logout']); // User logout
 });
 
 /*
