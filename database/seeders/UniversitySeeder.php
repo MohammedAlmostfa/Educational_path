@@ -17,56 +17,59 @@ class UniversitySeeder extends Seeder
         $json = file_get_contents(database_path('data/universities.json'));
         $data = json_decode($json, true);
 
-        // خريطة تحويل الجنس من نص إلى رقم
+        // تحويل الجنس من نص إلى رقم
         $genderMap = [
             'اناث'   => 0,
-            'ذكور'    => 1,
+            'ذكور'   => 1,
             'كلاهما' => 2,
         ];
 
         foreach ($data as $item) {
-            // حفظ المحافظة
+            // المحافظة
             $governorate = Governorate::firstOrCreate([
-                'name' => $item['governorate']
+                'name' => $item['governorate'],
             ]);
 
-            // حفظ الجامعة
+            // الجامعة
             $university = University::firstOrCreate([
                 'name'           => $item['universityName'],
                 'governorate_id' => $governorate->id,
             ]);
 
-            // جلب أو إنشاء الفرع (لكل كلية)
+            // الفرع
             $branchName = $item['branch'] ?? 'عام';
             if (in_array($branchName, ['تطبيقي', 'احيائي'])) {
                 $branchName = 'علمي';
             }
             $branch = Branch::firstOrCreate(['name' => $branchName]);
 
-            // جلب أو إنشاء "نوع الكلية" في جدول departments مع type = 1
+            // نوع الكلية
             $collegeType = Department::firstOrCreate(
-                ['name' => $item['collegeType']], // الاسم
-                ['type' => 1]                     // type = 1 يعني نوع كلية
+                ['name' => $item['collegeType']],
+                ['type' => 1]
             );
 
-            // إنشاء الكلية وربطها بالـ "نوع" المخزن في departments
-            $college = College::create([
-                'name'             => $item['collegeName'],
-                'college_type_id'  => $collegeType->id,
-                'study_duration'   => $item['studyDuration'],
-                'university_id'    => $university->id,
-                'branch_id'        => $branch->id,
-                'gender'           => $genderMap[$item['gender']] ?? 2,
-            ]);
+            // الكلية
+            $college = College::firstOrCreate(
+                [
+                    'name'          => $item['collegeName'],
+                    'university_id' => $university->id,
+                ],
+                [
+                    'college_type_id' => $collegeType->id,
+                    'study_duration'  => $item['studyDuration'],
+                    'branch_id'       => $branch->id,
+                    'gender'          => $genderMap[$item['gender']] ?? 2,
+                ]
+            );
 
-            // ربط الأقسام بالكلية عبر pivot
+            // الأقسام
             if (!empty($item['departments'])) {
                 $priority = 0;
                 foreach ($item['departments'] as $dep) {
-                    // تخزين القسم العادي مع type = 0
                     $department = Department::firstOrCreate(
                         ['name' => $dep],
-                        ['type' => 0] // type = 0 يعني قسم عادي
+                        ['type' => 0]
                     );
 
                     $college->departments()->syncWithoutDetaching([
@@ -76,15 +79,24 @@ class UniversitySeeder extends Seeder
                 }
             }
 
-            // حفظ بيانات القبول
+            // بيانات القبول (admissions)
             if (!empty($item['admissions'])) {
                 foreach ($item['admissions'] as $adm) {
+                    // تجاهل admission إذا كل الثلاثة حقول null
+                    if (
+                        ($adm['minAverage'] ?? null) === null &&
+                        ($adm['minTotal'] ?? null) === null &&
+                        ($adm['preferenceScore'] ?? null) === null
+                    ) {
+                        continue;
+                    }
+
                     Admission::create([
                         'college_id'       => $college->id,
-                        'year'             => $adm['year'],
-                        'min_average'      => $adm['minAverage'],
-                        'min_total'        => $adm['minTotal'],
-                        'preference_score' => $adm['preferenceScore'],
+                        'year'             => $adm['year'] ?? null,
+                        'min_average'      => $adm['minAverage'] ?? null,
+                        'min_total'        => $adm['minTotal'] ?? null,
+                        'preference_score' => $adm['preferenceScore'] ?? null,
                     ]);
                 }
             }

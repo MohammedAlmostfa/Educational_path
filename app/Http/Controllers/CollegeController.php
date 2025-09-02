@@ -74,6 +74,36 @@ class CollegeController extends Controller
         }
     }
 
+
+    public function getNewCollege(Request $request)
+    {
+        // Call the service to get colleges, passing any filter/query parameters
+        $result = $this->collegeService->getNewColleges($request->all());
+
+        // Get currently authenticated user (if any)
+        $user = Auth::guard('sanctum')->user();
+
+        if ($user && $user->is_active == 1) {
+            // Authenticated users: return paginated response
+            return $result['status'] === 200
+                ? self::success(
+                    CollegeResource::collection($result['data']),
+                    $result['message'],
+                    $result['status']
+                )
+                : self::error(null, $result['message'], $result['status']);
+        } else {
+            // Guests: return full collection without pagination
+            return $result['status'] === 200
+                ? self::success(
+                    CollegeResource::collection($result['data']),
+                    $result['message'],
+                    $result['status']
+                )
+                : self::error(null, $result['message'], $result['status']);
+        }
+    }
+
     /**
      * Update a specific college.
      *

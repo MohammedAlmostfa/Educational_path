@@ -53,7 +53,7 @@ class AuthService extends Service
             }
 
 
-            if ($user->is_admin == 0 && $user->tokens()->count() > 0) {
+            if ($user->is_admin == 0 && $user->is_active == 1 && $user->tokens()->count() > 0) {
 
                 Log::info('User tokens count for ' . $user->email . ': ' . $user->tokens()->count());
 

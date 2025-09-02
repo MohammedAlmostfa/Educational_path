@@ -38,7 +38,7 @@ class DepartmentService extends Service
             return $this->successResponse(
                 'تم استرجاع جميع الأقسام وأنواع الكليات بنجاح.',
                 200,
-                ['departments_mixed' => $departmentsMixed]
+                $departmentsMixed
             );
         } catch (Exception $e) {
             Log::error('Error while fetching departments mixed: ' . $e->getMessage());

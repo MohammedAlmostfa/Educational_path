@@ -55,7 +55,7 @@ Route::post('/save-fcm', [DeviceTokenController::class, 'createOrUpdate']); // S
 
 // Public access: Get all colleges
 Route::get('/get-colleges', [CollegeController::class, 'index']);
-
+Route::get('/new-colleges', [CollegeController::class, 'getNewCollege']);
 // Public content routes
 Route::get('/content', [ContentController::class, 'index']); // Get all content
 Route::post('/add-viewers/{id}', [ContentController::class, 'addViewers']); // Increment content viewers
@@ -74,9 +74,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::delete('college/{id}', [CollegeController::class, 'delete']); // Delete a college
     Route::post('/logout', [AuthController::class, 'logout']); // User logout
 
-       Route::get('/governorate', [GovernorateController::class, 'index']); // Get all governorates
+    Route::get('/governorate', [GovernorateController::class, 'index']); // Get all governorates
     Route::get('/department', [DepartmentController::class, 'index']); // Get all departments
-        Route::get('/departments-and-college-types', [DepartmentController::class, 'getAllDepartmentsAndCollege']); // Get all departments
+    Route::get('/departments-and-college-types', [DepartmentController::class, 'getAllDepartmentsAndCollege']); // Get all departments
 
 });
 

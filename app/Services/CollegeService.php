@@ -52,6 +52,37 @@ class CollegeService extends Service
             return $this->errorResponse('حدث خطأ أثناء جلب الكليات. يرجى المحاولة مرة أخرى.', 500);
         }
     }
+public function getNewColleges(?array $filteringData = [])
+{
+    try {
+        $user = Auth::guard('sanctum')->user();
+
+        if ($user && $user->is_active == 1) {
+
+            $colleges = College::with(['university', 'collegeType', 'departments', 'admissions'])
+                ->whereDoesntHave('admissions')
+                ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
+                ->withExists([
+                    'savedByUsers as is_saved' => fn($q) => $q->where('user_id', $user->id)
+                ])
+              ->get();
+        } else {
+
+            $colleges = College::with(['university', 'departments', 'admissions'])
+                ->inRandomOrder()
+                ->whereDoesntHave('admissions')
+                ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
+                ->limit(4)
+                ->get();
+        }
+
+        return $this->successResponse('تم جلب الكليات الجديدة بنجاح.', 200, $colleges);
+
+    } catch (Exception $e) {
+        Log::error('Error fetching new colleges: ' . $e->getMessage());
+        return $this->errorResponse('حدث خطأ أثناء جلب الكليات الجديدة. يرجى المحاولة مرة أخرى.', 500);
+    }
+}
 
     /**
      * Update a college and its related departments.
