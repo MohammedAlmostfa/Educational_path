@@ -125,7 +125,9 @@ class AuthService extends Service
             );
 
             // ✅ تحقق إذا مسجل دخول
-            if ($user->tokens()->count() > 0) {
+
+            if ($user->is_admin == 0 && $user->is_active == 1 && $user->tokens()->count() > 0) {
+
                 return $this->errorResponse('أنت مسجل دخول بالفعل من جهاز آخر.', 403);
             }
 
