@@ -44,35 +44,42 @@ class AuthService extends Service
      * Prevent multiple logins for the same user.
      */
     public function login($data)
-    {
-        try {
-            $user = User::where('email', $data['email'])->first();
+{
+    try {
+        $user = User::where('email', $data['email'])->first();
 
-            if (!$user || !Hash::check($data['password'], $user->password)) {
-                return $this->errorResponse('بيانات تسجيل الدخول غير صحيحة.', 422);
-            }
-
-
-            if ($user->is_admin == 0 && $user->is_active == 1 && $user->tokens()->count() > 0) {
-
-
-
-                return $this->errorResponse('أنت مسجل دخول بالفعل من جهاز آخر.', 403);
-            }
-
-
-
-            $token = $user->createToken('auth_token')->plainTextToken;
-
-            return $this->successResponse('تم تسجيل الدخول بنجاح.', 200, [
-                'token' => $token,
-                'user' => new UserResource($user),
-            ]);
-        } catch (Exception $e) {
-            Log::error('Error while logging in user: ' . $e->getMessage());
-            return $this->errorResponse('حدث خطأ أثناء تسجيل الدخول. يرجى المحاولة مرة أخرى.', 500);
+        if (!$user || !Hash::check($data['password'], $user->password)) {
+            return $this->errorResponse('بيانات تسجيل الدخول غير صحيحة.', 422);
         }
+if (
+    $user->tokens()->count() > 0   // عنده تسجيل دخول مسبق
+    && $user->is_admin == 0        // مو أدمن
+    && $user->is_active == 1       // مفعل
+    && (
+        $user->name !== null ||               // مكمل بياناته (واحد على الأقل من الحقول مو فاضي)
+        $user->average !== null ||
+        $user->gender !== null ||
+        $user->branch_id !== null
+    )
+) {
+    return $this->errorResponse('أنت مسجل دخول بالفعل من جهاز آخر.', 403);
+}
+
+
+
+
+
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        return $this->successResponse('تم تسجيل الدخول بنجاح.', 200, [
+            'token' => $token,
+            'user' => new UserResource($user),
+        ]);
+    } catch (Exception $e) {
+        Log::error('Error while logging in user: ' . $e->getMessage());
+        return $this->errorResponse('حدث خطأ أثناء تسجيل الدخول. يرجى المحاولة مرة أخرى.', 500);
     }
+}
 
     /**
      * Logout the current authenticated user (current token only).
@@ -124,12 +131,20 @@ class AuthService extends Service
                 ]
             );
 
-            // ✅ تحقق إذا مسجل دخول
 
-            if ($user->is_admin == 0 && $user->is_active == 1 && $user->tokens()->count() > 0) {
-
-                return $this->errorResponse('أنت مسجل دخول بالفعل من جهاز آخر.', 403);
-            }
+if (
+    $user->tokens()->count() > 0   // عنده تسجيل دخول مسبق
+    && $user->is_admin == 0        // مو أدمن
+    && $user->is_active == 1       // مفعل
+    && (
+        $user->name !== null ||               // مكمل بياناته (واحد على الأقل من الحقول مو فاضي)
+        $user->average !== null ||
+        $user->gender !== null ||
+        $user->branch_id !== null
+    )
+) {
+    return $this->errorResponse('أنت مسجل دخول بالفعل من جهاز آخر.', 403);
+}
 
             Auth::login($user);
             $token = $user->createToken('auth_token')->plainTextToken;

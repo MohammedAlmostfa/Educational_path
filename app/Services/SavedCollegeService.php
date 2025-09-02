@@ -91,7 +91,7 @@ class SavedCollegeService extends Service
                     'collegeType'
                 ])
 
-                ->orderBy('saved_college_user.priority', 'desc')
+
                 ->get();
 
 
