@@ -135,15 +135,17 @@ class College extends Model
         }
 
         // Filter by admission average range
-        if (isset($filters['min_average_from'], $filters['min_average_to'])) {
-            $query->whereHas('admissions', function ($q) use ($filters) {
-                $q->whereBetween('min_average', [
-    number_format($filters['min_average_from'], 2, '.', ''),
-    number_format($filters['min_average_to'], 2, '.', '')
-]);
+        // Filter by admission average range
+if (!empty($filters['min_average_from']) && !empty($filters['min_average_to'])) {
+    $from = number_format((float) $filters['min_average_from'], 2, '.', '');
+    $to   = number_format((float) $filters['min_average_to'], 2, '.', '');
 
-            });
-        }
+    $query->whereHas('admissions', function ($q) use ($from, $to) {
+        $q->where('min_average', '>=', $from)
+          ->where('min_average', '<=', $to);
+    });
+}
+
 
         // Filter by departments
         if (!empty($filters['departments'])) {
