@@ -171,4 +171,31 @@ class UserService extends Service
             return $this->errorResponse('حدث خطأ أثناء التحقق من المستخدم، يرجى المحاولة مرة أخرى.', 500);
         }
     }
+
+
+     /**
+     * Logout the current authenticated user (current token only).
+     */
+    public function userlogout($email)
+{
+    try {
+        $user = User::where('email', $email)->first();
+
+        if ($user) {
+            Log::info('User tokens count before logout: ' . $user->tokens()->count());
+
+            // Delete all tokens for this user
+            $user->tokens()->delete();
+
+            return $this->successResponse('تم تسجيل الخروج بنجاح.', 200);
+        }
+
+        return $this->errorResponse('المستخدم غير موجود.', 404);
+    } catch (Exception $e) {
+        Log::error('Error while logging out user: ' . $e->getMessage());
+        return $this->errorResponse('حدث خطأ أثناء تسجيل الخروج. يرجى المحاولة مرة أخرى.', 500);
+    }
+}
+
+
 }

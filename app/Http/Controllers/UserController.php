@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\User\checkActivationCodeRequest;
-use App\Http\Requests\User\CreateUserDataRequest;
-use App\Http\Requests\User\FilterUser;
-use App\Http\Requests\User\updateUserDataRequest;
-use App\Http\Resources\UserResource;
+use Illuminate\Http\Request;
 use App\Services\UserService;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\LogoutRequest;
+use App\Http\Resources\UserResource;
+use App\Http\Requests\User\FilterUser;
+use App\Http\Requests\User\CreateUserDataRequest;
+use App\Http\Requests\User\updateUserDataRequest;
+use App\Http\Requests\User\checkActivationCodeRequest;
 
 /**
  * Class UserController
@@ -130,4 +132,18 @@ class UserController extends Controller
             ? self::success(new UserResource($result['data']), $result['message'], $result['status'])
             : self::error(null, $result['message'], $result['status']);
     }
+
+
+    public function Userlogout(LogoutRequest $request)
+{
+    $email = $request->email;
+
+    // Call logout method in AuthService and pass the email
+    $result = $this->userService->userlogout($email);
+
+    return $result['status'] === 200
+        ? self::success(null, $result['message'], $result['status'])
+        : self::error(null, $result['message'], $result['status']);
+}
+
 }

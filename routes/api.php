@@ -94,7 +94,7 @@ Route::middleware(['auth:sanctum', 'admin', 'activation'])->group(function () {
     Route::post('/content', [ContentController::class, 'store']); // Create new content
     Route::post('/content/{id}', [ContentController::class, 'update']); // Update specific content
     Route::delete('/content/{content}', [ContentController::class, 'destroy']); // Delete specific content
-
+    Route::post('/adminlogout', [UserController::class, 'Userlogout']);
     // User management
     Route::get('/show-unactive-users', [UserController::class, 'index'])->name('show-unactive-users');
     // List all inactive users
