@@ -26,6 +26,9 @@ class Admission extends Model
         'min_total',        // Minimum total score required
         'preference_score', // Score for preference ranking
     ];
+protected $casts= [
+'min_average' => 'decimal:2',
+];
 
     /**
      * Get the college associated with the admission.

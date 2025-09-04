@@ -31,6 +31,7 @@ class College extends Model
         'branch_id',
     ];
 
+
     /**
      * Relationship: A college has many departments (many-to-many).
      *
@@ -136,10 +137,11 @@ class College extends Model
         // Filter by admission average range
         if (isset($filters['min_average_from'], $filters['min_average_to'])) {
             $query->whereHas('admissions', function ($q) use ($filters) {
-                $q->whereBetween('min_average', [
-                    $filters['min_average_from'],
-                    $filters['min_average_to']
-                ]);
+               $q->whereBetween('min_average', [
+    (float) $filters['min_average_from'],
+    (float) $filters['min_average_to']
+]);
+
             });
         }
 
