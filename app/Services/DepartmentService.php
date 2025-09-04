@@ -33,6 +33,7 @@ class DepartmentService extends Service
         try {
             $departmentsMixed = Department::select('id', 'name', 'type')
                 ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
+                ->where('type', 0)
                 ->get();
 
             return $this->successResponse(
