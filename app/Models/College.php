@@ -56,10 +56,10 @@ class College extends Model
     {
         return $this->belongsTo(Branch::class, 'branch_id');
     }
-   public function collegeType()
-{
-    return $this->belongsTo(Department::class, 'college_type_id');
-}
+    public function collegeType()
+    {
+        return $this->belongsTo(Department::class, 'college_type_id');
+    }
 
     /**
      * Relationship: A college has many admissions.
@@ -137,9 +137,9 @@ class College extends Model
         // Filter by admission average range
         if (isset($filters['min_average_from'], $filters['min_average_to'])) {
             $query->whereHas('admissions', function ($q) use ($filters) {
-               $q->whereBetween('min_average', [
-    (float) $filters['min_average_from'],
-    (float) $filters['min_average_to']
+                $q->whereBetween('min_average', [
+    number_format($filters['min_average_from'], 2, '.', ''),
+    number_format($filters['min_average_to'], 2, '.', '')
 ]);
 
             });
