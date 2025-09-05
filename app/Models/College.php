@@ -145,7 +145,8 @@ class College extends Model
         $$query->orderByDesc(
             \App\Models\Admission::select('min_average')
                 ->whereColumn('admissions.college_id', 'colleges.id')
-                ->orderByDesc('year')
+               ->where('admissions.year', 2025)
+
                 ->orderByDesc('min_average')
                 ->limit(1)
         );
