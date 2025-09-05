@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -26,9 +27,9 @@ class Admission extends Model
         'min_total',        // Minimum total score required
         'preference_score', // Score for preference ranking
     ];
-protected $casts= [
-'min_average' => 'decimal:2',
-];
+    protected $casts = [
+        'min_average' => 'decimal:2',
+    ];
 
     /**
      * Get the college associated with the admission.
@@ -37,6 +38,4 @@ protected $casts= [
     {
         return $this->belongsTo(College::class);
     }
-
-
 }
