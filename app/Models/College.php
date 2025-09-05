@@ -91,67 +91,68 @@ class College extends Model
     /**
      * Scope: Filter colleges by multiple conditions.
      */
-    public function scopeFilterBy($query, $filters)
-    {
-        // Filter by governorates through related university
-        if (!empty($filters['governorates'])) {
-            $query->whereHas('university', function ($q) use ($filters) {
-                $q->whereIn('governorate_id', $filters['governorates']);
-            });
-        }
-
-        // Filter by college name
-        if (!empty($filters['name'])) {
-            $query->where('name', 'LIKE', "%{$filters['name']}%");
-        }
-
-        // Filter by university name
-        if (!empty($filters['universityName'])) {
-            $query->whereHas('university', function ($q) use ($filters) {
-                $q->where('name', 'LIKE', "%{$filters['universityName']}%");
-            });
-        }
-
-        // Filter by admission average range
-        if (!empty($filters['min_average_from']) && !empty($filters['min_average_to'])) {
-            $from = number_format((float) $filters['min_average_from'], 2, '.', '');
-            $to   = number_format((float) $filters['min_average_to'], 2, '.', '');
-
-            $query->whereHas('admissions', function ($q) use ($from, $to) {
-                $q->whereBetween('min_average', [$from, $to]);
-            });
-        }
-
-        // Filter by departments
-        if (!empty($filters['departments'])) {
-            $query->whereHas('departments', function ($q) use ($filters) {
-                $q->whereIn('departments.id', $filters['departments']);
-            });
-        }
-
-        // Filter by college type
-        if (!empty($filters['collegeType'])) {
-            $query->whereIn('college_type_id', $filters['collegeType']);
-        }
-
-        // Filter by branches
-        if (!empty($filters['branches'])) {
-            $query->whereHas('branch', function ($q) use ($filters) {
-                $q->whereIn('id', $filters['branches']);
-            });
-        }
-
-        // Sort by highest min_average in related admissions
-        $$query->orderByDesc(
-            \App\Models\Admission::select('min_average')
-                ->whereColumn('admissions.college_id', 'colleges.id')
-               ->where('admissions.year', 2025)
-
-                ->orderByDesc('min_average')
-                ->limit(1)
-        );
-
-
-        return $query;
+   public function scopeFilterBy($query, $filters)
+{
+    // Filter by governorates through related university
+    if (!empty($filters['governorates'])) {
+        $query->whereHas('university', function ($q) use ($filters) {
+            $q->whereIn('governorate_id', $filters['governorates']);
+        });
     }
+
+    // Filter by college name
+    if (!empty($filters['name'])) {
+        $query->where('name', 'LIKE', "%{$filters['name']}%");
+    }
+
+    // Filter by university name
+    if (!empty($filters['universityName'])) {
+        $query->whereHas('university', function ($q) use ($filters) {
+            $q->where('name', 'LIKE', "%{$filters['universityName']}%");
+        });
+    }
+
+    // Filter by admission average range
+    if (!empty($filters['min_average_from']) && !empty($filters['min_average_to'])) {
+        $from = number_format((float) $filters['min_average_from'], 2, '.', '');
+        $to   = number_format((float) $filters['min_average_to'], 2, '.', '');
+
+        $query->whereHas('admissions', function ($q) use ($from, $to) {
+            $q->whereBetween('min_average', [$from, $to]);
+        });
+    }
+
+    // Filter by departments
+    if (!empty($filters['departments'])) {
+        $query->whereHas('departments', function ($q) use ($filters) {
+            $q->whereIn('departments.id', $filters['departments']);
+        });
+    }
+
+    // Filter by college type (ID)
+    if (!empty($filters['collegeType'])) {
+        $collegeTypeIds = is_array($filters['collegeType'])
+            ? $filters['collegeType']
+            : [$filters['collegeType']]; // إذا كانت مفردة، حولها لمصفوفة
+
+        $query->whereIn('college_type_id', $collegeTypeIds);
+    }
+
+    // Filter by branches
+    if (!empty($filters['branches'])) {
+        $query->whereHas('branch', function ($q) use ($filters) {
+            $q->whereIn('id', $filters['branches']);
+        });
+    }
+
+    // Sort by highest min_average in related admissions (year 2025)
+    $query->orderByDesc(
+        \Illuminate\Support\Facades\DB::raw(
+            "(SELECT max(min_average) FROM admissions WHERE admissions.college_id = colleges.id AND admissions.year = 2025)"
+        )
+    );
+
+    return $query;
+}
+
 }

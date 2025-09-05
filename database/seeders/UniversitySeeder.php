@@ -8,7 +8,7 @@ use App\Models\College;
 use App\Models\Department;
 use App\Models\Governorate;
 use App\Models\University;
-use App\Models\CollegeType; // ✅ استدعاء الموديل الصحيح
+use App\Models\CollegeType;
 use Illuminate\Database\Seeder;
 
 class UniversitySeeder extends Seeder
@@ -37,31 +37,26 @@ class UniversitySeeder extends Seeder
                 'governorate_id' => $governorate->id,
             ]);
 
-            // الفرع
+            // الفرع (تحقق قبل الإنشاء)
             $branchName = $item['branch'] ?? 'عام';
             if (in_array($branchName, ['تطبيقي', 'احيائي'])) {
                 $branchName = 'علمي';
             }
             $branch = Branch::firstOrCreate(['name' => $branchName]);
 
-            // ✅ نوع الكلية (باستخدام CollegeType بدلاً من Department)
-            $collegeType = CollegeType::firstOrCreate(
-                ['name' => $item['collegeType']]
-            );
+            // نوع الكلية
+            $collegeType = CollegeType::firstOrCreate(['name' => $item['collegeType']]);
 
             // الكلية
-            $college = College::firstOrCreate(
-                [
-                    'name'          => $item['collegeName'],
-                    'university_id' => $university->id,
-                ],
-                [
-                    'college_type_id' => $collegeType->id,
-                    'study_duration'  => $item['studyDuration'],
-                    'branch_id'       => $branch->id,
-                    'gender'          => $genderMap[$item['gender']] ?? 2,
-                ]
-            );
+            $college = College::firstOrCreate([
+                'name'           => $item['collegeName'],
+                'university_id'  => $university->id,
+                'branch_id'      => $branch->id,
+                'college_type_id' => $collegeType->id,
+                'study_duration' => $item['studyDuration'],
+                'gender'         => $genderMap[$item['gender']] ?? 2,
+            ]);
+
 
             // الأقسام
             if (!empty($item['departments'])) {
@@ -69,7 +64,7 @@ class UniversitySeeder extends Seeder
                 foreach ($item['departments'] as $dep) {
                     $department = Department::firstOrCreate(
                         ['name' => $dep],
-
+                        ['type' => 0]
                     );
 
                     $college->departments()->syncWithoutDetaching([
@@ -82,7 +77,6 @@ class UniversitySeeder extends Seeder
             // بيانات القبول (admissions)
             if (!empty($item['admissions'])) {
                 foreach ($item['admissions'] as $adm) {
-                    // تجاهل admission إذا كل الثلاثة حقول null
                     if (
                         ($adm['minAverage'] ?? null) === null &&
                         ($adm['minTotal'] ?? null) === null &&
