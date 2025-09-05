@@ -64,7 +64,7 @@ class UniversitySeeder extends Seeder
                 foreach ($item['departments'] as $dep) {
                     $department = Department::firstOrCreate(
                         ['name' => $dep],
-                        ['type' => 0]
+
                     );
 
                     $college->departments()->syncWithoutDetaching([
