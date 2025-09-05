@@ -47,26 +47,24 @@ class UniversitySeeder extends Seeder
             // نوع الكلية
             $collegeType = CollegeType::firstOrCreate(['name' => $item['collegeType']]);
 
-            // الكلية
-            $college = College::firstOrCreate([
-                'name'           => $item['collegeName'],
-                'university_id'  => $university->id,
-                'branch_id'      => $branch->id,
-                'college_type_id' => $collegeType->id,
-                'study_duration' => $item['studyDuration'],
-                'gender'         => $genderMap[$item['gender']] ?? 2,
-            ]);
+            // الكلية: فريدة حسب الاسم + الجامعة + الفرع + نوع الكلية
+            $college = College::firstOrCreate(
+    [
+        'name'           => $item['collegeName'],
+        'university_id'  => $university->id,
+        'branch_id'      => $branch->id,
+        'college_type_id'=> $collegeType->id,
+        'study_duration' => $item['studyDuration'],
+        'gender'         => $genderMap[$item['gender']] ?? 2,
+    ]
+);
 
 
             // الأقسام
             if (!empty($item['departments'])) {
                 $priority = 0;
                 foreach ($item['departments'] as $dep) {
-                    $department = Department::firstOrCreate(
-                        ['name' => $dep],
-
-                    );
-
+                    $department = Department::firstOrCreate(['name' => $dep]);
                     $college->departments()->syncWithoutDetaching([
                         $department->id => ['priority' => $priority],
                     ]);
@@ -74,7 +72,7 @@ class UniversitySeeder extends Seeder
                 }
             }
 
-            // بيانات القبول (admissions)
+            // بيانات القبول
             if (!empty($item['admissions'])) {
                 foreach ($item['admissions'] as $adm) {
                     if (
@@ -85,13 +83,17 @@ class UniversitySeeder extends Seeder
                         continue;
                     }
 
-                    Admission::create([
-                        'college_id'       => $college->id,
-                        'year'             => $adm['year'] ?? null,
-                        'min_average'      => $adm['minAverage'] ?? null,
-                        'min_total'        => $adm['minTotal'] ?? null,
-                        'preference_score' => $adm['preferenceScore'] ?? null,
-                    ]);
+                    Admission::updateOrCreate(
+                        [
+                            'college_id' => $college->id,
+                            'year'       => $adm['year'] ?? null,
+                        ],
+                        [
+                            'min_average'      => $adm['minAverage'] ?? null,
+                            'min_total'        => $adm['minTotal'] ?? null,
+                            'preference_score' => $adm['preferenceScore'] ?? null,
+                        ]
+                    );
                 }
             }
         }
