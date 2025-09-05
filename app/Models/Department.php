@@ -20,7 +20,7 @@ class Department extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['name','type'];
+    protected $fillable = ['name'];
 
     /**
      * Relationship: A department belongs to many colleges (many-to-many).

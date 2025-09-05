@@ -15,7 +15,7 @@ class DepartmentService extends Service
     {
         try {
             $departments = Department::select('id', 'name')
-                ->where('type', 0)
+
                 ->get();
 
             return $this->successResponse('تم استرجاع الأقسام بنجاح.', 200, $departments);

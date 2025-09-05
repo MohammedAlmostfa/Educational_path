@@ -8,6 +8,7 @@ use App\Models\College;
 use App\Models\Department;
 use App\Models\Governorate;
 use App\Models\University;
+use App\Models\CollegeType; // ✅ استدعاء الموديل الصحيح
 use Illuminate\Database\Seeder;
 
 class UniversitySeeder extends Seeder
@@ -43,10 +44,9 @@ class UniversitySeeder extends Seeder
             }
             $branch = Branch::firstOrCreate(['name' => $branchName]);
 
-            // نوع الكلية
-            $collegeType = Department::firstOrCreate(
-                ['name' => $item['collegeType']],
-                ['type' => 1]
+            // ✅ نوع الكلية (باستخدام CollegeType بدلاً من Department)
+            $collegeType = CollegeType::firstOrCreate(
+                ['name' => $item['collegeType']]
             );
 
             // الكلية
@@ -69,7 +69,7 @@ class UniversitySeeder extends Seeder
                 foreach ($item['departments'] as $dep) {
                     $department = Department::firstOrCreate(
                         ['name' => $dep],
-                        ['type' => 0]
+
                     );
 
                     $college->departments()->syncWithoutDetaching([

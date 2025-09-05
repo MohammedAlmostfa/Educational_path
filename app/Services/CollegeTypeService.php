@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\CollegeType;
 use App\Models\Department;
 use Exception;
 use Illuminate\Support\Facades\Log;
@@ -12,8 +13,8 @@ class CollegeTypeService extends Service
     {
         try {
 
-            $collegeTypes = Department::select('id', 'name')
-                ->where('type', 1)
+            $collegeTypes = CollegeType::select('id', 'name')
+
                 ->get();
 
             return $this->successResponse(
