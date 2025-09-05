@@ -36,6 +36,7 @@ class CollegeService extends Service
                     ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
                     // Add is_saved field for each college
                     ->withExists(['savedByUsers as is_saved' => fn($q) => $q->where('user_id', $user->id)])
+
                     ->paginate(10);
             } else {
                 // Guest user: return random 4 colleges with relationships

@@ -114,53 +114,59 @@ class College extends Model
      * - branches (array of IDs)
      */
     public function scopeFilterBy($query, $filters)
-    {
-        // Filter by governorates through related university
-        if (!empty($filters['governorates'])) {
-            $query->whereHas('university', function ($q) use ($filters) {
-                $q->whereIn('governorate_id', $filters['governorates']);
-            });
-        }
+{
+    // Filter by governorates through related university
+    if (!empty($filters['governorates'])) {
+        $query->whereHas('university', function ($q) use ($filters) {
+            $q->whereIn('governorate_id', $filters['governorates']);
+        });
+    }
 
-        // Filter by college name
-        if (isset($filters['name'])) {
-            $query->where('name', 'LIKE', "%{$filters['name']}%");
-        }
+    // Filter by college name
+    if (!empty($filters['name'])) {
+        $query->where('name', 'LIKE', "%{$filters['name']}%");
+    }
 
-        // Filter by university name
-        if (isset($filters['universityName'])) {
-            $query->whereHas('university', function ($q) use ($filters) {
-                $q->where('name', 'LIKE', "%{$filters['universityName']}%");
-            });
-        }
+    // Filter by university name
+    if (!empty($filters['universityName'])) {
+        $query->whereHas('university', function ($q) use ($filters) {
+            $q->where('name', 'LIKE', "%{$filters['universityName']}%");
+        });
+    }
 
-        // Filter by admission average range
-        // Filter by admission average range
-if (!empty($filters['min_average_from']) && !empty($filters['min_average_to'])) {
-    $from = number_format((float) $filters['min_average_from'], 2, '.', '');
-    $to   = number_format((float) $filters['min_average_to'], 2, '.', '');
+    // Filter by admission average range
+    if (!empty($filters['min_average_from']) && !empty($filters['min_average_to'])) {
+        $from = number_format((float) $filters['min_average_from'], 2, '.', '');
+        $to   = number_format((float) $filters['min_average_to'], 2, '.', '');
 
-    $query->whereHas('admissions', function ($q) use ($from, $to) {
-        $q->where('min_average', '>=', $from)
-          ->where('min_average', '<=', $to);
-    });
+        $query->whereHas('admissions', function ($q) use ($from, $to) {
+            $q->whereBetween('min_average', [$from, $to]);
+        });
+    }
+
+    // Filter by departments
+    if (!empty($filters['departments'])) {
+        $query->whereHas('departments', function ($q) use ($filters) {
+            $q->whereIn('department_id', $filters['departments']);
+        });
+    }
+
+    // Filter by branches
+    if (!empty($filters['branches'])) {
+        $query->whereHas('branch', function ($q) use ($filters) {
+            $q->whereIn('id', $filters['branches']);
+        });
+    }
+
+    // ✅ Sort by highest min_average in related admissions
+    $query->orderByDesc(
+        \App\Models\Admission::select('min_average')
+            ->whereColumn('admissions.college_id', 'colleges.id')
+            ->orderByDesc('min_average')
+            ->limit(1)
+    );
+
+    return $query;
 }
 
-
-        // Filter by departments
-        if (!empty($filters['departments'])) {
-            $query->whereHas('departments', function ($q) use ($filters) {
-                $q->whereIn('department_id', $filters['departments']);
-            });
-        }
-
-        // Filter by branches
-        if (!empty($filters['branches'])) {
-            $query->whereHas('branch', function ($q) use ($filters) {
-                $q->whereIn('id', $filters['branches']);
-            });
-        }
-
-        return $query;
-    }
 }
