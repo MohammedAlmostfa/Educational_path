@@ -142,12 +142,14 @@ class College extends Model
         }
 
         // Sort by highest min_average in related admissions
-        $query->orderByDesc(
+        $$query->orderByDesc(
             \App\Models\Admission::select('min_average')
                 ->whereColumn('admissions.college_id', 'colleges.id')
+                ->orderByDesc('year')
                 ->orderByDesc('min_average')
                 ->limit(1)
         );
+
 
         return $query;
     }
