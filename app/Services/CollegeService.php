@@ -7,6 +7,7 @@ use App\Models\CollegeType;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Cache;
 
 /**
  * Class CollegeService
@@ -31,15 +32,27 @@ class CollegeService extends Service
             $user = Auth::guard('sanctum')->user();
 
             if ($user && $user->is_active == 1) {
-                // Authenticated user: fetch colleges with relationships and filters
-                $colleges = College::with(['university', 'collegeType', 'departments', 'admissions'])
-                    ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
-                    // Add is_saved field for each college
-                    ->withExists(['savedByUsers as is_saved' => fn($q) => $q->where('user_id', $user->id)])
+                $cacheKey = 'colleges_all_' . md5(json_encode($filteringData));
 
-                    ->paginate(10);
+
+                $allKeys = Cache::get('all_colleges_keys', []);
+                if (!in_array($cacheKey, $allKeys)) {
+                    $allKeys[] = $cacheKey;
+                    Cache::forever('all_colleges_keys', $allKeys);
+                }
+
+                $colleges = Cache::remember($cacheKey, now()->addMinutes(30), function () use ($filteringData) {
+                    return College::with(['university', 'collegeType', 'departments', 'admissions'])
+                        ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
+                        ->paginate(10);
+                });
+
+                $colleges->getCollection()->transform(function ($college) use ($user) {
+                    $college->is_saved = $college->savedByUsers()->where('user_id', $user->id)->exists();
+                    return $college;
+                });
             } else {
-                // Guest user: return random 4 colleges with relationships
+
                 $colleges = College::with(['university', 'departments', 'admissions'])
                     ->inRandomOrder()
                     ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
@@ -53,37 +66,49 @@ class CollegeService extends Service
             return $this->errorResponse('حدث خطأ أثناء جلب الكليات. يرجى المحاولة مرة أخرى.', 500);
         }
     }
-public function getNewColleges(?array $filteringData = [])
-{
-    try {
-        $user = Auth::guard('sanctum')->user();
 
-        if ($user && $user->is_active == 1) {
+    public function getNewColleges(?array $filteringData = [])
+    {
+        try {
+            $user = Auth::guard('sanctum')->user();
 
-            $colleges = College::with(['university', 'collegeType', 'departments', 'admissions'])
-                ->whereDoesntHave('admissions')
-                ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
-                ->withExists([
-                    'savedByUsers as is_saved' => fn($q) => $q->where('user_id', $user->id)
-                ])
-              ->get();
-        } else {
+            if ($user && $user->is_active == 1) {
+                $cacheKey = 'new_colleges_' . md5(json_encode($filteringData));
 
-            $colleges = College::with(['university', 'departments', 'admissions'])
-                ->inRandomOrder()
-                ->whereDoesntHave('admissions')
-                ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
-                ->limit(4)
-                ->get();
+
+                $allKeys = Cache::get('all_colleges_keys', []);
+                if (!in_array($cacheKey, $allKeys)) {
+                    $allKeys[] = $cacheKey;
+                    Cache::forever('all_colleges_keys', $allKeys);
+                }
+
+                $colleges = Cache::remember($cacheKey, now()->addMinutes(30), function () use ($filteringData) {
+                    return College::with(['university', 'collegeType', 'departments', 'admissions'])
+                        ->whereDoesntHave('admissions')
+                        ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
+                        ->get();
+                });
+
+                $colleges->transform(function ($college) use ($user) {
+                    $college->is_saved = $college->savedByUsers()->where('user_id', $user->id)->exists();
+                    return $college;
+                });
+            } else {
+
+                $colleges = College::with(['university', 'departments', 'admissions'])
+                    ->inRandomOrder()
+                    ->whereDoesntHave('admissions')
+                    ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
+                    ->limit(4)
+                    ->get();
+            }
+
+            return $this->successResponse('تم جلب الكليات الجديدة بنجاح.', 200, $colleges);
+        } catch (Exception $e) {
+            Log::error('Error fetching new colleges: ' . $e->getMessage());
+            return $this->errorResponse('حدث خطأ أثناء جلب الكليات الجديدة. يرجى المحاولة مرة أخرى.', 500);
         }
-
-        return $this->successResponse('تم جلب الكليات الجديدة بنجاح.', 200, $colleges);
-
-    } catch (Exception $e) {
-        Log::error('Error fetching new colleges: ' . $e->getMessage());
-        return $this->errorResponse('حدث خطأ أثناء جلب الكليات الجديدة. يرجى المحاولة مرة أخرى.', 500);
     }
-}
 
     /**
      * Update a college and its related departments.

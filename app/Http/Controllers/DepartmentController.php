@@ -27,16 +27,16 @@ class DepartmentController extends Controller
             : self::error(null, $result['message'], $result['status']);
     }
 
-    /**
-     * Get all departments + college types (mixed)
-     */
-    public function getAllDepartmentsAndCollege(DepartmentFilterRequest $request)
-    {
-        $filteringData = $request->validated();
-        $result = $this->departmentService->getAllDepartmentsAndCollege($filteringData);
+    // /**
+    //  * Get all departments + college types (mixed)
+    //  */
+    // public function getAllDepartmentsAndCollege(DepartmentFilterRequest $request)
+    // {
+    //     $filteringData = $request->validated();
+    //     $result = $this->departmentService->getAllDepartmentsAndCollege($filteringData);
 
-        return $result['status'] === 200
-            ? self::success($result['data'] ?? null, $result['message'], $result['status'])
-            : self::error(null, $result['message'], $result['status']);
-    }
+    //     return $result['status'] === 200
+    //         ? self::success($result['data'] ?? null, $result['message'], $result['status'])
+    //         : self::error(null, $result['message'], $result['status']);
+    // }
 }

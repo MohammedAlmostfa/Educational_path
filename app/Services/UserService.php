@@ -38,32 +38,6 @@ class UserService extends Service
         }
     }
 
-    // /**
-    //  * Generate an activation code for a user if not exists.
-    //  *
-    //  * @param int $id User ID
-    //  * @return array Standardized response with the code
-    //  */
-    // public function Activaccount($id)
-    // {
-    //     try {
-    //         $user = User::findOrFail($id);
-
-    //         if ($user->activation_code == null) {
-    //             $randomNumber = rand(1000, 9999);
-    //             $user->activation_code = $randomNumber;
-    //             $user->save();
-
-    //             return $this->successResponse('تم توليد الكود بنجاح', 200, ["activation_code" => $randomNumber]);
-    //         } else {
-    //             return $this->errorResponse('المستخدم له كود سابق', 400);
-    //         }
-
-    //     } catch (Exception $e) {
-    //         Log::error('Error generating activation code: ' . $e->getMessage());
-    //         return $this->errorResponse('حدث خطأ أثناء توليد الكود، يرجى المحاولة مرة أخرى.', 500);
-    //     }
-    // }
 
     /**
      * Verify the activation code for the currently authenticated user.

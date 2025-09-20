@@ -13,15 +13,13 @@ use App\Http\Controllers\DeviceTokenController;
 use App\Http\Controllers\GovernorateController;
 use App\Http\Controllers\SavedCollegeController;
 
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
 |--------------------------------------------------------------------------
 |
-| Here we define all API routes for the application.
-| Some routes are protected with middleware to check authentication
-| or user permissions (e.g., admin or activation check).
+| All API routes for the application.
+| Routes are grouped by public, authenticated, admin, and activated user.
 |
 */
 
@@ -29,11 +27,8 @@ use App\Http\Controllers\SavedCollegeController;
 |--------------------------------------------------------------------------
 | Test Authenticated User Route
 |--------------------------------------------------------------------------
-|
-| Route to return the authenticated user's info.
-|
+| Returns the authenticated user's information.
 */
-
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
@@ -42,10 +37,7 @@ Route::get('/user', function (Request $request) {
 |--------------------------------------------------------------------------
 | Authentication Routes
 |--------------------------------------------------------------------------
-|
-| Routes for user registration, login, logout, Google login,
-| and saving/updating device FCM tokens.
-|
+| Registration, login, logout, Google login, and device FCM token management.
 */
 Route::post('/register', [AuthController::class, 'register']); // Register a new user
 Route::post('/login', [AuthController::class, 'login']); // User login
@@ -53,81 +45,72 @@ Route::post('/logout', [AuthController::class, 'logout']); // User logout
 Route::post('/access-with-google', [AuthController::class, 'loginWithGoogle']); // Login via Google
 Route::post('/save-fcm', [DeviceTokenController::class, 'createOrUpdate']); // Save or update device FCM token
 
-// Public access: Get all colleges
-Route::get('/get-colleges', [CollegeController::class, 'index']);
-Route::get('/new-colleges', [CollegeController::class, 'getNewCollege']);
-// Public content routes
+/*
+|--------------------------------------------------------------------------
+| Public Data Routes
+|--------------------------------------------------------------------------
+| Accessible without authentication: colleges, new colleges, content, and location data.
+*/
+Route::get('/get-colleges', [CollegeController::class, 'index']); // List all colleges
+Route::get('/new-colleges', [CollegeController::class, 'getNewCollege']); // List new colleges
 Route::get('/content', [ContentController::class, 'index']); // Get all content
 Route::post('/add-viewers/{id}', [ContentController::class, 'addViewers']); // Increment content viewers
+Route::get('/college-types', [CollegeTypeController::class, 'index']); // Get college types
+Route::get('/university', [UniversityController::class, 'index']); // Get all universities
+Route::get('/governorate', [GovernorateController::class, 'index']); // Get all governorates
+Route::get('/department', [DepartmentController::class, 'index']); // Get all departments
 
 /*
 |--------------------------------------------------------------------------
 | Authenticated User Routes
 |--------------------------------------------------------------------------
-|
-| Routes that require the user to be logged in (auth:sanctum).
-|
+| Requires authentication via Sanctum.
 */
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/check-activation_code', [UserController::class, 'checkActivationCode']); // Verify activation code
     Route::put('/college/{id}', [CollegeController::class, 'update']); // Update college info
-    Route::delete('college/{id}', [CollegeController::class, 'delete']); // Delete a college
+    Route::delete('/college/{id}', [CollegeController::class, 'delete']); // Delete a college
     Route::post('/logout', [AuthController::class, 'logout']); // User logout
-
-    Route::get('/governorate', [GovernorateController::class, 'index']); // Get all governorates
-    Route::get('/department', [DepartmentController::class, 'index']); // Get all departments
-    Route::get('/departments-and-college-types', [DepartmentController::class, 'getAllDepartmentsAndCollege']); // Get all departments
-
 });
 
 /*
 |--------------------------------------------------------------------------
 | Admin Routes
 |--------------------------------------------------------------------------
-|
-| Routes that require authentication + admin role + activation check.
-| Admins can manage content, users, and universities.
-|
+| Requires authentication + admin role + user activation.
+| Admins manage content, users, and other resources.
 */
 Route::middleware(['auth:sanctum', 'admin', 'activation'])->group(function () {
     // Content management
     Route::post('/content', [ContentController::class, 'store']); // Create new content
-    Route::post('/content/{id}', [ContentController::class, 'update']); // Update specific content
-    Route::delete('/content/{content}', [ContentController::class, 'destroy']); // Delete specific content
-    Route::post('/adminlogout', [UserController::class, 'Userlogout']);
-    // User management
-    Route::get('/show-unactive-users', [UserController::class, 'index'])->name('show-unactive-users');
-    // List all inactive users
-    // Route::put('/activation/{id}', [UserController::class, 'active']); // Activate a specific user (commented out)
+    Route::post('/content/{id}', [ContentController::class, 'update']); // Update content
+    Route::delete('/content/{content}', [ContentController::class, 'destroy']); // Delete content
 
-    // University management
-    Route::get('/university', [UniversityController::class, 'index']); // Get all universities/departments
+    // Admin logout
+    Route::post('/adminlogout', [UserController::class, 'Userlogout']);
+
+    // User management
+    Route::get('/show-unactive-users', [UserController::class, 'index'])->name('show-unactive-users'); // List all inactive users
+    // Route::put('/activation/{id}', [UserController::class, 'active']); // Activate a user (commented out)
 });
 
 /*
 |--------------------------------------------------------------------------
 | Authenticated & Activated User Routes
 |--------------------------------------------------------------------------
-|
-| Routes that require authentication + user activation.
-| Includes content viewing, location data, user info management, and saved colleges.
-|
+| Requires authentication + user activation.
+| Includes content interaction, user info management, and saved colleges.
 */
 Route::middleware(['auth:sanctum', 'activation'])->group(function () {
     // Content
-
     Route::post('/add-viewers/{id}', [ContentController::class, 'addViewers']); // Increment content viewers
 
-    // Location data
-    Route::get('/college-types', [CollegeTypeController::class, 'index']);
-
-
-    // User information management
+    // User info management
     Route::post('/set-user-information', [UserController::class, 'creat']); // Save user info
     Route::post('/update-user-information', [UserController::class, 'update']); // Update user info
     Route::get('/me', [UserController::class, 'me']); // Get current authenticated user info
 
-    // Saved Colleges management
+    // Saved colleges management
     Route::post('/saved/{collegeId}', [SavedCollegeController::class, 'addSaved']); // Add a college to saved list
     Route::delete('/saved/{collegeId}', [SavedCollegeController::class, 'removeSaved']); // Remove a college from saved list
     Route::get('/saved', [SavedCollegeController::class, 'getSaved']); // Get all saved colleges

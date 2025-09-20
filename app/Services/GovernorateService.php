@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\Governorate;
 use Exception;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Cache;
 
 /**
  * Service responsible for managing governorates.
@@ -13,15 +14,20 @@ use Illuminate\Support\Facades\Log;
 class GovernorateService extends Service
 {
     /**
-     * Get all governorates.
+     * Get all governorates with caching.
      *
      * @return array Response with status, message, and data
      */
     public function getAllGovernorates()
     {
         try {
-            // Fetch all governorates (id and name only)
-            $governorates = Governorate::select('id', 'name')->get();
+            // Cache key
+            $cacheKey = 'governorates_all';
+
+            // Get from cache or store if not exists (2 hours)
+            $governorates = Cache::remember($cacheKey, now()->addHours(2), function () {
+                return Governorate::select('id', 'name')->get();
+            });
 
             return $this->successResponse('تم استرجاع المحافظات بنجاح.', 200, $governorates);
 
@@ -32,4 +38,6 @@ class GovernorateService extends Service
             return $this->errorResponse('حدث خطأ أثناء استرجاع المحافظات. يرجى المحاولة مرة أخرى.', 500);
         }
     }
+
+
 }

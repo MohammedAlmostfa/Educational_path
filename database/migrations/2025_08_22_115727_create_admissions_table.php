@@ -10,7 +10,6 @@ return new class extends Migration {
         Schema::create('admissions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('college_id')->constrained()->onDelete('cascade');
-
             $table->year('year')->nullable();
             $table->decimal('min_average', 5, 2)->nullable();
             $table->decimal('min_total', 8, 2)->nullable();

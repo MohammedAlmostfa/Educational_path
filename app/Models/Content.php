@@ -3,29 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
-/**
- * Class Content
- *
- * Represents a content post or article.
- * Supports optional image, title, body text, and a flag to mark it as new.
- */
 class Content extends Model
 {
-    /**
-     * Mass assignable attributes.
-     */
     protected $fillable = [
-        'image_url', // URL/path to the content image
-        'title',     // Title of the content
-        'body',      // Main body text of the content
-        'is_new',    // Flag indicating if this content is new (1 = new, 0 = old)
-        'viewers',   // Number of viewers
+        'image_url',
+        'title',
+        'body',
+        'is_new',
+        'viewers',
     ];
 
-    /**
-     * Attribute casting
-     */
     protected $casts = [
         'is_new'  => 'integer',
         'viewers' => 'integer',
@@ -41,10 +30,39 @@ class Content extends Model
         }
 
         if (isset($filteringData['title'])) {
-
-               $query->where('title', 'LIKE', "%{$filteringData['title']}%");
+            $query->where('title', 'LIKE', "%{$filteringData['title']}%");
         }
 
         return $query;
+    }
+
+    /**
+     * Model events: clear content cache automatically
+     */
+    protected static function booted()
+    {
+        $clearContentCache = function () {
+            $cacheKeys = Cache::get('all_contents_keys', []);
+            foreach ($cacheKeys as $key) {
+                Cache::forget($key);
+            }
+            Cache::forget('all_contents_keys');
+        };
+
+        static::created($clearContentCache);
+        static::updated($clearContentCache);
+        static::deleted($clearContentCache);
+    }
+
+    /**
+     * Helper to store each cache key
+     */
+    public static function rememberCacheKey(string $key)
+    {
+        $cacheKeys = Cache::get('all_contents_keys', []);
+        if (!in_array($key, $cacheKeys)) {
+            $cacheKeys[] = $key;
+            Cache::forever('all_contents_keys', $cacheKeys);
+        }
     }
 }

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Jobs\SendFcmNotificationJob;
 use App\Models\DeviceToken;
+use Illuminate\Support\Facades\Cache;
 
 /**
  * Class ContentService
@@ -32,16 +33,27 @@ class ContentService extends Service
     public function getAll($filteringData)
     {
         try {
-            $content = Content::when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
-                ->orderByDesc('created_at')
-                ->paginate(10);
+
+            $cacheKey = 'contents_' . md5(json_encode($filteringData));
+
+
+Content::rememberCacheKey($cacheKey);
+
+$content = Cache::remember($cacheKey, 60, function () use ($filteringData) {
+    return Content::when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
+        ->orderByDesc('created_at')
+        ->paginate(10);
+});
+
+
 
             return $this->successResponse('تم جلب المحتوى بنجاح.', 200, $content);
         } catch (Exception $e) {
             Log::error('Error fetching contents: ' . $e->getMessage());
-            return [];
+            return $this->errorResponse('حدث خطأ أثناء جلب المحتوى.', 500);
         }
     }
+
 
     /**
      * Create a new content.

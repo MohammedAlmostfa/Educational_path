@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('image_url')->nullable();
             $table->string('title');
             $table->text('body');
-             $table->tinyInteger('is_new')->default('1');
-
+            $table->tinyInteger('is_new')->default('1');
             $table->integer('viewers')->default(0);
             $table->timestamps();
         });

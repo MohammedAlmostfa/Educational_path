@@ -5,18 +5,23 @@ namespace App\Services;
 use App\Models\Department;
 use Exception;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Cache;
 
 class DepartmentService extends Service
 {
     /**
-     * Get all normal departments (type=0)
+     * Get all normal departments (type=0) with caching.
      */
     public function getAllDepartments()
     {
         try {
-            $departments = Department::select('id', 'name')
+            // مفتاح الكاش
+            $cacheKey = 'all_departments';
 
-                ->get();
+
+            $departments = Cache::remember($cacheKey, now()->addHours(2), function () {
+                return Department::select('id', 'name')->get();
+            });
 
             return $this->successResponse('تم استرجاع الأقسام بنجاح.', 200, $departments);
         } catch (Exception $e) {
@@ -25,28 +30,4 @@ class DepartmentService extends Service
         }
     }
 
-    /**
-     * Get all departments + college types (mixed)
-     */
-    public function getAllDepartmentsAndCollege(?array $filteringData = null)
-    {
-        try {
-            $departmentsMixed = Department::select('id', 'name', 'type')
-                ->when(!empty($filteringData), fn($query) => $query->filterBy($filteringData))
-                ->where('type', 0)
-                ->get();
-
-            return $this->successResponse(
-                'تم استرجاع جميع الأقسام وأنواع الكليات بنجاح.',
-                200,
-                $departmentsMixed
-            );
-        } catch (Exception $e) {
-            Log::error('Error while fetching departments mixed: ' . $e->getMessage());
-            return $this->errorResponse(
-                'حدث خطأ أثناء استرجاع الأقسام وأنواع الكليات. يرجى المحاولة مرة أخرى.',
-                500
-            );
-        }
-    }
 }

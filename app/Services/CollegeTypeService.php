@@ -3,19 +3,22 @@
 namespace App\Services;
 
 use App\Models\CollegeType;
-use App\Models\Department;
 use Exception;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Cache;
 
 class CollegeTypeService extends Service
 {
     public function getCollegeTypes()
     {
         try {
+            // Cache key
+            $cacheKey = 'college_types';
 
-            $collegeTypes = CollegeType::select('id', 'name')
-
-                ->get();
+            // Get from cache or store if not exists (2 hours)
+            $collegeTypes = Cache::remember($cacheKey, now()->addHours(2), function () {
+                return CollegeType::select('id', 'name')->get();
+            });
 
             return $this->successResponse(
                 'تم استرجاع أنواع الكليات بنجاح.',
@@ -31,4 +34,4 @@ class CollegeTypeService extends Service
             );
         }
     }
-}
+
