@@ -1,61 +1,154 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🎓 Educational Path
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 🧠 Overview
 
-## About Laravel
+**Educational Path** is a platform designed to help Iraqi students manage their **university admission preferences** efficiently and smoothly.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The system allows users to explore universities, filter options based on their academic path, and rank their preferences using an intuitive **drag-and-drop interface**.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+It also includes an **admin panel** for managing announcements, news, and user verification to ensure data accuracy.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🎯 Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 👤 User Registration & Verification
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+* Create a new account
+* Receive a verification code from the admin (via WhatsApp)
+* Activate the account before accessing the system
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🎓 Preference Management
 
-## Laravel Sponsors
+* Filter universities by:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+  * Specialization
+  * Certificate level
+  * College type (Scientific / Humanities)
+* Rank preferences using **drag & drop**
+* Save and edit selections
 
-### Premium Partners
+### 📰 Admin Content Management
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+* Add, edit, and delete:
 
-## Contributing
+  * News
+  * Informational articles
+* Support for images within content
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 📄 PDF Export
 
-## Code of Conduct
+* Download the final preference list as a PDF file
+* Useful for printing or official submission
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 🔔 Real-Time Notifications
 
-## Security Vulnerabilities
+* Instant updates using **Firebase Cloud Messaging (FCM)**
+* Notifications about:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+  * Admission announcements
+  * News updates
+  * Account status
 
-## License
+### 🔐 Role-Based Access
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+* 👨‍🎓 User: Manage preferences
+* 🛠️ Admin: Manage content and user verification
+
+---
+
+## 🏗️ Architecture
+
+| Module                           | Description                                            |
+| -------------------------------- | ------------------------------------------------------ |
+| User Registration & Verification | Account creation and activation via admin verification |
+| Preference Management            | Filtering and ranking university choices               |
+| Admin Content Management         | Managing news and educational content                  |
+| PDF Export                       | Generate downloadable PDF reports                      |
+| Real-Time Notifications          | Push notifications via FCM                             |
+| Role-Based Access                | User and Admin roles                                   |
+
+---
+
+## ⚙️ Tech Stack
+
+* **Laravel** — Backend Framework
+* **MySQL** — Database
+* **JWT** — Authentication
+* **Firebase Cloud Messaging (FCM)** — Notifications
+* **PDF Generator** — Export functionality
+
+---
+
+## 👥 Collaborators
+
+* **Sohaib Kamel** — Flutter Developer
+  🔗 https://www.linkedin.com/in/sohaib-kamel-863785347
+
+* **Azeddine Miche** — UX/UI Designer
+  🔗 https://www.linkedin.com/in/azzeddinemiche1998
+
+---
+
+## 🖼️ Screenshots
+
+### 🚀 Onboarding
+
+* Introduction for new users
+
+### 🔐 Authentication
+
+* Login
+* Register
+* Account activation
+
+### 🧑‍🎓 Profile Setup
+
+* Enter personal and academic details
+
+### 🏠 Home Dashboard
+
+* University listings with filters
+
+### 🔎 Filtering System
+
+* Filter by specialization and college type
+
+### 📊 Results Page
+
+* Display filtered universities
+
+### 💾 Saved Preferences
+
+* Drag-and-drop ranking system
+
+### 📰 News & Updates
+
+* Admin-published announcements
+
+### ❓ FAQ Page
+
+* Help and support section
+
+---
+
+## 🚀 Future Improvements
+
+* Google / Apple authentication
+* Smart university recommendation system
+* Admission probability analytics
+* Full mobile app version
+
+---
+
+## 📌 Status
+
+🟡 Active Project — continuously improving
+
+---
+
+## 📄 License
+
+To be defined.
+
+---
